@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smartphone Basics — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Scoped styles for the Smartphone Basics subtopic accordion only */
+  .subtopics-wrap { margin-top: 10px; }
+  .subtopic-block {
+    background: #fff;
+    border: 1px solid var(--blue-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .subtopic-block summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtopic-block summary::-webkit-details-marker { display: none; }
+  .subtopic-block summary::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; }
+  .subtopic-block[open] summary::before { transform: rotate(90deg); }
+  .subtopic-block .tips-list { padding: 12px 20px 16px 42px; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="../index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="../index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="../safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="learn-hero">
+  <h1 data-i18n="smartphone_hero_title">📱 Smartphone Basics</h1>
+  <div class="learn-flow">
+    <span data-i18n="smartphone_flow_learn">LEARN</span> → <span data-i18n="smartphone_flow_practice">PRACTICE</span> → <span data-i18n="smartphone_flow_quiz">QUIZ</span> → <span data-i18n="smartphone_flow_score">SCORE</span> → <span data-i18n="smartphone_flow_progress">PROGRESS</span>
+  </div>
+</div>
+
+<div class="learn-section">
+
+  <div class="info-block">
+    <h3 data-i18n="smartphone_simple_title">Simple Explanation</h3>
+    <p data-i18n="smartphone_simple_text">Your smartphone is a powerful tool once you know the basics — settings, connectivity, and how to keep it running smoothly and securely.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="smartphone_examples_title">Practical Examples</h3>
+    <ul class="tips-list">
+      <li data-i18n="smartphone_ex1">Adjusting Wi-Fi and mobile data helps you stay connected and control how much data you use.</li>
+      <li data-i18n="smartphone_ex2">Installing and updating apps only from official stores like Google Play keeps your phone safe.</li>
+      <li data-i18n="smartphone_ex3">Managing storage and using screen lock protects your data and keeps your phone running well.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="smartphone_safety_title">Safety Tips</h3>
+    <ul class="tips-list">
+      <li data-i18n="smartphone_safe1">Set a screen lock (PIN, pattern, or fingerprint).</li>
+      <li data-i18n="smartphone_safe2">Only install apps from Google Play Store or Apple App Store.</li>
+      <li data-i18n="smartphone_safe3">Keep your phone's software updated regularly.</li>
+      <li data-i18n="smartphone_safe4">Back up your photos and contacts to the cloud.</li>
+      <li data-i18n="smartphone_safe5">Turn off Bluetooth and Wi-Fi when not in use to save battery and reduce risk.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="sm_section_title">Explore Each Topic in Detail</h3>
+    <p data-i18n="sm_section_lead">Tap on a topic to see simple steps and safety tips.</p>
+    <div class="subtopics-wrap">
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t1_title">Setting Up a Phone</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t1_b1">Turn on your phone and follow the on-screen setup steps.</li>
+          <li data-i18n="sm_t1_b2">Choose your language and connect to Wi-Fi to continue setup.</li>
+          <li data-i18n="sm_t1_b3">Sign in with a Google account (Android) or Apple ID (iPhone).</li>
+          <li data-i18n="sm_t1_b4">Set the correct date, time, and region.</li>
+          <li data-i18n="sm_t1_b5">Set up a screen lock (PIN, pattern, or fingerprint) right away.</li>
+          <li data-i18n="sm_t1_b6">Allow only the permissions the phone truly needs during setup.</li>
+          <li data-i18n="sm_t1_b7">Restore contacts and apps from an old backup if you have one.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t2_title">Wi-Fi &amp; Mobile Data</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t2_b1">Wi-Fi uses home or office internet; mobile data uses your SIM's data plan.</li>
+          <li data-i18n="sm_t2_b2">Turn on Wi-Fi in Settings and tap your network name to connect.</li>
+          <li data-i18n="sm_t2_b3">Enter the Wi-Fi password carefully — it is case-sensitive.</li>
+          <li data-i18n="sm_t2_b4">Use mobile data when Wi-Fi isn't available, but keep an eye on usage.</li>
+          <li data-i18n="sm_t2_b5">Turn off Wi-Fi or mobile data when not needed to save battery.</li>
+          <li data-i18n="sm_t2_b6">Avoid using unknown public Wi-Fi for banking or important logins.</li>
+          <li data-i18n="sm_t2_b7">Check data usage in Settings so you don't run out before month-end.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t3_title">Bluetooth</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t3_b1">Bluetooth connects nearby devices like earphones, speakers, or smartwatches without wires.</li>
+          <li data-i18n="sm_t3_b2">Turn on Bluetooth from Settings or the quick-access panel.</li>
+          <li data-i18n="sm_t3_b3">Put the other device into "pairing mode" so your phone can find it.</li>
+          <li data-i18n="sm_t3_b4">Select the device name from the list and confirm pairing.</li>
+          <li data-i18n="sm_t3_b5">Turn Bluetooth off when not in use to save battery and stay safe.</li>
+          <li data-i18n="sm_t3_b6">Only pair with devices you know and trust.</li>
+          <li data-i18n="sm_t3_b7">Remove old or unknown paired devices from your Bluetooth list.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t4_title">Installing &amp; Uninstalling Apps</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t4_b1">Open Google Play Store (Android) or App Store (iPhone) to find apps.</li>
+          <li data-i18n="sm_t4_b2">Search the app name and check the developer name before installing.</li>
+          <li data-i18n="sm_t4_b3">Tap "Install" and wait for the app to download.</li>
+          <li data-i18n="sm_t4_b4">To uninstall, press and hold the app icon and choose "Uninstall" or "Remove".</li>
+          <li data-i18n="sm_t4_b5">Only install apps from official app stores, never from random links.</li>
+          <li data-i18n="sm_t4_b6">Check app ratings and reviews before installing.</li>
+          <li data-i18n="sm_t4_b7">Remove apps you no longer use to save storage space.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t5_title">App Permissions</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t5_b1">Permissions let apps access things like camera, location, contacts, or microphone.</li>
+          <li data-i18n="sm_t5_b2">Apps ask for permission the first time they need it — you can allow or deny.</li>
+          <li data-i18n="sm_t5_b3">Only give permissions an app truly needs for its purpose.</li>
+          <li data-i18n="sm_t5_b4">Review and change permissions anytime in Settings &gt; Apps &gt; Permissions.</li>
+          <li data-i18n="sm_t5_b5">Turn off location or camera access for apps that don't need it.</li>
+          <li data-i18n="sm_t5_b6">Be cautious of apps asking for too many unrelated permissions.</li>
+          <li data-i18n="sm_t5_b7">Denying a permission is usually safe — the app can ask again if needed.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t6_title">Updates</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t6_b1">Updates fix bugs, improve speed, and add important security patches.</li>
+          <li data-i18n="sm_t6_b2">Turn on auto-update in Play Store/App Store settings for convenience.</li>
+          <li data-i18n="sm_t6_b3">To update manually, open the store and check "My apps" or "Updates".</li>
+          <li data-i18n="sm_t6_b4">Also update your phone's operating system regularly from Settings.</li>
+          <li data-i18n="sm_t6_b5">Update apps over Wi-Fi to avoid using mobile data.</li>
+          <li data-i18n="sm_t6_b6">Never download updates from links sent by SMS or email.</li>
+          <li data-i18n="sm_t6_b7">Restart your phone occasionally to complete pending updates.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t7_title">Storage Management</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t7_b1">Storage is the space where photos, apps, and files are saved on your phone.</li>
+          <li data-i18n="sm_t7_b2">Check storage usage in Settings &gt; Storage to see what's taking up space.</li>
+          <li data-i18n="sm_t7_b3">Delete unused apps, duplicate photos, and old downloads regularly.</li>
+          <li data-i18n="sm_t7_b4">Move photos and videos to cloud storage or a memory card if needed.</li>
+          <li data-i18n="sm_t7_b5">Clear the cache of apps that take up too much space.</li>
+          <li data-i18n="sm_t7_b6">Keep some free storage space for smooth phone performance.</li>
+          <li data-i18n="sm_t7_b7">Back up important files before deleting anything you're unsure about.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t8_title">Contacts &amp; Emergency Contacts</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t8_b1">The Contacts app stores names and phone numbers you can call or message.</li>
+          <li data-i18n="sm_t8_b2">Add a contact by tapping "+" and entering their name and number.</li>
+          <li data-i18n="sm_t8_b3">Save important numbers like family, doctor, and police clearly.</li>
+          <li data-i18n="sm_t8_b4">Set up emergency contacts (ICE — In Case of Emergency) in phone settings.</li>
+          <li data-i18n="sm_t8_b5">Some phones let you call emergency services quickly from the lock screen.</li>
+          <li data-i18n="sm_t8_b6">Back up your contacts so you don't lose them if the phone is lost.</li>
+          <li data-i18n="sm_t8_b7">Regularly remove old or duplicate contact entries.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t9_title">Backup</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t9_b1">Backup means saving a safe copy of your data, usually to the cloud.</li>
+          <li data-i18n="sm_t9_b2">Turn on auto-backup for photos, contacts, and apps in phone settings.</li>
+          <li data-i18n="sm_t9_b3">Backups protect your data if the phone is lost, stolen, or damaged.</li>
+          <li data-i18n="sm_t9_b4">Connect to Wi-Fi so backups don't use your mobile data.</li>
+          <li data-i18n="sm_t9_b5">Check backup status occasionally to make sure it's working properly.</li>
+          <li data-i18n="sm_t9_b6">Use a Google account (Android) or iCloud (iPhone) for backup.</li>
+          <li data-i18n="sm_t9_b7">Restore your backup easily when you set up a new phone.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="sm_t10_title">Basic Troubleshooting</summary>
+        <ul class="tips-list">
+          <li data-i18n="sm_t10_b1">If the phone is slow, restart it — this fixes many small issues.</li>
+          <li data-i18n="sm_t10_b2">If an app crashes, close it and reopen it, or update the app.</li>
+          <li data-i18n="sm_t10_b3">If the phone won't connect to Wi-Fi, turn Wi-Fi off and on again.</li>
+          <li data-i18n="sm_t10_b4">If storage is full, delete unused files and apps to free up space.</li>
+          <li data-i18n="sm_t10_b5">If the screen freezes, press and hold the power button to restart.</li>
+          <li data-i18n="sm_t10_b6">If the battery drains fast, check which apps use the most battery.</li>
+          <li data-i18n="sm_t10_b7">If nothing works, note the problem and ask a trusted person or visit a service center.</li>
+        </ul>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="smartphone_scenario_title">Real-World Scenario — Practice</h3>
+    <div class="scenario-box">
+      <p data-i18n="smartphone_scenario_text">You get a notification that a new app update is available for an app you use daily.</p>
+      <p><strong data-i18n="smartphone_scenario_question">What should you do?</strong></p>
+    </div>
+    <div class="scenario-options" id="scenarioOptions"></div>
+    <div class="scenario-feedback" id="scenarioFeedback"></div>
+  </div>
+
+  <div class="learn-page-actions">
+    <a href="../quizzes/smartphone-quiz.html" class="btn btn-primary"><span data-i18n="smartphone_quiz_btn">Take the Smartphone Basics Quiz</span></a>
+    <a href="payments.html" class="btn btn-secondary"><span data-i18n="smartphone_next_btn">Next: Digital Payments</span></a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="../index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="../safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="../about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="../index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+
+<script src="../js/gamification.js"></script>
+<script src="../js/main.js"></script>
+<script>
+/* Smartphone Basics — subtopic translations.
+   Extends the existing site-wide `translations` object from main.js
+   so the Hindi/Marathi language switcher (langSelect) works for this
+   page's new content exactly as it does for the rest of the site. */
+Object.assign(translations.en, {
+  sm_section_title: "Explore Each Topic in Detail",
+  sm_section_lead: "Tap on a topic to see simple steps and safety tips.",
+  sm_t1_title: "Setting Up a Phone",
+  sm_t2_title: "Wi-Fi & Mobile Data",
+  sm_t3_title: "Bluetooth",
+  sm_t4_title: "Installing & Uninstalling Apps",
+  sm_t5_title: "App Permissions",
+  sm_t6_title: "Updates",
+  sm_t7_title: "Storage Management",
+  sm_t8_title: "Contacts & Emergency Contacts",
+  sm_t1_b1: "Turn on your phone and follow the on-screen setup steps.",
+  sm_t1_b2: "Choose your language and connect to Wi-Fi to continue setup.",
+  sm_t1_b3: "Sign in with a Google account (Android) or Apple ID (iPhone).",
+  sm_t1_b4: "Set the correct date, time, and region.",
+  sm_t1_b5: "Set up a screen lock (PIN, pattern, or fingerprint) right away.",
+  sm_t1_b6: "Allow only the permissions the phone truly needs during setup.",
+  sm_t1_b7: "Restore contacts and apps from an old backup if you have one.",
+
+  sm_t2_b1: "Wi-Fi uses home or office internet; mobile data uses your SIM's data plan.",
+  sm_t2_b2: "Turn on Wi-Fi in Settings and tap your network name to connect.",
+  sm_t2_b3: "Enter the Wi-Fi password carefully — it is case-sensitive.",
+  sm_t2_b4: "Use mobile data when Wi-Fi isn't available, but keep an eye on usage.",
+  sm_t2_b5: "Turn off Wi-Fi or mobile data when not needed to save battery.",
+  sm_t2_b6: "Avoid using unknown public Wi-Fi for banking or important logins.",
+  sm_t2_b7: "Check data usage in Settings so you don't run out before month-end.",
+
+  sm_t3_b1: "Bluetooth connects nearby devices like earphones, speakers, or smartwatches without wires.",
+  sm_t3_b2: "Turn on Bluetooth from Settings or the quick-access panel.",
+  sm_t3_b3: "Put the other device into \"pairing mode\" so your phone can find it.",
+  sm_t3_b4: "Select the device name from the list and confirm pairing.",
+  sm_t3_b5: "Turn Bluetooth off when not in use to save battery and stay safe.",
+  sm_t3_b6: "Only pair with devices you know and trust.",
+  sm_t3_b7: "Remove old or unknown paired devices from your Bluetooth list.",
+
+  sm_t4_b1: "Open Google Play Store (Android) or App Store (iPhone) to find apps.",
+  sm_t4_b2: "Search the app name and check the developer name before installing.",
+  sm_t4_b3: "Tap \"Install\" and wait for the app to download.",
+  sm_t4_b4: "To uninstall, press and hold the app icon and choose \"Uninstall\" or \"Remove\".",
+  sm_t4_b5: "Only install apps from official app stores, never from random links.",
+  sm_t4_b6: "Check app ratings and reviews before installing.",
+  sm_t4_b7: "Remove apps you no longer use to save storage space.",
+
+  sm_t5_b1: "Permissions let apps access things like camera, location, contacts, or microphone.",
+  sm_t5_b2: "Apps ask for permission the first time they need it — you can allow or deny.",
+  sm_t5_b3: "Only give permissions an app truly needs for its purpose.",
+  sm_t5_b4: "Review and change permissions anytime in Settings > Apps > Permissions.",
+  sm_t5_b5: "Turn off location or camera access for apps that don't need it.",
+  sm_t5_b6: "Be cautious of apps asking for too many unrelated permissions.",
+  sm_t5_b7: "Denying a permission is usually safe — the app can ask again if needed.",
+
+  sm_t6_b1: "Updates fix bugs, improve speed, and add important security patches.",
+  sm_t6_b2: "Turn on auto-update in Play Store/App Store settings for convenience.",
+  sm_t6_b3: "To update manually, open the store and check \"My apps\" or \"Updates\".",
+  sm_t6_b4: "Also update your phone's operating system regularly from Settings.",
+  sm_t6_b5: "Update apps over Wi-Fi to avoid using mobile data.",
+  sm_t6_b6: "Never download updates from links sent by SMS or email.",
+  sm_t6_b7: "Restart your phone occasionally to complete pending updates.",
+
+  sm_t7_b1: "Storage is the space where photos, apps, and files are saved on your phone.",
+  sm_t7_b2: "Check storage usage in Settings > Storage to see what's taking up space.",
+  sm_t7_b3: "Delete unused apps, duplicate photos, and old downloads regularly.",
+  sm_t7_b4: "Move photos and videos to cloud storage or a memory card if needed.",
+  sm_t7_b5: "Clear the cache of apps that take up too much space.",
+  sm_t7_b6: "Keep some free storage space for smooth phone performance.",
+  sm_t7_b7: "Back up important files before deleting anything you're unsure about.",
+
+  sm_t8_b1: "The Contacts app stores names and phone numbers you can call or message.",
+  sm_t8_b2: "Add a contact by tapping \"+\" and entering their name and number.",
+  sm_t8_b3: "Save important numbers like family, doctor, and police clearly.",
+  sm_t8_b4: "Set up emergency contacts (ICE — In Case of Emergency) in phone settings.",
+  sm_t8_b5: "Some phones let you call emergency services quickly from the lock screen.",
+  sm_t8_b6: "Back up your contacts so you don't lose them if the phone is lost.",
+  sm_t8_b7: "Regularly remove old or duplicate contact entries.",
+
+  sm_t9_b1: "Backup means saving a safe copy of your data, usually to the cloud.",
+  sm_t9_b2: "Turn on auto-backup for photos, contacts, and apps in phone settings.",
+  sm_t9_b3: "Backups protect your data if the phone is lost, stolen, or damaged.",
+  sm_t9_b4: "Connect to Wi-Fi so backups don't use your mobile data.",
+  sm_t9_b5: "Check backup status occasionally to make sure it's working properly.",
+  sm_t9_b6: "Use a Google account (Android) or iCloud (iPhone) for backup.",
+  sm_t9_b7: "Restore your backup easily when you set up a new phone.",
+
+  sm_t10_b1: "If the phone is slow, restart it — this fixes many small issues.",
+  sm_t10_b2: "If an app crashes, close it and reopen it, or update the app.",
+  sm_t10_b3: "If the phone won't connect to Wi-Fi, turn Wi-Fi off and on again.",
+  sm_t10_b4: "If storage is full, delete unused files and apps to free up space.",
+  sm_t10_b5: "If the screen freezes, press and hold the power button to restart.",
+  sm_t10_b6: "If the battery drains fast, check which apps use the most battery.",
+  sm_t10_b7: "If nothing works, note the problem and ask a trusted person or visit a service center.",
+
+  sm_t9_title: "Backup",
+  sm_t10_title: "Basic Troubleshooting"
+});
+
+Object.assign(translations.hi, {
+  sm_section_title: "हर विषय को विस्तार से जानें",
+  sm_section_lead: "आसान स्टेप्स और सुरक्षा टिप्स देखने के लिए किसी विषय पर टैप करें।",
+  sm_t1_title: "फ़ोन सेट अप करना",
+  sm_t1_b1: "फ़ोन ऑन करें और स्क्रीन पर दिए गए सेटअप स्टेप्स को फॉलो करें।",
+  sm_t1_b2: "अपनी भाषा चुनें और सेटअप जारी रखने के लिए Wi-Fi से कनेक्ट करें।",
+  sm_t1_b3: "Google खाते (Android) या Apple ID (iPhone) से साइन इन करें।",
+  sm_t1_b4: "सही तारीख, समय और क्षेत्र (region) सेट करें।",
+  sm_t1_b5: "शुरुआत में ही स्क्रीन लॉक (PIN, पैटर्न या फिंगरप्रिंट) लगाएं।",
+  sm_t1_b6: "सेटअप के दौरान केवल वही अनुमतियां (permissions) दें जो ज़रूरी हों।",
+  sm_t1_b7: "अगर पुराना बैकअप है, तो उससे कॉन्टैक्ट्स और ऐप्स वापस लाएं (restore करें)।",
+
+  sm_t2_title: "Wi-Fi और मोबाइल डेटा",
+  sm_t2_b1: "Wi-Fi घर या ऑफिस के इंटरनेट से चलता है; मोबाइल डेटा आपके सिम के डेटा प्लान से चलता है।",
+  sm_t2_b2: "Settings में Wi-Fi ऑन करें और कनेक्ट करने के लिए अपने नेटवर्क के नाम पर टैप करें।",
+  sm_t2_b3: "Wi-Fi पासवर्ड ध्यान से डालें — यह केस-सेंसिटिव (छोटे-बड़े अक्षर मायने रखते हैं) होता है।",
+  sm_t2_b4: "जब Wi-Fi उपलब्ध न हो तो मोबाइल डेटा इस्तेमाल करें, पर उपयोग पर नज़र रखें।",
+  sm_t2_b5: "ज़रूरत न होने पर Wi-Fi या मोबाइल डेटा बंद रखें ताकि बैटरी बचे।",
+  sm_t2_b6: "बैंकिंग या ज़रूरी लॉगिन के लिए अनजान पब्लिक Wi-Fi का इस्तेमाल न करें।",
+  sm_t2_b7: "महीना खत्म होने से पहले डेटा खत्म न हो, इसके लिए Settings में डेटा उपयोग जांचते रहें।",
+
+  sm_t3_title: "ब्लूटूथ (Bluetooth)",
+  sm_t3_b1: "Bluetooth बिना तार के पास के डिवाइस जैसे ईयरफोन, स्पीकर या स्मार्टवॉच से जोड़ता है।",
+  sm_t3_b2: "Settings या क्विक-एक्सेस पैनल से Bluetooth ऑन करें।",
+  sm_t3_b3: "दूसरे डिवाइस को \"पेयरिंग मोड\" में रखें ताकि आपका फोन उसे ढूंढ सके।",
+  sm_t3_b4: "लिस्ट में से डिवाइस का नाम चुनें और पेयरिंग कन्फर्म करें।",
+  sm_t3_b5: "बैटरी बचाने और सुरक्षित रहने के लिए इस्तेमाल न होने पर Bluetooth बंद रखें।",
+  sm_t3_b6: "सिर्फ उन्हीं डिवाइस से पेयर करें जिन्हें आप जानते और भरोसा करते हैं।",
+  sm_t3_b7: "अपनी Bluetooth लिस्ट से पुराने या अनजान पेयर किए गए डिवाइस हटा दें।",
+
+  sm_t4_title: "ऐप्स इंस्टॉल और अनइंस्टॉल करना",
+  sm_t4_b1: "ऐप्स ढूंढने के लिए Google Play Store (Android) या App Store (iPhone) खोलें।",
+  sm_t4_b2: "इंस्टॉल करने से पहले ऐप का नाम सर्च करें और डेवलपर का नाम जांच लें।",
+  sm_t4_b3: "\"Install\" पर टैप करें और ऐप डाउनलोड होने तक इंतज़ार करें।",
+  sm_t4_b4: "अनइंस्टॉल करने के लिए ऐप आइकन को दबाकर रखें और \"Uninstall\" या \"Remove\" चुनें।",
+  sm_t4_b5: "हमेशा ऑफिशियल ऐप स्टोर से ही ऐप इंस्टॉल करें, किसी अनजान लिंक से नहीं।",
+  sm_t4_b6: "इंस्टॉल करने से पहले ऐप की रेटिंग और रिव्यू ज़रूर देखें।",
+  sm_t4_b7: "जिन ऐप्स का इस्तेमाल नहीं करते, उन्हें हटा दें ताकि स्टोरेज बचे।",
+
+  sm_t5_title: "ऐप की अनुमतियां (Permissions)",
+  sm_t5_b1: "Permissions से ऐप्स को कैमरा, लोकेशन, कॉन्टैक्ट्स या माइक्रोफोन जैसी चीज़ों तक पहुंच मिलती है।",
+  sm_t5_b2: "ज़रूरत पड़ने पर ऐप पहली बार अनुमति मांगता है — आप allow या deny कर सकते हैं।",
+  sm_t5_b3: "ऐप को सिर्फ वही अनुमति दें जो उसके काम के लिए सच में ज़रूरी हो।",
+  sm_t5_b4: "Settings > Apps > Permissions में जाकर कभी भी अनुमतियां देखें और बदलें।",
+  sm_t5_b5: "जिन ऐप्स को ज़रूरत नहीं, उनके लिए लोकेशन या कैमरा एक्सेस बंद कर दें।",
+  sm_t5_b6: "जो ऐप बहुत सारी असंबंधित अनुमतियां मांगे, उससे सावधान रहें।",
+  sm_t5_b7: "अनुमति न देना (deny करना) आमतौर पर सुरक्षित है — ज़रूरत पड़ने पर ऐप दोबारा मांग लेगा।",
+
+  sm_t6_title: "अपडेट्स",
+  sm_t6_b1: "Updates से बग ठीक होते हैं, स्पीड बढ़ती है और ज़रूरी सिक्योरिटी पैच मिलते हैं।",
+  sm_t6_b2: "सुविधा के लिए Play Store/App Store की सेटिंग्स में auto-update ऑन करें।",
+  sm_t6_b3: "मैन्युअली अपडेट करने के लिए स्टोर खोलें और \"My apps\" या \"Updates\" देखें।",
+  sm_t6_b4: "Settings से अपने फोन का ऑपरेटिंग सिस्टम भी नियमित रूप से अपडेट करें।",
+  sm_t6_b5: "मोबाइल डेटा बचाने के लिए ऐप्स को Wi-Fi पर अपडेट करें।",
+  sm_t6_b6: "SMS या ईमेल में आए लिंक से कभी भी अपडेट डाउनलोड न करें।",
+  sm_t6_b7: "पेंडिंग अपडेट पूरे करने के लिए कभी-कभी अपना फोन रीस्टार्ट करें।",
+
+  sm_t7_title: "स्टोरेज मैनेजमेंट",
+  sm_t7_b1: "Storage वह जगह है जहां फोटो, ऐप्स और फाइलें फोन में सेव होती हैं।",
+  sm_t7_b2: "यह देखने के लिए कि क्या जगह ले रहा है, Settings > Storage में स्टोरेज उपयोग जांचें।",
+  sm_t7_b3: "बिना इस्तेमाल वाले ऐप्स, डुप्लीकेट फोटो और पुराने डाउनलोड नियमित रूप से डिलीट करें।",
+  sm_t7_b4: "ज़रूरत पड़ने पर फोटो और वीडियो को क्लाउड स्टोरेज या मेमोरी कार्ड में ले जाएं।",
+  sm_t7_b5: "ज़्यादा जगह लेने वाले ऐप्स का कैश (cache) साफ करें।",
+  sm_t7_b6: "फोन के सुचारू रूप से चलने के लिए कुछ खाली स्टोरेज रखें।",
+  sm_t7_b7: "जिस चीज़ के बारे में पक्का न हों, उसे डिलीट करने से पहले उसका बैकअप ले लें।",
+
+  sm_t8_title: "कॉन्टैक्ट्स और इमरजेंसी कॉन्टैक्ट्स",
+  sm_t8_b1: "Contacts ऐप में नाम और फोन नंबर सेव रहते हैं, जिन्हें आप कॉल या मैसेज कर सकते हैं।",
+  sm_t8_b2: "\"+\" पर टैप करके नाम और नंबर डालें और नया कॉन्टैक्ट जोड़ें।",
+  sm_t8_b3: "परिवार, डॉक्टर और पुलिस जैसे ज़रूरी नंबर साफ तरीके से सेव करें।",
+  sm_t8_b4: "फोन की सेटिंग्स में इमरजेंसी कॉन्टैक्ट्स (ICE — In Case of Emergency) सेट करें।",
+  sm_t8_b5: "कुछ फोन में लॉक स्क्रीन से ही जल्दी इमरजेंसी सेवाओं को कॉल किया जा सकता है।",
+  sm_t8_b6: "अपने कॉन्टैक्ट्स का बैकअप रखें ताकि फोन खोने पर भी वे न खोएं।",
+  sm_t8_b7: "पुराने या डुप्लीकेट कॉन्टैक्ट्स को समय-समय पर हटाते रहें।",
+
+  sm_t9_title: "बैकअप",
+  sm_t9_b1: "Backup का मतलब है अपने डेटा की सुरक्षित कॉपी सेव करना, आमतौर पर क्लाउड पर।",
+  sm_t9_b2: "फोन की सेटिंग्स में फोटो, कॉन्टैक्ट्स और ऐप्स के लिए auto-backup ऑन करें।",
+  sm_t9_b3: "फोन खोने, चोरी होने या खराब होने पर बैकअप आपका डेटा सुरक्षित रखता है।",
+  sm_t9_b4: "मोबाइल डेटा न इस्तेमाल हो, इसके लिए Wi-Fi से कनेक्ट होकर बैकअप लें।",
+  sm_t9_b5: "यह सुनिश्चित करने के लिए कि बैकअप सही से काम कर रहा है, कभी-कभी उसकी स्थिति जांचें।",
+  sm_t9_b6: "बैकअप के लिए Google खाता (Android) या iCloud (iPhone) इस्तेमाल करें।",
+  sm_t9_b7: "नया फोन सेट करते समय अपना बैकअप आसानी से वापस पा (restore कर) सकते हैं।",
+
+  sm_t10_title: "आम समस्याओं का समाधान (Troubleshooting)",
+  sm_t10_b1: "अगर फोन धीमा चल रहा है, तो उसे रीस्टार्ट करें — इससे कई छोटी समस्याएं ठीक हो जाती हैं।",
+  sm_t10_b2: "अगर कोई ऐप क्रैश हो जाए, तो उसे बंद करके दोबारा खोलें, या ऐप को अपडेट करें।",
+  sm_t10_b3: "अगर फोन Wi-Fi से कनेक्ट नहीं हो रहा, तो Wi-Fi को बंद करके दोबारा ऑन करें।",
+  sm_t10_b4: "अगर स्टोरेज भर गई है, तो जगह खाली करने के लिए बिना इस्तेमाल वाली फाइलें और ऐप्स हटाएं।",
+  sm_t10_b5: "अगर स्क्रीन फ्रीज़ हो जाए, तो रीस्टार्ट करने के लिए पावर बटन को दबाकर रखें।",
+  sm_t10_b6: "अगर बैटरी जल्दी खत्म हो रही है, तो देखें कि कौन-सा ऐप सबसे ज़्यादा बैटरी इस्तेमाल कर रहा है।",
+  sm_t10_b7: "अगर कुछ भी काम न करे, तो समस्या नोट करें और किसी भरोसेमंद व्यक्ति से पूछें या सर्विस सेंटर जाएं।"
+});
+
+Object.assign(translations.mr, {
+  sm_section_title: "प्रत्येक विषय सविस्तर जाणून घ्या",
+  sm_section_lead: "सोप्या स्टेप्स आणि सुरक्षा टिप्स पाहण्यासाठी एखाद्या विषयावर टॅप करा.",
+  sm_t1_title: "फोन सेट अप करणे",
+  sm_t1_b1: "फोन सुरू करा आणि स्क्रीनवर दिलेल्या सेटअप स्टेप्स फॉलो करा.",
+  sm_t1_b2: "तुमची भाषा निवडा आणि सेटअप सुरू ठेवण्यासाठी Wi-Fi ला कनेक्ट करा.",
+  sm_t1_b3: "Google खात्याने (Android) किंवा Apple ID ने (iPhone) साइन इन करा.",
+  sm_t1_b4: "योग्य तारीख, वेळ आणि प्रदेश (region) सेट करा.",
+  sm_t1_b5: "सुरुवातीलाच स्क्रीन लॉक (PIN, पॅटर्न किंवा फिंगरप्रिंट) लावा.",
+  sm_t1_b6: "सेटअप दरम्यान फक्त गरजेच्या परवानग्या (permissions) द्या.",
+  sm_t1_b7: "जुना बॅकअप असल्यास त्यातून कॉन्टॅक्ट्स आणि अ‍ॅप्स परत आणा (restore करा).",
+
+  sm_t2_title: "Wi-Fi आणि मोबाइल डेटा",
+  sm_t2_b1: "Wi-Fi घरातील किंवा ऑफिसमधील इंटरनेटवर चालतो; मोबाइल डेटा तुमच्या सिमच्या डेटा प्लॅनवर चालतो.",
+  sm_t2_b2: "Settings मध्ये Wi-Fi सुरू करा आणि कनेक्ट करण्यासाठी तुमच्या नेटवर्कच्या नावावर टॅप करा.",
+  sm_t2_b3: "Wi-Fi पासवर्ड काळजीपूर्वक टाका — तो केस-सेन्सिटिव्ह (लहान-मोठी अक्षरे महत्त्वाची) असतो.",
+  sm_t2_b4: "Wi-Fi उपलब्ध नसताना मोबाइल डेटा वापरा, पण वापरावर लक्ष ठेवा.",
+  sm_t2_b5: "गरज नसताना Wi-Fi किंवा मोबाइल डेटा बंद ठेवा, जेणेकरून बॅटरी वाचेल.",
+  sm_t2_b6: "बँकिंग किंवा महत्त्वाच्या लॉगिनसाठी अनोळखी सार्वजनिक Wi-Fi वापरू नका.",
+  sm_t2_b7: "महिना संपण्याआधी डेटा संपू नये म्हणून Settings मध्ये डेटा वापर तपासत राहा.",
+
+  sm_t3_title: "ब्लूटूथ (Bluetooth)",
+  sm_t3_b1: "Bluetooth तारेशिवाय जवळच्या डिव्हाइसला जोडतो, जसे इयरफोन, स्पीकर किंवा स्मार्टवॉच.",
+  sm_t3_b2: "Settings किंवा क्विक-अ‍ॅक्सेस पॅनलमधून Bluetooth सुरू करा.",
+  sm_t3_b3: "दुसऱ्या डिव्हाइसला \"पेअरिंग मोड\" मध्ये ठेवा जेणेकरून तुमचा फोन तो शोधू शकेल.",
+  sm_t3_b4: "यादीतून डिव्हाइसचे नाव निवडा आणि पेअरिंग कन्फर्म करा.",
+  sm_t3_b5: "बॅटरी वाचवण्यासाठी आणि सुरक्षिततेसाठी वापर नसताना Bluetooth बंद ठेवा.",
+  sm_t3_b6: "फक्त ओळखीच्या आणि विश्वासार्ह डिव्हाइसशीच पेअर करा.",
+  sm_t3_b7: "तुमच्या Bluetooth यादीतून जुने किंवा अनोळखी पेअर केलेले डिव्हाइस काढून टाका.",
+
+  sm_t4_title: "अ‍ॅप्स इंस्टॉल आणि अनइंस्टॉल करणे",
+  sm_t4_b1: "अ‍ॅप्स शोधण्यासाठी Google Play Store (Android) किंवा App Store (iPhone) उघडा.",
+  sm_t4_b2: "इंस्टॉल करण्याआधी अ‍ॅपचे नाव सर्च करा आणि डेव्हलपरचे नाव तपासा.",
+  sm_t4_b3: "\"Install\" वर टॅप करा आणि अ‍ॅप डाउनलोड होईपर्यंत थांबा.",
+  sm_t4_b4: "अनइंस्टॉल करण्यासाठी अ‍ॅप आयकॉन दाबून धरा आणि \"Uninstall\" किंवा \"Remove\" निवडा.",
+  sm_t4_b5: "नेहमी अधिकृत अ‍ॅप स्टोअरमधूनच अ‍ॅप इंस्टॉल करा, कोणत्याही अनोळखी लिंकवरून नाही.",
+  sm_t4_b6: "इंस्टॉल करण्याआधी अ‍ॅपचे रेटिंग आणि रिव्ह्यू जरूर पाहा.",
+  sm_t4_b7: "जे अ‍ॅप्स वापरत नाही ते काढून टाका, म्हणजे स्टोरेज वाचेल.",
+
+  sm_t5_title: "अ‍ॅप परवानग्या (Permissions)",
+  sm_t5_b1: "Permissions मुळे अ‍ॅप्सना कॅमेरा, लोकेशन, कॉन्टॅक्ट्स किंवा मायक्रोफोनसारख्या गोष्टींचा अ‍ॅक्सेस मिळतो.",
+  sm_t5_b2: "गरज असेल तेव्हा अ‍ॅप पहिल्यांदा परवानगी मागतो — तुम्ही allow किंवा deny करू शकता.",
+  sm_t5_b3: "अ‍ॅपला फक्त तीच परवानगी द्या जी त्याच्या कामासाठी खरोखर गरजेची आहे.",
+  sm_t5_b4: "Settings > Apps > Permissions मध्ये जाऊन कधीही परवानग्या पाहा आणि बदला.",
+  sm_t5_b5: "गरज नसलेल्या अ‍ॅप्ससाठी लोकेशन किंवा कॅमेरा अ‍ॅक्सेस बंद करा.",
+  sm_t5_b6: "खूप जास्त असंबंधित परवानग्या मागणाऱ्या अ‍ॅपपासून सावध राहा.",
+  sm_t5_b7: "परवानगी नाकारणे (deny करणे) सहसा सुरक्षित असते — गरज पडल्यास अ‍ॅप पुन्हा विचारेल.",
+
+  sm_t6_title: "अपडेट्स",
+  sm_t6_b1: "Updates मुळे बग दुरुस्त होतात, वेग वाढतो आणि महत्त्वाचे सुरक्षा पॅच मिळतात.",
+  sm_t6_b2: "सोयीसाठी Play Store/App Store सेटिंग्समध्ये auto-update सुरू करा.",
+  sm_t6_b3: "मॅन्युअली अपडेट करण्यासाठी स्टोअर उघडा आणि \"My apps\" किंवा \"Updates\" पाहा.",
+  sm_t6_b4: "Settings मधून तुमच्या फोनची ऑपरेटिंग सिस्टिमही नियमितपणे अपडेट करा.",
+  sm_t6_b5: "मोबाइल डेटा वाचवण्यासाठी अ‍ॅप्स Wi-Fi वर अपडेट करा.",
+  sm_t6_b6: "SMS किंवा ईमेलमध्ये आलेल्या लिंकवरून कधीही अपडेट डाउनलोड करू नका.",
+  sm_t6_b7: "प्रलंबित अपडेट पूर्ण करण्यासाठी अधूनमधून तुमचा फोन रीस्टार्ट करा.",
+
+  sm_t7_title: "स्टोरेज मॅनेजमेंट",
+  sm_t7_b1: "Storage म्हणजे फोनमध्ये फोटो, अ‍ॅप्स आणि फाइल्स साठवल्या जाणारी जागा.",
+  sm_t7_b2: "काय जागा घेत आहे हे पाहण्यासाठी Settings > Storage मध्ये स्टोरेज वापर तपासा.",
+  sm_t7_b3: "न वापरलेले अ‍ॅप्स, डुप्लिकेट फोटो आणि जुने डाउनलोड नियमितपणे डिलीट करा.",
+  sm_t7_b4: "गरज असल्यास फोटो आणि व्हिडिओ क्लाउड स्टोरेज किंवा मेमरी कार्डमध्ये हलवा.",
+  sm_t7_b5: "जास्त जागा घेणाऱ्या अ‍ॅप्सचा कॅश (cache) साफ करा.",
+  sm_t7_b6: "फोन सुरळीत चालण्यासाठी थोडी रिकामी स्टोरेज ठेवा.",
+  sm_t7_b7: "खात्री नसलेली कोणतीही गोष्ट डिलीट करण्याआधी तिचा बॅकअप घ्या.",
+
+  sm_t8_title: "कॉन्टॅक्ट्स आणि इमर्जन्सी कॉन्टॅक्ट्स",
+  sm_t8_b1: "Contacts अ‍ॅपमध्ये नावे आणि फोन नंबर साठवलेले असतात, ज्यांना तुम्ही कॉल किंवा मेसेज करू शकता.",
+  sm_t8_b2: "\"+\" वर टॅप करून नाव आणि नंबर टाका आणि नवीन कॉन्टॅक्ट जोडा.",
+  sm_t8_b3: "कुटुंब, डॉक्टर आणि पोलीस यांसारखे महत्त्वाचे नंबर स्पष्टपणे सेव्ह करा.",
+  sm_t8_b4: "फोनच्या सेटिंग्समध्ये इमर्जन्सी कॉन्टॅक्ट्स (ICE — In Case of Emergency) सेट करा.",
+  sm_t8_b5: "काही फोनमध्ये लॉक स्क्रीनवरूनच पटकन इमर्जन्सी सेवांना कॉल करता येतो.",
+  sm_t8_b6: "तुमच्या कॉन्टॅक्ट्सचा बॅकअप ठेवा, जेणेकरून फोन हरवला तरी ते हरवणार नाहीत.",
+  sm_t8_b7: "जुने किंवा डुप्लिकेट कॉन्टॅक्ट्स वेळोवेळी काढून टाका.",
+
+  sm_t9_title: "बॅकअप",
+  sm_t9_b1: "Backup म्हणजे तुमच्या डेटाची सुरक्षित प्रत साठवणे, सहसा क्लाउडवर.",
+  sm_t9_b2: "फोनच्या सेटिंग्समध्ये फोटो, कॉन्टॅक्ट्स आणि अ‍ॅप्ससाठी auto-backup सुरू करा.",
+  sm_t9_b3: "फोन हरवला, चोरीला गेला किंवा खराब झाला तरी बॅकअप तुमचा डेटा सुरक्षित ठेवतो.",
+  sm_t9_b4: "मोबाइल डेटा वापरला जाऊ नये म्हणून Wi-Fi ला कनेक्ट होऊन बॅकअप घ्या.",
+  sm_t9_b5: "बॅकअप व्यवस्थित काम करत आहे याची खात्री करण्यासाठी अधूनमधून त्याची स्थिती तपासा.",
+  sm_t9_b6: "बॅकअपसाठी Google खाते (Android) किंवा iCloud (iPhone) वापरा.",
+  sm_t9_b7: "नवीन फोन सेट करताना तुमचा बॅकअप सहज परत मिळवू (restore करू) शकता.",
+
+  sm_t10_title: "सामान्य समस्यांचे निराकरण (Troubleshooting)",
+  sm_t10_b1: "फोन स्लो चालत असेल, तर तो रीस्टार्ट करा — यामुळे अनेक लहान समस्या सुटतात.",
+  sm_t10_b2: "एखादा अ‍ॅप क्रॅश झाला, तर तो बंद करून पुन्हा उघडा, किंवा अ‍ॅप अपडेट करा.",
+  sm_t10_b3: "फोन Wi-Fi ला कनेक्ट होत नसेल, तर Wi-Fi बंद करून पुन्हा सुरू करा.",
+  sm_t10_b4: "स्टोरेज भरली असेल, तर जागा मोकळी करण्यासाठी न वापरलेल्या फाइल्स आणि अ‍ॅप्स काढा.",
+  sm_t10_b5: "स्क्रीन फ्रीज झाली, तर रीस्टार्ट करण्यासाठी पॉवर बटण दाबून धरा.",
+  sm_t10_b6: "बॅटरी लवकर संपत असेल, तर कोणता अ‍ॅप सर्वात जास्त बॅटरी वापरतो ते तपासा.",
+  sm_t10_b7: "काहीच काम करत नसेल, तर समस्या लक्षात ठेवा आणि विश्वासू व्यक्तीला विचारा किंवा सर्व्हिस सेंटरला भेट द्या."
+});
+
+if (typeof dsApplyTranslations === 'function') { dsApplyTranslations(); }
+
+const scOptions = ["Ignore updates forever \u2014 they're not important", "Update it through the official app store", "Download an APK file from a random website instead", "Uninstall the app completely"];
+const scCorrect = 1;
+const scExplanation = "Updating through the official app store keeps the app secure and bug-free. Random APK downloads can carry malware.";
+const optWrap = document.getElementById('scenarioOptions');
+const feedbackEl = document.getElementById('scenarioFeedback');
+scOptions.forEach((text, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = String.fromCharCode(65 + idx) + '. ' + text;
+    btn.addEventListener('click', () => {
+        const buttons = optWrap.querySelectorAll('button');
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === scCorrect) b.classList.add('correct');
+        });
+        if (idx !== scCorrect) btn.classList.add('incorrect');
+        feedbackEl.textContent = (idx === scCorrect ? '✅ Correct! ' : '❌ Not quite. ') + scExplanation;
+    
+        if (typeof dsMarkLessonComplete === 'function' && !dsIsLessonComplete('smartphone')) {
+            dsMarkLessonComplete('smartphone');
+        }
+    });
+    optWrap.appendChild(btn);
+});
+</script>
+<script>
+/* Trilingual lesson-page copy. */
+Object.assign(translations.en, {
+  "smartphone_hero_title": "📱 Smartphone Basics",
+  "smartphone_flow_learn": "LEARN",
+  "smartphone_flow_practice": "PRACTICE",
+  "smartphone_flow_quiz": "QUIZ",
+  "smartphone_flow_score": "SCORE",
+  "smartphone_flow_progress": "PROGRESS",
+  "smartphone_simple_title": "Simple Explanation",
+  "smartphone_simple_text": "Your smartphone is a powerful tool once you know the basics — settings, connectivity, and how to keep it running smoothly and securely.",
+  "smartphone_examples_title": "Practical Examples",
+  "smartphone_ex1": "Adjusting Wi-Fi and mobile data helps you stay connected and control how much data you use.",
+  "smartphone_ex2": "Installing and updating apps only from official stores like Google Play keeps your phone safe.",
+  "smartphone_ex3": "Managing storage and using screen lock protects your data and keeps your phone running well.",
+  "smartphone_safety_title": "Safety Tips",
+  "smartphone_safe1": "Set a screen lock (PIN, pattern, or fingerprint).",
+  "smartphone_safe2": "Only install apps from Google Play Store or Apple App Store.",
+  "smartphone_safe3": "Keep your phone's software updated regularly.",
+  "smartphone_safe4": "Back up your photos and contacts to the cloud.",
+  "smartphone_safe5": "Turn off Bluetooth and Wi-Fi when not in use to save battery and reduce risk.",
+  "smartphone_scenario_title": "Real-World Scenario — Practice",
+  "smartphone_scenario_text": "You get a notification that a new app update is available for an app you use daily.",
+  "smartphone_scenario_question": "What should you do?",
+  "smartphone_scenario_opt1": "Ignore updates forever — they're not important",
+  "smartphone_scenario_opt2": "Update it through the official app store",
+  "smartphone_scenario_opt3": "Download an APK file from a random website instead",
+  "smartphone_scenario_opt4": "Uninstall the app completely",
+  "smartphone_scenario_correct": "Correct!",
+  "smartphone_scenario_incorrect": "Not quite.",
+  "smartphone_scenario_explanation": "Updating through the official app store keeps the app secure and bug-free. Random APK downloads can carry malware.",
+  "smartphone_quiz_btn": "Take the Smartphone Basics Quiz",
+  "smartphone_next_btn": "Next: Digital Payments",
+});
+Object.assign(translations.hi, {
+  "smartphone_hero_title": "📱 स्मार्टफोन की मूल बातें",
+  "smartphone_flow_learn": "सीखें",
+  "smartphone_flow_practice": "अभ्यास",
+  "smartphone_flow_quiz": "क्विज़",
+  "smartphone_flow_score": "स्कोर",
+  "smartphone_flow_progress": "प्रगति",
+  "smartphone_simple_title": "सरल समझ",
+  "smartphone_simple_text": "जब आपको इसकी मूल बातें पता हों, तो आपका स्मार्टफोन एक शक्तिशाली साधन है — सेटिंग्स, कनेक्टिविटी और उसे सुरक्षित व सुचारु रखने के तरीके।",
+  "smartphone_examples_title": "व्यावहारिक उदाहरण",
+  "smartphone_ex1": "Wi-Fi और मोबाइल डेटा की सेटिंग बदलने से आप जुड़े रहते हैं और डेटा की खपत नियंत्रित कर सकते हैं।",
+  "smartphone_ex2": "Google Play जैसे आधिकारिक स्टोर से ही ऐप इंस्टॉल और अपडेट करने से आपका फोन सुरक्षित रहता है।",
+  "smartphone_ex3": "स्टोरेज को व्यवस्थित रखना और स्क्रीन लॉक का उपयोग करना आपके डेटा की सुरक्षा करता है और फोन को अच्छी तरह चलाता है।",
+  "smartphone_safety_title": "सुरक्षा सुझाव",
+  "smartphone_safe1": "स्क्रीन लॉक (PIN, पैटर्न या फिंगरप्रिंट) सेट करें।",
+  "smartphone_safe2": "ऐप केवल Google Play Store या Apple App Store से ही इंस्टॉल करें।",
+  "smartphone_safe3": "अपने फोन का सॉफ्टवेयर नियमित रूप से अपडेट रखें।",
+  "smartphone_safe4": "अपने फोटो और कॉन्टैक्ट्स का क्लाउड पर बैकअप रखें।",
+  "smartphone_safe5": "बैटरी बचाने और जोखिम कम करने के लिए उपयोग न होने पर Bluetooth और Wi-Fi बंद रखें।",
+  "smartphone_scenario_title": "वास्तविक जीवन की स्थिति — अभ्यास",
+  "smartphone_scenario_text": "आपको सूचना मिलती है कि जिस ऐप का आप रोज़ उपयोग करते हैं, उसका नया अपडेट उपलब्ध है।",
+  "smartphone_scenario_question": "आपको क्या करना चाहिए?",
+  "smartphone_scenario_opt1": "अपडेट को हमेशा नज़रअंदाज़ करें — वे ज़रूरी नहीं हैं",
+  "smartphone_scenario_opt2": "इसे आधिकारिक ऐप स्टोर से अपडेट करें",
+  "smartphone_scenario_opt3": "किसी अनजान वेबसाइट से APK फ़ाइल डाउनलोड करें",
+  "smartphone_scenario_opt4": "ऐप को पूरी तरह अनइंस्टॉल करें",
+  "smartphone_scenario_correct": "सही!",
+  "smartphone_scenario_incorrect": "पूरी तरह सही नहीं।",
+  "smartphone_scenario_explanation": "आधिकारिक ऐप स्टोर से अपडेट करने पर ऐप अधिक सुरक्षित और त्रुटियों से मुक्त रहता है। अनजान APK डाउनलोड में मैलवेयर हो सकता है।",
+  "smartphone_quiz_btn": "स्मार्टफोन की मूल बातें क्विज़ लें",
+  "smartphone_next_btn": "अगला: डिजिटल भुगतान",
+});
+Object.assign(translations.mr, {
+  "smartphone_hero_title": "📱 स्मार्टफोन मूलभूत गोष्टी",
+  "smartphone_flow_learn": "शिका",
+  "smartphone_flow_practice": "सराव",
+  "smartphone_flow_quiz": "क्विझ",
+  "smartphone_flow_score": "गुण",
+  "smartphone_flow_progress": "प्रगती",
+  "smartphone_simple_title": "सोपे स्पष्टीकरण",
+  "smartphone_simple_text": "मूलभूत गोष्टी माहित असतील तर स्मार्टफोन हे एक शक्तिशाली साधन आहे — सेटिंग्ज, कनेक्टिव्हिटी आणि तो सुरक्षित व सुरळीत ठेवण्याचे मार्ग.",
+  "smartphone_examples_title": "व्यावहारिक उदाहरणे",
+  "smartphone_ex1": "Wi-Fi आणि मोबाइल डेटाची सेटिंग बदलल्याने कनेक्टेड राहता येते आणि किती डेटा वापरायचा हे नियंत्रित करता येते.",
+  "smartphone_ex2": "Google Play सारख्या अधिकृत स्टोअरमधूनच अ‍ॅप्स इन्स्टॉल आणि अपडेट केल्याने फोन सुरक्षित राहतो.",
+  "smartphone_ex3": "स्टोरेज व्यवस्थापित करणे आणि स्क्रीन लॉक वापरणे तुमचा डेटा सुरक्षित ठेवते आणि फोन सुरळीत चालण्यास मदत करते.",
+  "smartphone_safety_title": "सुरक्षिततेच्या टिप्स",
+  "smartphone_safe1": "स्क्रीन लॉक (PIN, पॅटर्न किंवा फिंगरप्रिंट) सेट करा.",
+  "smartphone_safe2": "अ‍ॅप्स फक्त Google Play Store किंवा Apple App Store मधूनच इन्स्टॉल करा.",
+  "smartphone_safe3": "तुमच्या फोनचे सॉफ्टवेअर नियमितपणे अपडेट ठेवा.",
+  "smartphone_safe4": "तुमच्या फोटो आणि कॉन्टॅक्ट्सचा क्लाउडवर बॅकअप घ्या.",
+  "smartphone_safe5": "बॅटरी वाचवण्यासाठी आणि धोका कमी करण्यासाठी वापरात नसताना Bluetooth आणि Wi-Fi बंद ठेवा.",
+  "smartphone_scenario_title": "वास्तविक जीवनातील प्रसंग — सराव",
+  "smartphone_scenario_text": "तुम्ही दररोज वापरत असलेल्या अ‍ॅपसाठी नवीन अपडेट उपलब्ध असल्याची सूचना तुम्हाला मिळते.",
+  "smartphone_scenario_question": "तुम्ही काय कराल?",
+  "smartphone_scenario_opt1": "अपडेट कायम दुर्लक्षित करा — ते महत्त्वाचे नाहीत",
+  "smartphone_scenario_opt2": "अधिकृत अ‍ॅप स्टोअरमधून ते अपडेट करा",
+  "smartphone_scenario_opt3": "त्याऐवजी अनोळखी वेबसाइटवरून APK फाइल डाउनलोड करा",
+  "smartphone_scenario_opt4": "अ‍ॅप पूर्णपणे अनइन्स्टॉल करा",
+  "smartphone_scenario_correct": "बरोबर!",
+  "smartphone_scenario_incorrect": "पूर्णपणे बरोबर नाही.",
+  "smartphone_scenario_explanation": "अधिकृत अ‍ॅप स्टोअरमधून अपडेट केल्याने अ‍ॅप सुरक्षित आणि बगमुक्त राहते. अनोळखी APK डाउनलोडमध्ये मालवेअर असू शकतो.",
+  "smartphone_quiz_btn": "स्मार्टफोन मूलभूत गोष्टींचा क्विझ घ्या",
+  "smartphone_next_btn": "पुढील: डिजिटल पेमेंट्स",
+});
+function applyScenarioLanguage() {
+  const buttons = document.querySelectorAll('#scenarioOptions button');
+  buttons.forEach((btn, idx) => { const key = 'smartphone_scenario_opt' + (idx + 1); btn.textContent = String.fromCharCode(65 + idx) + '. ' + dsT(key); });
+  const feedback = document.getElementById('scenarioFeedback');
+  if (feedback && buttons.length) {
+    const incorrect = Array.from(buttons).findIndex(btn => btn.classList.contains('incorrect'));
+    const answered = incorrect !== -1 ? incorrect : Array.from(buttons).findIndex(btn => btn.classList.contains('correct'));
+    if (answered !== -1) feedback.textContent = (answered === 1 ? dsT('smartphone_scenario_correct') + ' ' : dsT('smartphone_scenario_incorrect') + ' ') + dsT('smartphone_scenario_explanation');
+  }
+}
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+applyScenarioLanguage();
+const lessonLangSelect = document.getElementById('langSelect');
+if (lessonLangSelect) lessonLangSelect.addEventListener('change', () => setTimeout(applyScenarioLanguage, 0));
+document.querySelectorAll('#scenarioOptions button').forEach(btn => btn.addEventListener('click', () => setTimeout(applyScenarioLanguage, 0)));
+</script>
+</body>
+</html>

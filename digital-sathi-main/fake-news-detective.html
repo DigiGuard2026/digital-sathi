@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake News Detective — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1 data-i18n="fnd_title">🔎 Fake News Detective</h1>
+  <p class="subtitle" data-i18n="fnd_lead">Read each sample post and select the warning signs you can spot.</p>
+</section>
+
+<div id="fndArea"></div>
+
+<div id="fndFinalResult" class="result-card hidden" style="max-width:650px;margin:20px auto;">
+  <h3>🔎 Fake News Detective — Summary</h3>
+  <p id="fndFinalText"></p>
+  <div class="result-actions">
+    <button id="fndRestartBtn" class="btn btn-primary">Try Again</button>
+    <a href="dashboard.html" class="btn btn-secondary" data-i18n="quiz_back_dashboard">Back to Dashboard</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+<script>
+const fndPosts = [
+ {text:{en:"URGENT!!! Scientists SHOCKED as new fruit CURES all disease overnight! Doctors HATE this! Forward to everyone before it gets deleted!!!",hi:"अत्यावश्यक!!! वैज्ञानिक हैरान हैं क्योंकि नया फल रातों-रात सभी बीमारियां ठीक करता है! डॉक्टर इससे नफरत करते हैं! डिलीट होने से पहले सबको फॉरवर्ड करें!!!",mr:"तातडीचे!!! नवीन फळामुळे सर्व आजार एका रात्रीत बरे होतात म्हणून वैज्ञानिक SHOCKED! डॉक्टरांना हे अजिबात आवडत नाही! डिलीट होण्यापूर्वी सर्वांना फॉरवर्ड करा!!!"},signs:{en:["Uses 'URGENT!!!' / all-caps urgent language","Names a specific, credible research source","Asks you to forward immediately","Provides verifiable evidence or data","Uses exaggerated, emotional claims"],hi:["'URGENT!!!' / बड़े अक्षरों वाली जल्दबाजी की भाषा का उपयोग करता है","किसी विशिष्ट, विश्वसनीय शोध स्रोत का नाम देता है","आपसे तुरंत फॉरवर्ड करने को कहता है","सत्यापित किए जा सकने वाले सबूत या डेटा देता है","बढ़ा-चढ़ाकर भावनात्मक दावे करता है"],mr:["'URGENT!!!' / मोठ्या अक्षरांत घाईची भाषा वापरतो","विशिष्ट, विश्वासार्ह संशोधन स्रोताचे नाव देतो","तुम्हाला लगेच फॉरवर्ड करण्यास सांगतो","पडताळता येणारे पुरावे किंवा डेटा देतो","अतिशयोक्तीपूर्ण, भावनिक दावे करतो"]},correct:[true,false,true,false,true]},
+ {text:{en:"Local elections official confirms voting will happen as scheduled next month. Full statement available on the state election commission's website.",hi:"स्थानीय चुनाव अधिकारी पुष्टि करते हैं कि अगले महीने मतदान निर्धारित समय पर होगा। पूरा बयान राज्य चुनाव आयोग की वेबसाइट पर उपलब्ध है।",mr:"स्थानिक निवडणूक अधिकारी पुष्टी करतात की पुढील महिन्यात नियोजित वेळेनुसार मतदान होईल. संपूर्ण निवेदन राज्य निवडणूक आयोगाच्या वेबसाइटवर उपलब्ध आहे."},signs:{en:["Uses urgent, alarming language","Names a specific, credible source","Pressures you to share it immediately","Links to a suspicious or unrelated URL","Written in a calm, factual tone"],hi:["जल्दबाजी या डराने वाली भाषा का उपयोग करता है","किसी विशिष्ट, विश्वसनीय स्रोत का नाम देता है","आप पर तुरंत साझा करने का दबाव डालता है","संदिग्ध या असंबंधित URL से लिंक करता है","शांत, तथ्यात्मक भाषा में लिखा है"],mr:["घाईची किंवा घाबरवणारी भाषा वापरतो","विशिष्ट, विश्वासार्ह स्रोताचे नाव देतो","तुमच्यावर लगेच शेअर करण्याचा दबाव टाकतो","संशयास्पद किंवा असंबंधित URL ची लिंक देतो","शांत, तथ्यात्मक भाषेत लिहिले आहे"]},correct:[false,true,false,false,true]},
+ {text:{en:"BREAKING: Celebrity secretly reveals shocking truth government doesn't want you to know!! Click bit.ly/xyz123 now before it's taken down!!",hi:"ब्रेकिंग: सेलिब्रिटी ने सरकार से छिपाई गई चौंकाने वाली सच्चाई गुप्त रूप से बता दी!! हटाए जाने से पहले अभी bit.ly/xyz123 पर क्लिक करें!!",mr:"ब्रेकिंग: सेलिब्रिटीने सरकारला नको असलेले धक्कादायक सत्य गुप्तपणे उघड केले!! काढून टाकण्यापूर्वी आता bit.ly/xyz123 वर क्लिक करा!!"},signs:{en:["Uses a shortened/suspicious URL","Creates false urgency ('before it's taken down')","Cites a named, checkable source","Implies a hidden conspiracy with no evidence","Has a clearly named, credible author"],hi:["छोटे/संदिग्ध URL का उपयोग करता है","झूठी जल्दबाजी पैदा करता है ('हटाए जाने से पहले')","किसी नामित, जांचे जा सकने वाले स्रोत का उल्लेख करता है","बिना सबूत छिपी साजिश का संकेत देता है","स्पष्ट रूप से नामित, विश्वसनीय लेखक है"],mr:["लहान/संशयास्पद URL वापरतो","खोटी घाई निर्माण करतो ('काढून टाकण्यापूर्वी')","नाव दिलेल्या, पडताळता येणाऱ्या स्रोताचा उल्लेख करतो","पुराव्याशिवाय लपलेल्या कटाचा संकेत देतो","स्पष्टपणे नाव दिलेला, विश्वासार्ह लेखक आहे"]},correct:[true,true,false,true,false]}
+];
+const fndUI={en:{check:"Check My Answer",next:"Next Post",summary:"See Summary",resultTitle:"🔎 Fake News Detective — Summary",again:"Try Again",dashboard:"Back to Dashboard",prompt:"Which warning signs do you see? (select all that apply)",found:"Warning Signs Found",feedback:"This post may be unreliable because it uses warning signs such as urgency or emotional exaggeration and lacks strong sourcing — always verify before sharing.",final:"You correctly spotted",final2:"warning signs across all posts. Always verify before sharing — checking the source, tone, and evidence takes only a moment and helps stop misinformation."},hi:{check:"मेरा उत्तर जांचें",next:"अगली पोस्ट",summary:"सारांश देखें",resultTitle:"🔎 फेक न्यूज़ डिटेक्टिव — सारांश",again:"फिर से कोशिश करें",dashboard:"डैशबोर्ड पर वापस जाएं",prompt:"आपको कौन से चेतावनी संकेत दिखाई देते हैं? (सभी लागू विकल्प चुनें)",found:"पाए गए चेतावनी संकेत",feedback:"यह पोस्ट अविश्वसनीय हो सकती है क्योंकि इसमें जल्दबाजी या भावनात्मक बढ़ा-चढ़ाकर कही गई बातें जैसे चेतावनी संकेत हैं और मजबूत स्रोत नहीं है — साझा करने से पहले हमेशा पुष्टि करें।",final:"आपने सभी पोस्ट में सही पहचाने",final2:"चेतावनी संकेत। साझा करने से पहले हमेशा पुष्टि करें — स्रोत, भाषा और सबूत जांचने में केवल एक क्षण लगता है और गलत सूचना रोकने में मदद मिलती है।"},mr:{check:"माझे उत्तर तपासा",next:"पुढील पोस्ट",summary:"सारांश पहा",resultTitle:"🔎 फेक न्यूज डिटेक्टिव्ह — सारांश",again:"पुन्हा प्रयत्न करा",dashboard:"डॅशबोर्डवर परत जा",prompt:"तुम्हाला कोणते धोक्याचे संकेत दिसतात? (लागू असलेले सर्व निवडा)",found:"सापडलेले धोक्याचे संकेत",feedback:"ही पोस्ट अविश्वसनीय असू शकते कारण यात घाई किंवा भावनिक अतिशयोक्ती यांसारखे धोक्याचे संकेत आहेत आणि मजबूत स्रोत नाही — शेअर करण्यापूर्वी नेहमी खात्री करा.",final:"तुम्ही सर्व पोस्टमध्ये योग्यरित्या ओळखले",final2:"धोक्याचे संकेत. शेअर करण्यापूर्वी नेहमी खात्री करा — स्रोत, भाषा आणि पुरावे तपासायला फक्त क्षणभर लागतो आणि चुकीची माहिती थांबवण्यास मदत होते."}};
+let fndIndex=0,fndTotalFound=0,fndTotalPossible=0;const fndArea=document.getElementById('fndArea'),fndFinalResult=document.getElementById('fndFinalResult'),fndFinalText=document.getElementById('fndFinalText'),fndRestartBtn=document.getElementById('fndRestartBtn');
+function fndLang(){return typeof dsGetLang==='function'?dsGetLang():'en';}
+function renderFndPost(){if(fndIndex>=fndPosts.length){showFndFinal();return;}const lang=fndLang(),ui=fndUI[lang]||fndUI.en,post=fndPosts[fndIndex];const card=document.createElement('div');card.className='fnd-post-card';card.innerHTML=`<div class="fnd-post-text">"${post.text[lang]}"</div><p><strong>${ui.prompt}</strong></p><div class="fnd-checklist" id="fndChecklist"></div><button id="fndCheckBtn" class="btn btn-primary">${ui.check}</button><p class="feedback" id="fndFeedback"></p>`;fndArea.innerHTML='';fndArea.appendChild(card);const checklist=card.querySelector('#fndChecklist');post.signs[lang].forEach((labelText,i)=>{const label=document.createElement('label');label.innerHTML=`<input type="checkbox" value="${i}"> ${labelText}`;checklist.appendChild(label);});card.querySelector('#fndCheckBtn').addEventListener('click',()=>{const checkboxes=checklist.querySelectorAll('input[type="checkbox"]');let foundCorrect=0;const totalCorrect=post.correct.filter(Boolean).length;checkboxes.forEach(cb=>{cb.disabled=true;const i=Number(cb.value),label=cb.closest('label');if(post.correct[i]){label.classList.add('correct-sign');if(cb.checked)foundCorrect++;}else if(cb.checked){label.classList.add('missed-sign');}});fndTotalFound+=foundCorrect;fndTotalPossible+=totalCorrect;card.querySelector('#fndFeedback').textContent=`${ui.found}: ${foundCorrect} / ${totalCorrect}. ${ui.feedback}`;card.querySelector('#fndCheckBtn').disabled=true;const nextBtn=document.createElement('button');nextBtn.className='btn btn-secondary';nextBtn.textContent=fndIndex===fndPosts.length-1?ui.summary:ui.next;nextBtn.style.marginTop='14px';nextBtn.addEventListener('click',()=>{fndIndex++;renderFndPost();});card.appendChild(nextBtn);});}
+function showFndFinal(){const lang=fndLang(),ui=fndUI[lang]||fndUI.en;fndArea.innerHTML='';fndFinalResult.classList.remove('hidden');fndFinalText.textContent=`${ui.final} ${fndTotalFound} / ${fndTotalPossible} ${ui.final2}`;fndFinalResult.querySelector('h3').textContent=ui.resultTitle;fndRestartBtn.textContent=ui.again;const dash=fndFinalResult.querySelector('a[href="dashboard.html"]');if(dash)dash.textContent=ui.dashboard;if(typeof dsAddXP==='function')dsAddXP(20);}
+fndRestartBtn.addEventListener('click',()=>{fndIndex=0;fndTotalFound=0;fndTotalPossible=0;fndFinalResult.classList.add('hidden');renderFndPost();});
+window.dsQuizLanguageChanged=()=>{if(document.getElementById('fndArea')){if(!fndFinalResult.classList.contains('hidden'))showFndFinal();else renderFndPost();}};
+document.addEventListener('DOMContentLoaded', renderFndPost);
+</script>
+
+<script src="js/gamification.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

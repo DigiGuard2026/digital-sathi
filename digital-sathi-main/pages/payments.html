@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Payments — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Scoped styles for the Digital Payments subtopic accordion only */
+  .subtopics-wrap { margin-top: 10px; }
+  .subtopic-block {
+    background: #fff;
+    border: 1px solid var(--blue-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .subtopic-block summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtopic-block summary::-webkit-details-marker { display: none; }
+  .subtopic-block summary::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; }
+  .subtopic-block[open] summary::before { transform: rotate(90deg); }
+  .subtopic-block .tips-list { padding: 12px 20px 16px 42px; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="../index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="../index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="../safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="learn-hero">
+  <h1 data-i18n="payments_hero_title">💳 Digital Payments</h1>
+  <div class="learn-flow">
+    <span data-i18n="payments_flow_learn">LEARN</span> → <span data-i18n="payments_flow_practice">PRACTICE</span> → <span data-i18n="payments_flow_quiz">QUIZ</span> → <span data-i18n="payments_flow_score">SCORE</span> → <span data-i18n="payments_flow_progress">PROGRESS</span>
+  </div>
+</div>
+
+<div class="learn-section">
+
+  <div class="info-block">
+    <h3 data-i18n="payments_simple_title">Simple Explanation</h3>
+    <p data-i18n="payments_simple_text">UPI (Unified Payments Interface) lets you send and receive money instantly using just your phone — no need to carry cash.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="payments_examples_title">Practical Examples</h3>
+    <ul class="tips-list">
+      <li data-i18n="payments_ex1">To pay a shopkeeper, you scan their QR code and enter your UPI PIN to send money.</li>
+      <li data-i18n="payments_ex2">Your UPI PIN is like a signature — it authorizes a payment, so it must stay private.</li>
+      <li data-i18n="payments_ex3">If a payment fails but money is deducted, it's usually auto-reversed within a few days.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="payments_safety_title">Safety Tips</h3>
+    <ul class="tips-list">
+      <li data-i18n="payments_safe1">Never share your UPI PIN or OTP with anyone.</li>
+      <li data-i18n="payments_safe2">You only scan a QR code to SEND money, never to receive it.</li>
+      <li data-i18n="payments_safe3">Always check the receiver's name before confirming payment.</li>
+      <li data-i18n="payments_safe4">Check your bank SMS alerts regularly for unknown transactions.</li>
+      <li data-i18n="payments_safe5">Use only well-known, official payment apps.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="pay_section_title">Explore Each Topic in Detail</h3>
+    <p data-i18n="pay_section_lead">Tap on a topic to see simple steps and safety tips.</p>
+    <div class="subtopics-wrap">
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t1_title">UPI Basics</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t1_b1">UPI lets you send and receive money instantly using just your phone.</li>
+          <li data-i18n="pay_t1_b2">You need a bank account linked to your mobile number to use UPI.</li>
+          <li data-i18n="pay_t1_b3">Popular UPI apps include Google Pay, PhonePe, Paytm, and BHIM.</li>
+          <li data-i18n="pay_t1_b4">Your UPI ID looks like a name followed by @ and a bank or app name.</li>
+          <li data-i18n="pay_t1_b5">You don't need to share your bank account number for most UPI payments.</li>
+          <li data-i18n="pay_t1_b6">UPI works 24x7, including weekends and holidays, with no extra charge.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t2_title">QR Payments</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t2_b1">A QR code is a small square you scan with your phone's camera to pay.</li>
+          <li data-i18n="pay_t2_b2">Open your UPI app, tap "Scan QR", and point your camera at the code.</li>
+          <li data-i18n="pay_t2_b3">Check the receiver's name and amount carefully before confirming payment.</li>
+          <li data-i18n="pay_t2_b4">Enter your UPI PIN to complete the payment after scanning.</li>
+          <li data-i18n="pay_t2_b5">Scanning a QR code is only for sending money, never for receiving it.</li>
+          <li data-i18n="pay_t2_b6">Never scan a QR code to "receive" money, a refund, or cashback — that's a scam.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t3_title">Sending &amp; Receiving Money</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t3_b1">To send money, enter the receiver's UPI ID or phone number in your app.</li>
+          <li data-i18n="pay_t3_b2">Always check the receiver's name shown on screen before sending.</li>
+          <li data-i18n="pay_t3_b3">Enter the amount and your UPI PIN to complete the transfer.</li>
+          <li data-i18n="pay_t3_b4">To receive money, just share your UPI ID or QR code — no PIN needed.</li>
+          <li data-i18n="pay_t3_b5">You'll get an SMS or app notification once money is received.</li>
+          <li data-i18n="pay_t3_b6">Money usually reaches the other person's account within seconds.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t4_title">Checking Transaction Status</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t4_b1">Open your UPI app and go to "Transaction History" to see past payments.</li>
+          <li data-i18n="pay_t4_b2">Each entry shows the date, amount, and status: success, pending, or failed.</li>
+          <li data-i18n="pay_t4_b3">"Pending" means the transaction is still processing — wait a few minutes.</li>
+          <li data-i18n="pay_t4_b4">You can also confirm payments through your bank's SMS alerts.</li>
+          <li data-i18n="pay_t4_b5">Save the transaction ID if you ever need to raise a complaint.</li>
+          <li data-i18n="pay_t4_b6">Check your bank statement or passbook if you're unsure about a payment.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t5_title">UPI PIN</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t5_b1">Your UPI PIN is a secret 4- or 6-digit code that authorizes every payment.</li>
+          <li data-i18n="pay_t5_b2">You set your UPI PIN when you first link your bank account in the app.</li>
+          <li data-i18n="pay_t5_b3">Never share your UPI PIN with anyone, including bank staff or family.</li>
+          <li data-i18n="pay_t5_b4">You only enter your UPI PIN to SEND money, never to receive it.</li>
+          <li data-i18n="pay_t5_b5">Use "Forgot UPI PIN" in your app to reset it if you forget.</li>
+          <li data-i18n="pay_t5_b6">Change your PIN immediately if you think someone else may know it.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t6_title">OTP Safety</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t6_b1">An OTP (One-Time Password) is a code sent by SMS to verify it's really you.</li>
+          <li data-i18n="pay_t6_b2">OTPs are meant only for you — never share them, even with bank callers.</li>
+          <li data-i18n="pay_t6_b3">Banks and payment apps never call or message asking for your OTP.</li>
+          <li data-i18n="pay_t6_b4">Anyone asking for your OTP to "help" you is almost always a scammer.</li>
+          <li data-i18n="pay_t6_b5">An OTP usually expires within a few minutes for your safety.</li>
+          <li data-i18n="pay_t6_b6">Never enter an OTP on a link or website you weren't expecting.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t7_title">Payment Requests</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t7_b1">A payment request asks you to approve sending money to someone.</li>
+          <li data-i18n="pay_t7_b2">You never need your UPI PIN just to RECEIVE money.</li>
+          <li data-i18n="pay_t7_b3">Scammers sometimes disguise a "collect request" as a way to receive money.</li>
+          <li data-i18n="pay_t7_b4">Read the request screen carefully — it will clearly say "Pay" if money will leave your account.</li>
+          <li data-i18n="pay_t7_b5">Never enter your UPI PIN for a request you didn't expect.</li>
+          <li data-i18n="pay_t7_b6">When in doubt, call the person directly before approving any request.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t8_title">Failed/Wrong Transactions</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t8_b1">If a payment fails but money is deducted, it's usually auto-reversed in a few days.</li>
+          <li data-i18n="pay_t8_b2">Note the transaction ID and time as soon as a payment fails.</li>
+          <li data-i18n="pay_t8_b3">Check your transaction history and bank SMS to confirm what happened.</li>
+          <li data-i18n="pay_t8_b4">Contact your bank or app support if money isn't refunded in 3-5 working days.</li>
+          <li data-i18n="pay_t8_b5">If you sent money to the wrong person, contact your bank right away.</li>
+          <li data-i18n="pay_t8_b6">Keep screenshots and reference numbers ready when contacting support.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t9_title">Common Payment Scams</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t9_b1">Fake "refund" or "cashback" offers that ask you to scan a QR code or enter your PIN.</li>
+          <li data-i18n="pay_t9_b2">Calls pretending to be your bank, asking for your OTP, PIN, or card details.</li>
+          <li data-i18n="pay_t9_b3">Messages warning your account will be blocked unless you click a link now.</li>
+          <li data-i18n="pay_t9_b4">Fake customer care numbers found through search engines instead of official sources.</li>
+          <li data-i18n="pay_t9_b5">Requests to install "screen sharing" apps to help fix a payment problem.</li>
+          <li data-i18n="pay_t9_b6">Anyone who creates urgency and pressures you to act immediately is likely a scammer.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="pay_t10_title">What to Do If Something Goes Wrong</summary>
+        <ul class="tips-list">
+          <li data-i18n="pay_t10_b1">Stay calm and stop sharing any more information with the caller or sender.</li>
+          <li data-i18n="pay_t10_b2">Change your UPI PIN immediately if you think it may be compromised.</li>
+          <li data-i18n="pay_t10_b3">Call your bank's official helpline (from their website or card) to report it.</li>
+          <li data-i18n="pay_t10_b4">Use the "Report/Block" option in your UPI app for suspicious transactions.</li>
+          <li data-i18n="pay_t10_b5">Report cyber fraud on the National Cybercrime Helpline: 1930 or cybercrime.gov.in.</li>
+          <li data-i18n="pay_t10_b6">File a written complaint with your bank and keep a copy for your records.</li>
+        </ul>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="payments_scenario_title">Real-World Scenario — Practice</h3>
+    <div class="scenario-box">
+      <p data-i18n="payments_scenario_text">You receive a message: 'Your bank account will be blocked today. Click this link immediately.'</p>
+      <p><strong data-i18n="payments_scenario_question">What should you do?</strong></p>
+    </div>
+    <div class="scenario-options" id="scenarioOptions"></div>
+    <div class="scenario-feedback" id="scenarioFeedback"></div>
+  </div>
+
+  <div class="learn-page-actions">
+    <a href="../quizzes/payments-quiz.html" class="btn btn-primary"><span data-i18n="payments_quiz_btn">Take the Digital Payments Quiz</span></a>
+    <a href="online-safety.html" class="btn btn-secondary"><span data-i18n="payments_next_btn">Next: Online Safety</span></a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="../index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="../safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="../about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="../index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+
+<script src="../js/gamification.js"></script>
+<script src="../js/main.js"></script>
+<script>
+/* Digital Payments — subtopic translations.
+   Extends the existing site-wide `translations` object from main.js
+   so the Hindi/Marathi language switcher (langSelect) works for this
+   page's new content exactly as it does for the rest of the site. */
+Object.assign(translations.en, {
+  pay_section_title: "Explore Each Topic in Detail",
+  pay_section_lead: "Tap on a topic to see simple steps and safety tips.",
+  pay_t1_title: "UPI Basics",
+  pay_t1_b1: "UPI lets you send and receive money instantly using just your phone.",
+  pay_t1_b2: "You need a bank account linked to your mobile number to use UPI.",
+  pay_t1_b3: "Popular UPI apps include Google Pay, PhonePe, Paytm, and BHIM.",
+  pay_t1_b4: "Your UPI ID looks like a name followed by @ and a bank or app name.",
+  pay_t1_b5: "You don't need to share your bank account number for most UPI payments.",
+  pay_t1_b6: "UPI works 24x7, including weekends and holidays, with no extra charge.",
+
+  pay_t2_title: "QR Payments",
+  pay_t2_b1: "A QR code is a small square you scan with your phone's camera to pay.",
+  pay_t2_b2: "Open your UPI app, tap \"Scan QR\", and point your camera at the code.",
+  pay_t2_b3: "Check the receiver's name and amount carefully before confirming payment.",
+  pay_t2_b4: "Enter your UPI PIN to complete the payment after scanning.",
+  pay_t2_b5: "Scanning a QR code is only for sending money, never for receiving it.",
+  pay_t2_b6: "Never scan a QR code to \"receive\" money, a refund, or cashback — that's a scam.",
+
+  pay_t3_title: "Sending & Receiving Money",
+  pay_t3_b1: "To send money, enter the receiver's UPI ID or phone number in your app.",
+  pay_t3_b2: "Always check the receiver's name shown on screen before sending.",
+  pay_t3_b3: "Enter the amount and your UPI PIN to complete the transfer.",
+  pay_t3_b4: "To receive money, just share your UPI ID or QR code — no PIN needed.",
+  pay_t3_b5: "You'll get an SMS or app notification once money is received.",
+  pay_t3_b6: "Money usually reaches the other person's account within seconds.",
+
+  pay_t4_title: "Checking Transaction Status",
+  pay_t4_b1: "Open your UPI app and go to \"Transaction History\" to see past payments.",
+  pay_t4_b2: "Each entry shows the date, amount, and status: success, pending, or failed.",
+  pay_t4_b3: "\"Pending\" means the transaction is still processing — wait a few minutes.",
+  pay_t4_b4: "You can also confirm payments through your bank's SMS alerts.",
+  pay_t4_b5: "Save the transaction ID if you ever need to raise a complaint.",
+  pay_t4_b6: "Check your bank statement or passbook if you're unsure about a payment.",
+
+  pay_t5_title: "UPI PIN",
+  pay_t5_b1: "Your UPI PIN is a secret 4- or 6-digit code that authorizes every payment.",
+  pay_t5_b2: "You set your UPI PIN when you first link your bank account in the app.",
+  pay_t5_b3: "Never share your UPI PIN with anyone, including bank staff or family.",
+  pay_t5_b4: "You only enter your UPI PIN to SEND money, never to receive it.",
+  pay_t5_b5: "Use \"Forgot UPI PIN\" in your app to reset it if you forget.",
+  pay_t5_b6: "Change your PIN immediately if you think someone else may know it.",
+
+  pay_t6_title: "OTP Safety",
+  pay_t6_b1: "An OTP (One-Time Password) is a code sent by SMS to verify it's really you.",
+  pay_t6_b2: "OTPs are meant only for you — never share them, even with bank callers.",
+  pay_t6_b3: "Banks and payment apps never call or message asking for your OTP.",
+  pay_t6_b4: "Anyone asking for your OTP to \"help\" you is almost always a scammer.",
+  pay_t6_b5: "An OTP usually expires within a few minutes for your safety.",
+  pay_t6_b6: "Never enter an OTP on a link or website you weren't expecting.",
+
+  pay_t7_title: "Payment Requests",
+  pay_t7_b1: "A payment request asks you to approve sending money to someone.",
+  pay_t7_b2: "You never need your UPI PIN just to RECEIVE money.",
+  pay_t7_b3: "Scammers sometimes disguise a \"collect request\" as a way to receive money.",
+  pay_t7_b4: "Read the request screen carefully — it will clearly say \"Pay\" if money will leave your account.",
+  pay_t7_b5: "Never enter your UPI PIN for a request you didn't expect.",
+  pay_t7_b6: "When in doubt, call the person directly before approving any request.",
+
+  pay_t8_title: "Failed/Wrong Transactions",
+  pay_t8_b1: "If a payment fails but money is deducted, it's usually auto-reversed in a few days.",
+  pay_t8_b2: "Note the transaction ID and time as soon as a payment fails.",
+  pay_t8_b3: "Check your transaction history and bank SMS to confirm what happened.",
+  pay_t8_b4: "Contact your bank or app support if money isn't refunded in 3-5 working days.",
+  pay_t8_b5: "If you sent money to the wrong person, contact your bank right away.",
+  pay_t8_b6: "Keep screenshots and reference numbers ready when contacting support.",
+
+  pay_t9_title: "Common Payment Scams",
+  pay_t9_b1: "Fake \"refund\" or \"cashback\" offers that ask you to scan a QR code or enter your PIN.",
+  pay_t9_b2: "Calls pretending to be your bank, asking for your OTP, PIN, or card details.",
+  pay_t9_b3: "Messages warning your account will be blocked unless you click a link now.",
+  pay_t9_b4: "Fake customer care numbers found through search engines instead of official sources.",
+  pay_t9_b5: "Requests to install \"screen sharing\" apps to help fix a payment problem.",
+  pay_t9_b6: "Anyone who creates urgency and pressures you to act immediately is likely a scammer.",
+
+  pay_t10_title: "What to Do If Something Goes Wrong",
+  pay_t10_b1: "Stay calm and stop sharing any more information with the caller or sender.",
+  pay_t10_b2: "Change your UPI PIN immediately if you think it may be compromised.",
+  pay_t10_b3: "Call your bank's official helpline (from their website or card) to report it.",
+  pay_t10_b4: "Use the \"Report/Block\" option in your UPI app for suspicious transactions.",
+  pay_t10_b5: "Report cyber fraud on the National Cybercrime Helpline: 1930 or cybercrime.gov.in.",
+  pay_t10_b6: "File a written complaint with your bank and keep a copy for your records."
+});
+
+Object.assign(translations.hi, {
+  pay_section_title: "हर विषय को विस्तार से जानें",
+  pay_section_lead: "आसान स्टेप्स और सुरक्षा टिप्स देखने के लिए किसी विषय पर टैप करें।",
+  pay_t1_title: "UPI की मूल बातें",
+  pay_t1_b1: "UPI से आप सिर्फ अपने फोन का इस्तेमाल करके तुरंत पैसे भेज और प्राप्त कर सकते हैं।",
+  pay_t1_b2: "UPI इस्तेमाल करने के लिए आपके मोबाइल नंबर से जुड़ा बैंक खाता होना ज़रूरी है।",
+  pay_t1_b3: "लोकप्रिय UPI ऐप्स में Google Pay, PhonePe, Paytm और BHIM शामिल हैं।",
+  pay_t1_b4: "आपकी UPI ID एक नाम के बाद @ और बैंक या ऐप के नाम जैसी दिखती है।",
+  pay_t1_b5: "ज़्यादातर UPI भुगतान के लिए आपको अपना बैंक खाता नंबर बताने की ज़रूरत नहीं होती।",
+  pay_t1_b6: "UPI हफ्ते के सातों दिन, चौबीसों घंटे काम करता है और इसमें कोई अतिरिक्त शुल्क नहीं लगता।",
+
+  pay_t2_title: "QR भुगतान",
+  pay_t2_b1: "QR कोड एक छोटा चौकोर निशान होता है जिसे आप फोन के कैमरे से स्कैन करके भुगतान करते हैं।",
+  pay_t2_b2: "अपना UPI ऐप खोलें, \"Scan QR\" पर टैप करें और कैमरे को कोड पर रखें।",
+  pay_t2_b3: "भुगतान कन्फर्म करने से पहले प्राप्तकर्ता का नाम और राशि ध्यान से जांचें।",
+  pay_t2_b4: "स्कैन करने के बाद भुगतान पूरा करने के लिए अपना UPI पिन डालें।",
+  pay_t2_b5: "QR कोड स्कैन करना सिर्फ पैसे भेजने के लिए होता है, पैसे पाने के लिए नहीं।",
+  pay_t2_b6: "पैसे, रिफंड या कैशबैक \"पाने\" के लिए QR कोड कभी स्कैन न करें — यह धोखाधड़ी है।",
+
+  pay_t3_title: "पैसे भेजना और प्राप्त करना",
+  pay_t3_b1: "पैसे भेजने के लिए अपने ऐप में प्राप्तकर्ता की UPI ID या फोन नंबर डालें।",
+  pay_t3_b2: "भेजने से पहले स्क्रीन पर दिख रहे प्राप्तकर्ता के नाम की हमेशा जांच करें।",
+  pay_t3_b3: "राशि डालें और लेन-देन पूरा करने के लिए अपना UPI पिन डालें।",
+  pay_t3_b4: "पैसे पाने के लिए बस अपनी UPI ID या QR कोड शेयर करें — पिन की ज़रूरत नहीं।",
+  pay_t3_b5: "पैसे मिलने पर आपको SMS या ऐप नोटिफिकेशन मिलेगा।",
+  pay_t3_b6: "पैसे आमतौर पर कुछ ही सेकंड में दूसरे व्यक्ति के खाते में पहुंच जाते हैं।",
+
+  pay_t4_title: "लेन-देन की स्थिति जांचना",
+  pay_t4_b1: "अपना UPI ऐप खोलें और पुराने भुगतान देखने के लिए \"Transaction History\" पर जाएं।",
+  pay_t4_b2: "हर एंट्री में तारीख, राशि और स्थिति (सफल, प्रोसेसिंग में, या असफल) दिखती है।",
+  pay_t4_b3: "\"प्रोसेसिंग में (Pending)\" का मतलब है लेन-देन अभी पूरा हो रहा है — कुछ मिनट रुकें।",
+  pay_t4_b4: "आप अपने बैंक के SMS अलर्ट से भी भुगतान की पुष्टि कर सकते हैं।",
+  pay_t4_b5: "अगर कभी शिकायत करनी हो तो ट्रांजेक्शन ID सेव कर लें।",
+  pay_t4_b6: "भुगतान को लेकर कोई शक हो तो बैंक स्टेटमेंट या पासबुक जांचें।",
+
+  pay_t5_title: "UPI पिन",
+  pay_t5_b1: "आपका UPI पिन एक गुप्त 4 या 6 अंकों का कोड है जो हर भुगतान की अनुमति देता है।",
+  pay_t5_b2: "जब आप पहली बार ऐप में बैंक खाता जोड़ते हैं, तब आप UPI पिन सेट करते हैं।",
+  pay_t5_b3: "अपना UPI पिन किसी के साथ साझा न करें, चाहे वह बैंक कर्मचारी हो या परिवार का सदस्य।",
+  pay_t5_b4: "UPI पिन सिर्फ पैसे भेजने के लिए डाला जाता है, पैसे पाने के लिए नहीं।",
+  pay_t5_b5: "अगर पिन भूल जाएं, तो ऐप में \"Forgot UPI PIN\" विकल्प से इसे रीसेट करें।",
+  pay_t5_b6: "अगर लगे कि किसी और को आपका पिन पता है, तो तुरंत उसे बदल दें।",
+
+  pay_t6_title: "OTP सुरक्षा",
+  pay_t6_b1: "OTP (वन-टाइम पासवर्ड) एक कोड है जो SMS से भेजा जाता है ताकि यह पुष्टि हो सके कि यह सच में आप हैं।",
+  pay_t6_b2: "OTP सिर्फ आपके लिए होता है — इसे किसी के साथ साझा न करें, बैंक के कॉल करने वाले के साथ भी नहीं।",
+  pay_t6_b3: "बैंक और भुगतान ऐप्स कभी भी कॉल या मैसेज करके OTP नहीं मांगते।",
+  pay_t6_b4: "जो कोई भी \"मदद\" के नाम पर OTP मांगे, वह लगभग हमेशा धोखेबाज़ होता है।",
+  pay_t6_b5: "सुरक्षा के लिए OTP आमतौर पर कुछ ही मिनटों में समाप्त हो जाता है।",
+  pay_t6_b6: "किसी अनजान लिंक या वेबसाइट पर कभी OTP न डालें।",
+
+  pay_t7_title: "भुगतान अनुरोध (Payment Requests)",
+  pay_t7_b1: "भुगतान अनुरोध (Payment Request) में आपसे किसी को पैसे भेजने की मंज़ूरी मांगी जाती है।",
+  pay_t7_b2: "सिर्फ पैसे प्राप्त करने के लिए आपको कभी भी UPI पिन डालने की ज़रूरत नहीं होती।",
+  pay_t7_b3: "कुछ धोखेबाज़ \"Collect Request\" को पैसे पाने की तरह दिखाकर भेजते हैं।",
+  pay_t7_b4: "अनुरोध वाली स्क्रीन को ध्यान से पढ़ें — अगर पैसे खाते से जाएंगे तो वहां साफ \"Pay\" लिखा होगा।",
+  pay_t7_b5: "जिस अनुरोध की आपने उम्मीद नहीं की, उसके लिए कभी अपना UPI पिन न डालें।",
+  pay_t7_b6: "शक होने पर मंज़ूरी देने से पहले सीधे उस व्यक्ति को कॉल करके पुष्टि करें।",
+
+  pay_t8_title: "असफल/गलत लेन-देन",
+  pay_t8_b1: "अगर भुगतान असफल हो जाए पर पैसे कट जाएं, तो वे आमतौर पर कुछ दिनों में अपने आप वापस आ जाते हैं।",
+  pay_t8_b2: "भुगतान असफल होते ही ट्रांजेक्शन ID और समय नोट कर लें।",
+  pay_t8_b3: "क्या हुआ यह जानने के लिए ट्रांजेक्शन हिस्ट्री और बैंक SMS जांचें।",
+  pay_t8_b4: "अगर 3-5 कार्य दिवसों में पैसे वापस न आएं, तो बैंक या ऐप सपोर्ट से संपर्क करें।",
+  pay_t8_b5: "अगर गलत व्यक्ति को पैसे भेज दिए हैं, तो तुरंत अपने बैंक को बताएं।",
+  pay_t8_b6: "सपोर्ट से बात करते समय स्क्रीनशॉट और रेफरेंस नंबर तैयार रखें।",
+
+  pay_t9_title: "आम भुगतान धोखाधड़ी",
+  pay_t9_b1: "फर्जी \"रिफंड\" या \"कैशबैक\" ऑफर, जिनमें आपसे QR कोड स्कैन करने या पिन डालने को कहा जाता है।",
+  pay_t9_b2: "बैंक बनकर कॉल करने वाले लोग जो आपसे OTP, पिन या कार्ड की जानकारी मांगते हैं।",
+  pay_t9_b3: "ऐसे मैसेज जो कहें कि तुरंत लिंक पर क्लिक न करने पर आपका खाता ब्लॉक हो जाएगा।",
+  pay_t9_b4: "सर्च इंजन पर मिलने वाले फर्जी कस्टमर केयर नंबर, जो आधिकारिक स्रोत से नहीं होते।",
+  pay_t9_b5: "भुगतान की समस्या \"ठीक करने\" के लिए \"स्क्रीन शेयरिंग\" ऐप इंस्टॉल करने को कहना।",
+  pay_t9_b6: "जो कोई भी जल्दबाज़ी दिखाकर तुरंत कार्रवाई करने का दबाव बनाए, वह अक्सर धोखेबाज़ होता है।",
+
+  pay_t10_title: "अगर कुछ गलत हो जाए तो क्या करें",
+  pay_t10_b1: "शांत रहें और कॉल करने वाले या भेजने वाले को आगे कोई जानकारी न दें।",
+  pay_t10_b2: "अगर लगे कि आपका UPI पिन किसी और को पता है, तो उसे तुरंत बदल दें।",
+  pay_t10_b3: "धोखाधड़ी की रिपोर्ट करने के लिए बैंक की आधिकारिक हेल्पलाइन (वेबसाइट या कार्ड पर) पर कॉल करें।",
+  pay_t10_b4: "संदिग्ध लेन-देन या संपर्क के लिए अपने UPI ऐप में \"Report/Block\" विकल्प का इस्तेमाल करें।",
+  pay_t10_b5: "साइबर धोखाधड़ी की शिकायत नेशनल साइबरक्राइम हेल्पलाइन 1930 या cybercrime.gov.in पर करें।",
+  pay_t10_b6: "बैंक में लिखित शिकायत दर्ज करें और उसकी एक कॉपी अपने पास रखें।"
+});
+
+Object.assign(translations.mr, {
+  pay_section_title: "प्रत्येक विषय सविस्तर जाणून घ्या",
+  pay_section_lead: "सोप्या स्टेप्स आणि सुरक्षा टिप्स पाहण्यासाठी एखाद्या विषयावर टॅप करा.",
+  pay_t1_title: "UPI च्या मूलभूत गोष्टी",
+  pay_t1_b1: "UPI मुळे तुम्ही फक्त तुमच्या फोनचा वापर करून त्वरित पैसे पाठवू आणि मिळवू शकता.",
+  pay_t1_b2: "UPI वापरण्यासाठी तुमच्या मोबाइल नंबरशी जोडलेले बँक खाते असणे आवश्यक आहे.",
+  pay_t1_b3: "Google Pay, PhonePe, Paytm आणि BHIM ही लोकप्रिय UPI अ‍ॅप्स आहेत.",
+  pay_t1_b4: "तुमची UPI ID एखाद्या नावानंतर @ आणि बँक किंवा अ‍ॅपचे नाव अशी दिसते.",
+  pay_t1_b5: "बहुतेक UPI पेमेंटसाठी तुम्हाला तुमचा बँक खाते क्रमांक द्यावा लागत नाही.",
+  pay_t1_b6: "UPI आठवड्याचे सातही दिवस, चोवीस तास चालते आणि यासाठी कोणतेही अतिरिक्त शुल्क नसते.",
+
+  pay_t2_title: "QR पेमेंट्स",
+  pay_t2_b1: "QR कोड हा एक छोटा चौकोनी कोड असतो जो तुम्ही फोनच्या कॅमेराने स्कॅन करून पेमेंट करता.",
+  pay_t2_b2: "तुमचे UPI अ‍ॅप उघडा, \"Scan QR\" वर टॅप करा आणि कॅमेरा त्या कोडवर धरा.",
+  pay_t2_b3: "पेमेंट कन्फर्म करण्याआधी प्राप्तकर्त्याचे नाव आणि रक्कम काळजीपूर्वक तपासा.",
+  pay_t2_b4: "स्कॅन केल्यानंतर पेमेंट पूर्ण करण्यासाठी तुमचा UPI पिन टाका.",
+  pay_t2_b5: "QR कोड स्कॅन करणे फक्त पैसे पाठवण्यासाठी असते, पैसे मिळवण्यासाठी नाही.",
+  pay_t2_b6: "पैसे, रिफंड किंवा कॅशबॅक \"मिळवण्यासाठी\" कधीही QR कोड स्कॅन करू नका — ही फसवणूक असते.",
+
+  pay_t3_title: "पैसे पाठवणे आणि मिळवणे",
+  pay_t3_b1: "पैसे पाठवण्यासाठी तुमच्या अ‍ॅपमध्ये प्राप्तकर्त्याची UPI ID किंवा फोन नंबर टाका.",
+  pay_t3_b2: "पैसे पाठवण्याआधी स्क्रीनवर दिसणारे प्राप्तकर्त्याचे नाव नेहमी तपासा.",
+  pay_t3_b3: "रक्कम टाका आणि व्यवहार पूर्ण करण्यासाठी तुमचा UPI पिन टाका.",
+  pay_t3_b4: "पैसे मिळवण्यासाठी फक्त तुमची UPI ID किंवा QR कोड शेअर करा — पिनची गरज नसते.",
+  pay_t3_b5: "पैसे मिळाल्यावर तुम्हाला SMS किंवा अ‍ॅप नोटिफिकेशन मिळेल.",
+  pay_t3_b6: "पैसे साधारणपणे काही सेकंदांतच दुसऱ्या व्यक्तीच्या खात्यात पोहोचतात.",
+
+  pay_t4_title: "व्यवहाराची स्थिती तपासणे",
+  pay_t4_b1: "तुमचे UPI अ‍ॅप उघडा आणि जुने व्यवहार पाहण्यासाठी \"Transaction History\" वर जा.",
+  pay_t4_b2: "प्रत्येक नोंदीमध्ये तारीख, रक्कम आणि स्थिती (यशस्वी, प्रलंबित किंवा अयशस्वी) दिसते.",
+  pay_t4_b3: "\"प्रलंबित (Pending)\" म्हणजे व्यवहार अजून प्रक्रियेत आहे — काही मिनिटे थांबा.",
+  pay_t4_b4: "तुम्ही बँकेच्या SMS अलर्टवरूनही पेमेंटची खात्री करू शकता.",
+  pay_t4_b5: "कधी तक्रार करायची झाल्यास ट्रान्झॅक्शन ID जपून ठेवा.",
+  pay_t4_b6: "पेमेंटबद्दल शंका असल्यास बँक स्टेटमेंट किंवा पासबुक तपासा.",
+
+  pay_t5_title: "UPI पिन",
+  pay_t5_b1: "तुमचा UPI पिन हा गुप्त 4 किंवा 6 अंकी कोड असतो जो प्रत्येक पेमेंटला मान्यता देतो.",
+  pay_t5_b2: "तुम्ही अ‍ॅपमध्ये पहिल्यांदा बँक खाते जोडता तेव्हा UPI पिन सेट करता.",
+  pay_t5_b3: "तुमचा UPI पिन कोणासोबतही शेअर करू नका, मग तो बँक कर्मचारी असो किंवा घरातील व्यक्ती.",
+  pay_t5_b4: "UPI पिन फक्त पैसे पाठवण्यासाठी टाकावा लागतो, पैसे मिळवण्यासाठी नाही.",
+  pay_t5_b5: "पिन विसरल्यास अ‍ॅपमधील \"Forgot UPI PIN\" पर्यायाने तो रीसेट करा.",
+  pay_t5_b6: "एखाद्याला तुमचा पिन माहीत असल्याची शंका आल्यास तो लगेच बदला.",
+
+  pay_t6_title: "OTP सुरक्षा",
+  pay_t6_b1: "OTP (वन-टाइम पासवर्ड) हा SMS द्वारे पाठवला जाणारा कोड आहे जो तुमची ओळख पडताळतो.",
+  pay_t6_b2: "OTP फक्त तुमच्यासाठी असतो — तो कोणासोबतही, अगदी बँकेच्या कॉलरसोबतही शेअर करू नका.",
+  pay_t6_b3: "बँका आणि पेमेंट अ‍ॅप्स कधीही कॉल किंवा मेसेज करून OTP मागत नाहीत.",
+  pay_t6_b4: "\"मदत\" करण्याच्या नावाखाली जो कोणी OTP मागतो, तो जवळपास नेहमीच फसवणूक करणारा असतो.",
+  pay_t6_b5: "सुरक्षेसाठी OTP साधारणपणे काही मिनिटांतच कालबाह्य होतो.",
+  pay_t6_b6: "अनपेक्षित लिंक किंवा वेबसाइटवर कधीही OTP टाकू नका.",
+
+  pay_t7_title: "पेमेंट रिक्वेस्ट",
+  pay_t7_b1: "पेमेंट रिक्वेस्टमध्ये तुम्हाला कोणाला तरी पैसे पाठवण्याची मान्यता द्यायला सांगितले जाते.",
+  pay_t7_b2: "फक्त पैसे मिळवण्यासाठी तुम्हाला कधीही UPI पिन टाकायची गरज नसते.",
+  pay_t7_b3: "काही फसवणूक करणारे \"Collect Request\" पैसे मिळवण्यासारखी भासवून पाठवतात.",
+  pay_t7_b4: "रिक्वेस्टची स्क्रीन काळजीपूर्वक वाचा — खात्यातून पैसे जाणार असतील तर तिथे स्पष्टपणे \"Pay\" लिहिलेले असते.",
+  pay_t7_b5: "अनपेक्षित रिक्वेस्टसाठी कधीही तुमचा UPI पिन टाकू नका.",
+  pay_t7_b6: "शंका असल्यास मान्यता देण्याआधी थेट त्या व्यक्तीला कॉल करून खात्री करा.",
+
+  pay_t8_title: "अयशस्वी/चुकीचे व्यवहार",
+  pay_t8_b1: "पेमेंट अयशस्वी होऊनही पैसे कापले गेल्यास, ते साधारणपणे काही दिवसांत आपोआप परत येतात.",
+  pay_t8_b2: "पेमेंट अयशस्वी झाल्यावर लगेच ट्रान्झॅक्शन ID आणि वेळ नोंदवून ठेवा.",
+  pay_t8_b3: "काय झाले हे समजण्यासाठी ट्रान्झॅक्शन हिस्ट्री आणि बँकेचा SMS तपासा.",
+  pay_t8_b4: "3-5 कामाच्या दिवसांत पैसे परत न आल्यास बँक किंवा अ‍ॅप सपोर्टशी संपर्क साधा.",
+  pay_t8_b5: "चुकीच्या व्यक्तीला पैसे पाठवले असल्यास लगेच तुमच्या बँकेला कळवा.",
+  pay_t8_b6: "सपोर्टशी बोलताना स्क्रीनशॉट आणि रेफरन्स नंबर तयार ठेवा.",
+
+  pay_t9_title: "सामान्य पेमेंट फसवणुकी",
+  pay_t9_b1: "बनावट \"रिफंड\" किंवा \"कॅशबॅक\" ऑफर, ज्यात QR कोड स्कॅन करायला किंवा पिन टाकायला सांगितले जाते.",
+  pay_t9_b2: "बँकेचे नाव सांगून कॉल करणारे लोक जे तुमचा OTP, पिन किंवा कार्ड तपशील मागतात.",
+  pay_t9_b3: "लगेच लिंकवर क्लिक न केल्यास खाते ब्लॉक होईल असे सांगणारे मेसेज.",
+  pay_t9_b4: "सर्च इंजिनवर सापडणारे बनावट कस्टमर केअर नंबर, जे अधिकृत स्रोतांचे नसतात.",
+  pay_t9_b5: "पेमेंटची समस्या \"सोडवण्यासाठी\" स्क्रीन शेअरिंग अ‍ॅप इन्स्टॉल करायला सांगणे.",
+  pay_t9_b6: "जो कोणी घाई करून लगेच काहीतरी करण्याचा दबाव आणतो, तो बहुधा फसवणूक करणारा असतो.",
+
+  pay_t10_title: "काही चूक झाल्यास काय करावे",
+  pay_t10_b1: "शांत राहा आणि कॉल करणाऱ्या किंवा पाठवणाऱ्या व्यक्तीला आणखी माहिती देऊ नका.",
+  pay_t10_b2: "तुमचा UPI पिन कोणाला माहीत असल्याची शंका आल्यास तो लगेच बदला.",
+  pay_t10_b3: "फसवणुकीची तक्रार करण्यासाठी बँकेच्या अधिकृत हेल्पलाइनवर (वेबसाइट किंवा कार्डवरून) कॉल करा.",
+  pay_t10_b4: "संशयास्पद व्यवहार किंवा संपर्कासाठी तुमच्या UPI अ‍ॅपमधील \"Report/Block\" पर्याय वापरा.",
+  pay_t10_b5: "सायबर फसवणुकीची तक्रार नॅशनल सायबरक्राइम हेल्पलाइन 1930 किंवा cybercrime.gov.in वर करा.",
+  pay_t10_b6: "बँकेकडे लेखी तक्रार नोंदवा आणि तिची एक प्रत स्वतःकडे ठेवा."
+});
+
+if (typeof dsApplyTranslations === 'function') { dsApplyTranslations(); }
+
+const scOptions = ["Click the link", "Share your OTP", "Verify the message through the official bank channel", "Forward it to friends"];
+const scCorrect = 2;
+const scExplanation = "Urgent messages with links are a classic scam pattern. Always verify independently through your bank's official app or number.";
+const optWrap = document.getElementById('scenarioOptions');
+const feedbackEl = document.getElementById('scenarioFeedback');
+scOptions.forEach((text, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = String.fromCharCode(65 + idx) + '. ' + text;
+    btn.addEventListener('click', () => {
+        const buttons = optWrap.querySelectorAll('button');
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === scCorrect) b.classList.add('correct');
+        });
+        if (idx !== scCorrect) btn.classList.add('incorrect');
+        feedbackEl.textContent = (idx === scCorrect ? '✅ Correct! ' : '❌ Not quite. ') + scExplanation;
+    
+        if (typeof dsMarkLessonComplete === 'function' && !dsIsLessonComplete('payments')) {
+            dsMarkLessonComplete('payments');
+        }
+    });
+    optWrap.appendChild(btn);
+});
+</script>
+<script>
+/* Trilingual lesson-page copy. */
+Object.assign(translations.en, {
+  "payments_hero_title": "💳 Digital Payments",
+  "payments_flow_learn": "LEARN",
+  "payments_flow_practice": "PRACTICE",
+  "payments_flow_quiz": "QUIZ",
+  "payments_flow_score": "SCORE",
+  "payments_flow_progress": "PROGRESS",
+  "payments_simple_title": "Simple Explanation",
+  "payments_simple_text": "UPI (Unified Payments Interface) lets you send and receive money instantly using just your phone — no need to carry cash.",
+  "payments_examples_title": "Practical Examples",
+  "payments_ex1": "To pay a shopkeeper, you scan their QR code and enter your UPI PIN to send money.",
+  "payments_ex2": "Your UPI PIN is like a signature — it authorizes a payment, so it must stay private.",
+  "payments_ex3": "If a payment fails but money is deducted, it's usually auto-reversed within a few days.",
+  "payments_safety_title": "Safety Tips",
+  "payments_safe1": "Never share your UPI PIN or OTP with anyone.",
+  "payments_safe2": "You only scan a QR code to SEND money, never to receive it.",
+  "payments_safe3": "Always check the receiver's name before confirming payment.",
+  "payments_safe4": "Check your bank SMS alerts regularly for unknown transactions.",
+  "payments_safe5": "Use only well-known, official payment apps.",
+  "payments_scenario_title": "Real-World Scenario — Practice",
+  "payments_scenario_text": "You receive a message: “Your bank account will be blocked today. Click this link immediately.”",
+  "payments_scenario_question": "What should you do?",
+  "payments_scenario_opt1": "Click the link",
+  "payments_scenario_opt2": "Share your OTP",
+  "payments_scenario_opt3": "Verify the message through the official bank channel",
+  "payments_scenario_opt4": "Forward it to friends",
+  "payments_scenario_correct": "Correct!",
+  "payments_scenario_incorrect": "Not quite.",
+  "payments_scenario_explanation": "Urgent messages with links are a classic scam pattern. Always verify independently through your bank's official app or number.",
+  "payments_quiz_btn": "Take the Digital Payments Quiz",
+  "payments_next_btn": "Next: Online Safety",
+});
+Object.assign(translations.hi, {
+  "payments_hero_title": "💳 डिजिटल भुगतान",
+  "payments_flow_learn": "सीखें",
+  "payments_flow_practice": "अभ्यास",
+  "payments_flow_quiz": "क्विज़",
+  "payments_flow_score": "स्कोर",
+  "payments_flow_progress": "प्रगति",
+  "payments_simple_title": "सरल समझ",
+  "payments_simple_text": "UPI (यूनिफाइड पेमेंट्स इंटरफेस) से आप केवल फोन का उपयोग करके तुरंत पैसे भेज और प्राप्त कर सकते हैं — नकद रखने की जरूरत नहीं।",
+  "payments_examples_title": "व्यावहारिक उदाहरण",
+  "payments_ex1": "दुकानदार को भुगतान करने के लिए उसका QR कोड स्कैन करें और पैसे भेजने के लिए अपना UPI PIN दर्ज करें।",
+  "payments_ex2": "आपका UPI PIN हस्ताक्षर की तरह है — यह भुगतान को अधिकृत करता है, इसलिए इसे गुप्त रखें।",
+  "payments_ex3": "यदि भुगतान विफल हो जाए लेकिन पैसे कट जाएं, तो आमतौर पर कुछ दिनों में राशि अपने आप वापस हो जाती है।",
+  "payments_safety_title": "सुरक्षा सुझाव",
+  "payments_safe1": "अपना UPI PIN या OTP कभी भी किसी के साथ साझा न करें।",
+  "payments_safe2": "QR कोड केवल पैसे भेजने के लिए स्कैन करें, पैसे प्राप्त करने के लिए कभी नहीं।",
+  "payments_safe3": "भुगतान की पुष्टि करने से पहले हमेशा प्राप्तकर्ता का नाम जांचें।",
+  "payments_safe4": "अनजान लेनदेन के लिए अपने बैंक के SMS अलर्ट नियमित रूप से जांचें।",
+  "payments_safe5": "केवल प्रसिद्ध और आधिकारिक भुगतान ऐप का उपयोग करें।",
+  "payments_scenario_title": "वास्तविक जीवन की स्थिति — अभ्यास",
+  "payments_scenario_text": "आपको संदेश मिलता है: “आपका बैंक खाता आज बंद कर दिया जाएगा। इस लिंक पर तुरंत क्लिक करें।”",
+  "payments_scenario_question": "आपको क्या करना चाहिए?",
+  "payments_scenario_opt1": "लिंक पर क्लिक करें",
+  "payments_scenario_opt2": "अपना OTP साझा करें",
+  "payments_scenario_opt3": "आधिकारिक बैंक चैनल से संदेश की पुष्टि करें",
+  "payments_scenario_opt4": "इसे दोस्तों को फॉरवर्ड करें",
+  "payments_scenario_correct": "सही!",
+  "payments_scenario_incorrect": "पूरी तरह सही नहीं।",
+  "payments_scenario_explanation": "लिंक वाले तुरंत कार्रवाई के संदेश स्कैम का आम तरीका हैं। हमेशा अपने बैंक के आधिकारिक ऐप या नंबर से स्वतंत्र रूप से पुष्टि करें।",
+  "payments_quiz_btn": "डिजिटल भुगतान क्विज़ लें",
+  "payments_next_btn": "अगला: ऑनलाइन सुरक्षा",
+});
+Object.assign(translations.mr, {
+  "payments_hero_title": "💳 डिजिटल पेमेंट्स",
+  "payments_flow_learn": "शिका",
+  "payments_flow_practice": "सराव",
+  "payments_flow_quiz": "क्विझ",
+  "payments_flow_score": "गुण",
+  "payments_flow_progress": "प्रगती",
+  "payments_simple_title": "सोपे स्पष्टीकरण",
+  "payments_simple_text": "UPI (युनिफाइड पेमेंट्स इंटरफेस) वापरून फक्त फोनच्या मदतीने पैसे त्वरित पाठवता आणि स्वीकारता येतात — रोख रक्कम बाळगण्याची गरज नाही.",
+  "payments_examples_title": "व्यावहारिक उदाहरणे",
+  "payments_ex1": "दुकानदाराला पैसे देण्यासाठी त्यांचा QR कोड स्कॅन करा आणि पैसे पाठवण्यासाठी तुमचा UPI PIN टाका.",
+  "payments_ex2": "तुमचा UPI PIN हा स्वाक्षरीसारखा असतो — तो पेमेंटला मंजुरी देतो, त्यामुळे तो गुप्त ठेवा.",
+  "payments_ex3": "पेमेंट अयशस्वी झाले पण पैसे वजा झाले तर साधारणपणे काही दिवसांत रक्कम आपोआप परत येते.",
+  "payments_safety_title": "सुरक्षिततेच्या टिप्स",
+  "payments_safe1": "तुमचा UPI PIN किंवा OTP कधीही कोणालाही सांगू नका.",
+  "payments_safe2": "QR कोड फक्त पैसे पाठवण्यासाठी स्कॅन करा; पैसे मिळवण्यासाठी कधीही नाही.",
+  "payments_safe3": "पेमेंटची पुष्टी करण्यापूर्वी नेहमी प्राप्तकर्त्याचे नाव तपासा.",
+  "payments_safe4": "अनोळखी व्यवहारांसाठी तुमच्या बँकेचे SMS अलर्ट नियमितपणे तपासा.",
+  "payments_safe5": "फक्त विश्वासार्ह आणि अधिकृत पेमेंट अ‍ॅप्स वापरा.",
+  "payments_scenario_title": "वास्तविक जीवनातील प्रसंग — सराव",
+  "payments_scenario_text": "तुम्हाला संदेश मिळतो: “तुमचे बँक खाते आज बंद केले जाईल. या लिंकवर त्वरित क्लिक करा.”",
+  "payments_scenario_question": "तुम्ही काय कराल?",
+  "payments_scenario_opt1": "लिंकवर क्लिक करा",
+  "payments_scenario_opt2": "तुमचा OTP सांगा",
+  "payments_scenario_opt3": "अधिकृत बँक माध्यमातून संदेशाची खात्री करा",
+  "payments_scenario_opt4": "तो मित्रांना फॉरवर्ड करा",
+  "payments_scenario_correct": "बरोबर!",
+  "payments_scenario_incorrect": "पूर्णपणे बरोबर नाही.",
+  "payments_scenario_explanation": "लिंक असलेले तातडीचे संदेश हे स्कॅमचे सामान्य लक्षण आहे. तुमच्या बँकेच्या अधिकृत अ‍ॅप किंवा नंबरद्वारे नेहमी स्वतंत्रपणे खात्री करा.",
+  "payments_quiz_btn": "डिजिटल पेमेंट्सचा क्विझ घ्या",
+  "payments_next_btn": "पुढील: ऑनलाइन सुरक्षा",
+});
+function applyScenarioLanguage() {
+  const buttons = document.querySelectorAll('#scenarioOptions button');
+  buttons.forEach((btn, idx) => { const key = 'payments_scenario_opt' + (idx + 1); btn.textContent = String.fromCharCode(65 + idx) + '. ' + dsT(key); });
+  const feedback = document.getElementById('scenarioFeedback');
+  if (feedback && buttons.length) {
+    const incorrect = Array.from(buttons).findIndex(btn => btn.classList.contains('incorrect'));
+    const answered = incorrect !== -1 ? incorrect : Array.from(buttons).findIndex(btn => btn.classList.contains('correct'));
+    if (answered !== -1) feedback.textContent = (answered === 2 ? dsT('payments_scenario_correct') + ' ' : dsT('payments_scenario_incorrect') + ' ') + dsT('payments_scenario_explanation');
+  }
+}
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+applyScenarioLanguage();
+const lessonLangSelect = document.getElementById('langSelect');
+if (lessonLangSelect) lessonLangSelect.addEventListener('change', () => setTimeout(applyScenarioLanguage, 0));
+document.querySelectorAll('#scenarioOptions button').forEach(btn => btn.addEventListener('click', () => setTimeout(applyScenarioLanguage, 0)));
+</script>
+</body>
+</html>

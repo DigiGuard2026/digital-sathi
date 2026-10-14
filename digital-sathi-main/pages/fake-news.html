@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake News Awareness — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Scoped styles for the Fake News Awareness subtopic accordion only */
+  .subtopics-wrap { margin-top: 10px; }
+  .subtopic-block {
+    background: #fff;
+    border: 1px solid var(--blue-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .subtopic-block summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtopic-block summary::-webkit-details-marker { display: none; }
+  .subtopic-block summary::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; }
+  .subtopic-block[open] summary::before { transform: rotate(90deg); }
+  .subtopic-block .tips-list { padding: 12px 20px 16px 42px; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="../index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="../index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="../safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="learn-hero">
+  <h1 data-i18n="fake-news_hero_title">📰 Fake News Awareness</h1>
+  <div class="learn-flow">
+    <span data-i18n="fake-news_flow_learn">LEARN</span> → <span data-i18n="fake-news_flow_practice">PRACTICE</span> → <span data-i18n="fake-news_flow_quiz">QUIZ</span> → <span data-i18n="fake-news_flow_score">SCORE</span> → <span data-i18n="fake-news_flow_progress">PROGRESS</span>
+  </div>
+</div>
+
+<div class="learn-section">
+
+  <div class="info-block">
+    <h3 data-i18n="fake-news_simple_title">Simple Explanation</h3>
+    <p data-i18n="fake-news_simple_text">Fake news is false or misleading information shared as if it were true. It can spread quickly, especially through social media and messaging apps.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="fake-news_examples_title">Practical Examples</h3>
+    <ul class="tips-list">
+      <li data-i18n="fake-news_ex1">A forwarded message with an alarming claim may have no real source behind it.</li>
+      <li data-i18n="fake-news_ex2">Checking multiple trusted news sources helps confirm whether something is actually true.</li>
+      <li data-i18n="fake-news_ex3">Doctored images or old photos are sometimes shared out of context to mislead people.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="fake-news_safety_title">Safety Tips</h3>
+    <ul class="tips-list">
+      <li data-i18n="fake-news_safe1">Check a trusted news source before believing or sharing anything surprising.</li>
+      <li data-i18n="fake-news_safe2">Many forwards do not mean something is true.</li>
+      <li data-i18n="fake-news_safe3">Use fact-checking websites to verify claims.</li>
+      <li data-i18n="fake-news_safe4">Be cautious of ALL CAPS or urgent-sounding headlines.</li>
+      <li data-i18n="fake-news_safe5">Think twice before sharing — verify first.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="fn_section_title">Explore Each Topic in Detail</h3>
+    <p data-i18n="fn_section_lead">Tap on a topic to learn how to spot and stop fake news.</p>
+    <div class="subtopics-wrap">
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t1_title">What Is Misinformation?</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t1_b1">Misinformation is information that is false or inaccurate, whether or not someone meant to mislead you.</li>
+          <li data-i18n="fn_t1_b2">Disinformation is false information created and shared on purpose to deceive people.</li>
+          <li data-i18n="fn_t1_b3">Misinformation can spread through social media, messaging apps, TV, or word of mouth.</li>
+          <li data-i18n="fn_t1_b4">Even well-meaning people can accidentally spread misinformation by sharing without checking.</li>
+          <li data-i18n="fn_t1_b5">Misinformation can affect health decisions, elections, money matters, and personal safety.</li>
+          <li data-i18n="fn_t1_b6">Always pause and think before believing or sharing anything that sounds surprising.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t2_title">Fake News vs Misleading Information</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t2_b1">Fake news is completely made-up or false content presented as real news.</li>
+          <li data-i18n="fn_t2_b2">Misleading information may contain some truth but is presented in a way that creates a false impression.</li>
+          <li data-i18n="fn_t2_b3">A real photo or video used with a wrong caption or date is misleading, not fully fake.</li>
+          <li data-i18n="fn_t2_b4">Fake news often uses fake websites, fake logos, or fake journalist names to look real.</li>
+          <li data-i18n="fn_t2_b5">Misleading headlines can exaggerate or twist a true story to grab attention.</li>
+          <li data-i18n="fn_t2_b6">Both types can cause confusion, so it's important to verify before trusting either.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t3_title">How to Verify a Claim</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t3_b1">Search the claim in a search engine to see if trusted news outlets are reporting it too.</li>
+          <li data-i18n="fn_t3_b2">Look for the same news on at least two or three reliable, well-known sources.</li>
+          <li data-i18n="fn_t3_b3">Use fact-checking websites (like PIB Fact Check, Alt News, or Boom Live) to check viral claims.</li>
+          <li data-i18n="fn_t3_b4">Be extra careful with claims that sound too shocking, too good, or too urgent to be true.</li>
+          <li data-i18n="fn_t3_b5">Check if the claim includes real names, dates, and places that can be verified.</li>
+          <li data-i18n="fn_t3_b6">If you can't confirm a claim from a trusted source, don't share it yet.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t4_title">Checking the Source</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t4_b1">Look at who published the information — is it a known, trusted news organization?</li>
+          <li data-i18n="fn_t4_b2">Check the website address (URL) carefully; fake sites often use names similar to real ones.</li>
+          <li data-i18n="fn_t4_b3">Look for an "About Us" page and contact details to see if the source is genuine.</li>
+          <li data-i18n="fn_t4_b4">Be cautious of posts from anonymous accounts or pages with no clear identity.</li>
+          <li data-i18n="fn_t4_b5">Official government information usually comes from .gov.in websites or verified social media accounts.</li>
+          <li data-i18n="fn_t4_b6">A source with many spelling mistakes or poor design is often less trustworthy.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t5_title">Reverse-Image-Search Concept</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t5_b1">Reverse image search lets you check where a photo first appeared online.</li>
+          <li data-i18n="fn_t5_b2">It helps you find out if a photo is old, from a different event, or used out of context.</li>
+          <li data-i18n="fn_t5_b3">On a phone or computer, you can search an image using Google Lens or Google Images.</li>
+          <li data-i18n="fn_t5_b4">Save or screenshot the image, then upload it to the search tool to see matching results.</li>
+          <li data-i18n="fn_t5_b5">If the same image appears with different captions or dates, it may be used to mislead.</li>
+          <li data-i18n="fn_t5_b6">Reverse image search is especially useful for viral photos linked to accidents, riots, or disasters.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t6_title">Checking Dates &amp; Context</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t6_b1">Always check the date of a photo, video, or news article before believing or sharing it.</li>
+          <li data-i18n="fn_t6_b2">Old news or old images are sometimes reshared as if they are happening right now.</li>
+          <li data-i18n="fn_t6_b3">Read the full article, not just the headline, to understand the real context.</li>
+          <li data-i18n="fn_t6_b4">Check if the event mentioned actually happened in the place and time claimed.</li>
+          <li data-i18n="fn_t6_b5">Look for updates or corrections — sometimes an early report changes as more facts come out.</li>
+          <li data-i18n="fn_t6_b6">A video clip taken out of its original context can create a completely false impression.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t7_title">AI-Generated Content &amp; Deepfakes</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t7_b1">Deepfakes are AI-generated videos or audio that make people appear to say or do things they never did.</li>
+          <li data-i18n="fn_t7_b2">AI can also create fake but realistic-looking photos of people, places, or events that never existed.</li>
+          <li data-i18n="fn_t7_b3">Look for unnatural blinking, odd lighting, blurry edges, or mismatched lip movements in videos.</li>
+          <li data-i18n="fn_t7_b4">Be cautious of voice messages or calls that sound urgent and ask for money — voices can be cloned.</li>
+          <li data-i18n="fn_t7_b5">Reverse image search and fact-checking tools can sometimes help identify AI-generated images.</li>
+          <li data-i18n="fn_t7_b6">If a video or audio clip seems shocking or unusual for that person, verify it before believing it.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t8_title">Fake Screenshots</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t8_b1">Screenshots of news, chats, or social media posts can be easily edited using simple apps.</li>
+          <li data-i18n="fn_t8_b2">A fake screenshot can show a message, tweet, or headline that was never actually posted.</li>
+          <li data-i18n="fn_t8_b3">Check if the same message or post can be found directly on the original app or website.</li>
+          <li data-i18n="fn_t8_b4">Look for mismatched fonts, spacing, or logos, which can be signs of editing.</li>
+          <li data-i18n="fn_t8_b5">Be cautious of screenshots without dates, usernames, or verified account marks.</li>
+          <li data-i18n="fn_t8_b6">If a screenshot cannot be verified elsewhere, treat it as unconfirmed.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t9_title">Identifying Manipulated Content</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t9_b1">Manipulated content includes edited photos, cropped images, or videos with altered speed or sound.</li>
+          <li data-i18n="fn_t9_b2">Cropping a photo or video can remove important context and change its meaning.</li>
+          <li data-i18n="fn_t9_b3">Look closely for blurred areas, odd shadows, or straight lines that look bent — signs of editing.</li>
+          <li data-i18n="fn_t9_b4">Compare the content with the original source, if you can find it, to spot differences.</li>
+          <li data-i18n="fn_t9_b5">Be cautious of content that seems designed to provoke anger, fear, or strong reactions.</li>
+          <li data-i18n="fn_t9_b6">When in doubt, ask: "Who benefits if I believe and share this?"</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="fn_t10_title">Before-You-Share Checklist</summary>
+        <ul class="tips-list">
+          <li data-i18n="fn_t10_b1">Have I checked this news on at least one trusted, well-known source?</li>
+          <li data-i18n="fn_t10_b2">Do I know who created or posted this content, and is it a genuine source?</li>
+          <li data-i18n="fn_t10_b3">Have I checked the date to make sure this is current, not old news?</li>
+          <li data-i18n="fn_t10_b4">Have I looked at the full context, not just the headline or a short clip?</li>
+          <li data-i18n="fn_t10_b5">If the content is a photo or video, have I checked if it looks edited or AI-generated?</li>
+          <li data-i18n="fn_t10_b6">If I'm still unsure, it's safer not to share until I can verify it.</li>
+        </ul>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="fake-news_scenario_title">Real-World Scenario — Practice</h3>
+    <div class="scenario-box">
+      <p data-i18n="fake-news_scenario_text">You receive a WhatsApp forward claiming a well-known company is shutting down, with no source mentioned.</p>
+      <p><strong data-i18n="fake-news_scenario_question">What should you do?</strong></p>
+    </div>
+    <div class="scenario-options" id="scenarioOptions"></div>
+    <div class="scenario-feedback" id="scenarioFeedback"></div>
+  </div>
+
+  <div class="learn-page-actions">
+    <a href="../fake-news-detective.html" class="btn btn-secondary" data-i18n="fnd_title">🔎 Try Fake News Detective</a>
+    <a href="../quizzes/fake-news-quiz.html" class="btn btn-primary"><span data-i18n="fake-news_quiz_btn">Take the Fake News Awareness Quiz</span></a>
+    <a href="government-services.html" class="btn btn-secondary"><span data-i18n="fake-news_next_btn">Next: Government Services</span></a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="../index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="../safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="../about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="../index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+
+<script src="../js/gamification.js"></script>
+<script src="../js/main.js"></script>
+<script>
+/* Fake News Awareness — subtopic translations.
+   Extends the existing site-wide `translations` object from main.js
+   so the Hindi/Marathi language switcher (langSelect) works for this
+   page's new content exactly as it does for the rest of the site. */
+Object.assign(translations.en, {
+  fn_section_title: "Explore Each Topic in Detail",
+  fn_section_lead: "Tap on a topic to learn how to spot and stop fake news.",
+  fn_t1_title: "What Is Misinformation?",
+  fn_t2_title: "Fake News vs Misleading Information",
+  fn_t3_title: "How to Verify a Claim",
+  fn_t4_title: "Checking the Source",
+  fn_t5_title: "Reverse-Image-Search Concept",
+  fn_t6_title: "Checking Dates & Context",
+  fn_t7_title: "AI-Generated Content & Deepfakes",
+  fn_t8_title: "Fake Screenshots",
+  fn_t9_title: "Identifying Manipulated Content",
+  fn_t10_title: "Before-You-Share Checklist",
+
+  fn_t1_b1: "Misinformation is information that is false or inaccurate, whether or not someone meant to mislead you.",
+  fn_t1_b2: "Disinformation is false information created and shared on purpose to deceive people.",
+  fn_t1_b3: "Misinformation can spread through social media, messaging apps, TV, or word of mouth.",
+  fn_t1_b4: "Even well-meaning people can accidentally spread misinformation by sharing without checking.",
+  fn_t1_b5: "Misinformation can affect health decisions, elections, money matters, and personal safety.",
+  fn_t1_b6: "Always pause and think before believing or sharing anything that sounds surprising.",
+
+  fn_t2_b1: "Fake news is completely made-up or false content presented as real news.",
+  fn_t2_b2: "Misleading information may contain some truth but is presented in a way that creates a false impression.",
+  fn_t2_b3: "A real photo or video used with a wrong caption or date is misleading, not fully fake.",
+  fn_t2_b4: "Fake news often uses fake websites, fake logos, or fake journalist names to look real.",
+  fn_t2_b5: "Misleading headlines can exaggerate or twist a true story to grab attention.",
+  fn_t2_b6: "Both types can cause confusion, so it's important to verify before trusting either.",
+
+  fn_t3_b1: "Search the claim in a search engine to see if trusted news outlets are reporting it too.",
+  fn_t3_b2: "Look for the same news on at least two or three reliable, well-known sources.",
+  fn_t3_b3: "Use fact-checking websites (like PIB Fact Check, Alt News, or Boom Live) to check viral claims.",
+  fn_t3_b4: "Be extra careful with claims that sound too shocking, too good, or too urgent to be true.",
+  fn_t3_b5: "Check if the claim includes real names, dates, and places that can be verified.",
+  fn_t3_b6: "If you can't confirm a claim from a trusted source, don't share it yet.",
+
+  fn_t4_b1: "Look at who published the information — is it a known, trusted news organization?",
+  fn_t4_b2: "Check the website address (URL) carefully; fake sites often use names similar to real ones.",
+  fn_t4_b3: "Look for an \"About Us\" page and contact details to see if the source is genuine.",
+  fn_t4_b4: "Be cautious of posts from anonymous accounts or pages with no clear identity.",
+  fn_t4_b5: "Official government information usually comes from .gov.in websites or verified social media accounts.",
+  fn_t4_b6: "A source with many spelling mistakes or poor design is often less trustworthy.",
+
+  fn_t5_b1: "Reverse image search lets you check where a photo first appeared online.",
+  fn_t5_b2: "It helps you find out if a photo is old, from a different event, or used out of context.",
+  fn_t5_b3: "On a phone or computer, you can search an image using Google Lens or Google Images.",
+  fn_t5_b4: "Save or screenshot the image, then upload it to the search tool to see matching results.",
+  fn_t5_b5: "If the same image appears with different captions or dates, it may be used to mislead.",
+  fn_t5_b6: "Reverse image search is especially useful for viral photos linked to accidents, riots, or disasters.",
+
+  fn_t6_b1: "Always check the date of a photo, video, or news article before believing or sharing it.",
+  fn_t6_b2: "Old news or old images are sometimes reshared as if they are happening right now.",
+  fn_t6_b3: "Read the full article, not just the headline, to understand the real context.",
+  fn_t6_b4: "Check if the event mentioned actually happened in the place and time claimed.",
+  fn_t6_b5: "Look for updates or corrections — sometimes an early report changes as more facts come out.",
+  fn_t6_b6: "A video clip taken out of its original context can create a completely false impression.",
+
+  fn_t7_b1: "Deepfakes are AI-generated videos or audio that make people appear to say or do things they never did.",
+  fn_t7_b2: "AI can also create fake but realistic-looking photos of people, places, or events that never existed.",
+  fn_t7_b3: "Look for unnatural blinking, odd lighting, blurry edges, or mismatched lip movements in videos.",
+  fn_t7_b4: "Be cautious of voice messages or calls that sound urgent and ask for money — voices can be cloned.",
+  fn_t7_b5: "Reverse image search and fact-checking tools can sometimes help identify AI-generated images.",
+  fn_t7_b6: "If a video or audio clip seems shocking or unusual for that person, verify it before believing it.",
+
+  fn_t8_b1: "Screenshots of news, chats, or social media posts can be easily edited using simple apps.",
+  fn_t8_b2: "A fake screenshot can show a message, tweet, or headline that was never actually posted.",
+  fn_t8_b3: "Check if the same message or post can be found directly on the original app or website.",
+  fn_t8_b4: "Look for mismatched fonts, spacing, or logos, which can be signs of editing.",
+  fn_t8_b5: "Be cautious of screenshots without dates, usernames, or verified account marks.",
+  fn_t8_b6: "If a screenshot cannot be verified elsewhere, treat it as unconfirmed.",
+
+  fn_t9_b1: "Manipulated content includes edited photos, cropped images, or videos with altered speed or sound.",
+  fn_t9_b2: "Cropping a photo or video can remove important context and change its meaning.",
+  fn_t9_b3: "Look closely for blurred areas, odd shadows, or straight lines that look bent — signs of editing.",
+  fn_t9_b4: "Compare the content with the original source, if you can find it, to spot differences.",
+  fn_t9_b5: "Be cautious of content that seems designed to provoke anger, fear, or strong reactions.",
+  fn_t9_b6: "When in doubt, ask: \"Who benefits if I believe and share this?\"",
+
+  fn_t10_b1: "Have I checked this news on at least one trusted, well-known source?",
+  fn_t10_b2: "Do I know who created or posted this content, and is it a genuine source?",
+  fn_t10_b3: "Have I checked the date to make sure this is current, not old news?",
+  fn_t10_b4: "Have I looked at the full context, not just the headline or a short clip?",
+  fn_t10_b5: "If the content is a photo or video, have I checked if it looks edited or AI-generated?",
+  fn_t10_b6: "If I'm still unsure, it's safer not to share until I can verify it."
+});
+
+Object.assign(translations.hi, {
+  fn_section_title: "हर विषय को विस्तार से जानें",
+  fn_section_lead: "फेक न्यूज़ पहचानने और रोकने का तरीका जानने के लिए किसी विषय पर टैप करें।",
+  fn_t1_title: "मिसइंफॉर्मेशन (गलत जानकारी) क्या है?",
+  fn_t2_title: "फेक न्यूज़ बनाम भ्रामक जानकारी",
+  fn_t3_title: "किसी दावे की पुष्टि कैसे करें",
+  fn_t4_title: "स्रोत की जाँच करना",
+  fn_t5_title: "रिवर्स-इमेज-सर्च का कॉन्सेप्ट",
+  fn_t6_title: "तारीख और संदर्भ की जाँच",
+  fn_t7_title: "AI से बनी सामग्री और डीपफेक",
+  fn_t8_title: "नकली स्क्रीनशॉट",
+  fn_t9_title: "छेड़छाड़ की गई सामग्री पहचानना",
+  fn_t10_title: "शेयर करने से पहले की चेकलिस्ट",
+
+  fn_t1_b1: "मिसइंफॉर्मेशन ऐसी जानकारी है जो झूठी या गलत होती है, चाहे किसी ने जानबूझकर गुमराह करने की कोशिश की हो या नहीं।",
+  fn_t1_b2: "डिसइंफॉर्मेशन वह झूठी जानकारी है जिसे जानबूझकर लोगों को धोखा देने के लिए बनाया और फैलाया जाता है।",
+  fn_t1_b3: "मिसइंफॉर्मेशन सोशल मीडिया, मैसेजिंग ऐप्स, टीवी या मुँह-जुबानी के ज़रिए फैल सकती है।",
+  fn_t1_b4: "अच्छे इरादे वाले लोग भी बिना जाँचे शेयर करके गलती से गलत जानकारी फैला सकते हैं।",
+  fn_t1_b5: "गलत जानकारी स्वास्थ्य से जुड़े फैसलों, चुनाव, पैसों के मामलों और व्यक्तिगत सुरक्षा को प्रभावित कर सकती है।",
+  fn_t1_b6: "कुछ भी चौंकाने वाला मानने या शेयर करने से पहले हमेशा रुकें और सोचें।",
+
+  fn_t2_b1: "फेक न्यूज़ पूरी तरह से बनाई गई या झूठी सामग्री होती है जिसे असली खबर की तरह पेश किया जाता है।",
+  fn_t2_b2: "भ्रामक जानकारी में कुछ सच्चाई हो सकती है, लेकिन उसे ऐसे पेश किया जाता है कि गलत धारणा बन जाए।",
+  fn_t2_b3: "एक असली फोटो या वीडियो को गलत कैप्शन या तारीख के साथ इस्तेमाल करना भ्रामक है, पूरी तरह फेक नहीं।",
+  fn_t2_b4: "फेक न्यूज़ असली दिखने के लिए अक्सर नकली वेबसाइट, नकली लोगो या नकली पत्रकारों के नाम का इस्तेमाल करती है।",
+  fn_t2_b5: "भ्रामक हेडलाइन ध्यान खींचने के लिए किसी सच्ची खबर को बढ़ा-चढ़ाकर या तोड़-मरोड़कर पेश कर सकती हैं।",
+  fn_t2_b6: "दोनों तरह की सामग्री भ्रम पैदा कर सकती हैं, इसलिए भरोसा करने से पहले जाँच करना ज़रूरी है।",
+
+  fn_t3_b1: "यह देखने के लिए कि भरोसेमंद न्यूज़ चैनल भी यही खबर दिखा रहे हैं या नहीं, दावे को सर्च इंजन पर खोजें।",
+  fn_t3_b2: "कम से कम दो-तीन भरोसेमंद और जाने-माने स्रोतों पर वही खबर देखें।",
+  fn_t3_b3: "वायरल दावों की जाँच के लिए फैक्ट-चेकिंग वेबसाइट्स (जैसे PIB Fact Check, Alt News, या Boom Live) का इस्तेमाल करें।",
+  fn_t3_b4: "जो दावे बहुत चौंकाने वाले, बहुत अच्छे या बहुत जल्दबाज़ी वाले लगें, उन पर ज़्यादा सावधानी बरतें।",
+  fn_t3_b5: "देखें कि दावे में सही नाम, तारीख और जगहें दी गई हैं जिनकी पुष्टि की जा सके।",
+  fn_t3_b6: "अगर किसी भरोसेमंद स्रोत से दावे की पुष्टि न हो सके, तो उसे अभी शेयर न करें।",
+
+  fn_t4_b1: "देखें कि जानकारी किसने प्रकाशित की है — क्या यह कोई जाना-पहचाना, भरोसेमंद न्यूज़ संगठन है?",
+  fn_t4_b2: "वेबसाइट का पता (URL) ध्यान से देखें; नकली वेबसाइट अक्सर असली नामों से मिलते-जुलते नाम इस्तेमाल करती हैं।",
+  fn_t4_b3: "यह जाँचने के लिए कि स्रोत असली है या नहीं, \"About Us\" पेज और संपर्क जानकारी देखें।",
+  fn_t4_b4: "बिना पहचान वाले अनाम अकाउंट या पेजों से आई पोस्ट पर सावधान रहें।",
+  fn_t4_b5: "सरकारी जानकारी आमतौर पर .gov.in वेबसाइट या वेरिफाइड सोशल मीडिया अकाउंट से आती है।",
+  fn_t4_b6: "बहुत सारी स्पेलिंग गलतियों या खराब डिज़ाइन वाला स्रोत अक्सर कम भरोसेमंद होता है।",
+
+  fn_t5_b1: "रिवर्स इमेज सर्च से आप यह जाँच सकते हैं कि कोई फोटो इंटरनेट पर सबसे पहले कब और कहाँ दिखी थी।",
+  fn_t5_b2: "इससे पता चलता है कि फोटो पुरानी है, किसी अलग घटना की है, या गलत संदर्भ में इस्तेमाल हो रही है।",
+  fn_t5_b3: "फोन या कंप्यूटर पर आप Google Lens या Google Images से फोटो सर्च कर सकते हैं।",
+  fn_t5_b4: "फोटो सेव या स्क्रीनशॉट करें, फिर मिलते-जुलते नतीजे देखने के लिए उसे सर्च टूल में अपलोड करें।",
+  fn_t5_b5: "अगर वही फोटो अलग-अलग कैप्शन या तारीखों के साथ दिखे, तो हो सकता है वह गुमराह करने के लिए इस्तेमाल हो रही हो।",
+  fn_t5_b6: "रिवर्स इमेज सर्च खासकर दुर्घटनाओं, दंगों या आपदाओं से जुड़ी वायरल फोटो की जाँच में बहुत उपयोगी है।",
+
+  fn_t6_b1: "किसी फोटो, वीडियो या खबर पर भरोसा करने या शेयर करने से पहले हमेशा उसकी तारीख जाँचें।",
+  fn_t6_b2: "कभी-कभी पुरानी खबरें या पुरानी फोटो ऐसे शेयर की जाती हैं जैसे वे अभी हो रही हों।",
+  fn_t6_b3: "सही संदर्भ समझने के लिए सिर्फ हेडलाइन नहीं, पूरा लेख पढ़ें।",
+  fn_t6_b4: "जाँचें कि जिस घटना का ज़िक्र है, वह वाकई उसी जगह और समय पर हुई थी।",
+  fn_t6_b5: "अपडेट या सुधार देखें — कभी-कभी शुरुआती खबर बाद में और तथ्य सामने आने पर बदल जाती है।",
+  fn_t6_b6: "किसी वीडियो क्लिप को उसके असली संदर्भ से हटाकर दिखाना पूरी तरह गलत धारणा बना सकता है।",
+
+  fn_t7_b1: "डीपफेक AI से बने ऐसे वीडियो या ऑडियो होते हैं जो लोगों को कुछ ऐसा कहते या करते दिखाते हैं जो उन्होंने कभी नहीं किया।",
+  fn_t7_b2: "AI ऐसे लोगों, जगहों या घटनाओं की असली जैसी दिखने वाली फोटो भी बना सकता है जो कभी अस्तित्व में नहीं थीं।",
+  fn_t7_b3: "वीडियो में अस्वाभाविक पलकें झपकना, अजीब रोशनी, धुंधले किनारे या होंठों की हरकत का न मिलना देखें।",
+  fn_t7_b4: "पैसे माँगने वाले जल्दबाज़ी भरे वॉइस मैसेज या कॉल से सावधान रहें — आवाज़ भी क्लोन की जा सकती है।",
+  fn_t7_b5: "रिवर्स इमेज सर्च और फैक्ट-चेकिंग टूल कभी-कभी AI से बनी फोटो पहचानने में मदद कर सकते हैं।",
+  fn_t7_b6: "अगर कोई वीडियो या ऑडियो क्लिप उस व्यक्ति के लिए चौंकाने वाला या असामान्य लगे, तो भरोसा करने से पहले जाँच करें।",
+
+  fn_t8_b1: "खबर, चैट या सोशल मीडिया पोस्ट के स्क्रीनशॉट को साधारण ऐप्स से आसानी से एडिट किया जा सकता है।",
+  fn_t8_b2: "नकली स्क्रीनशॉट में ऐसा मैसेज, ट्वीट या हेडलाइन दिख सकती है जो वास्तव में कभी पोस्ट ही नहीं हुई।",
+  fn_t8_b3: "जाँचें कि वही मैसेज या पोस्ट असली ऐप या वेबसाइट पर सीधे मिलती है या नहीं।",
+  fn_t8_b4: "अलग-अलग फॉन्ट, स्पेसिंग या लोगो पर ध्यान दें, ये एडिटिंग के संकेत हो सकते हैं।",
+  fn_t8_b5: "बिना तारीख, यूज़रनेम या वेरिफाइड अकाउंट के निशान वाले स्क्रीनशॉट से सावधान रहें।",
+  fn_t8_b6: "अगर स्क्रीनशॉट की पुष्टि कहीं और से न हो सके, तो उसे अपुष्ट ही मानें।",
+
+  fn_t9_b1: "छेड़छाड़ की गई सामग्री में एडिट की गई फोटो, क्रॉप की गई इमेज या स्पीड/आवाज़ बदली गई वीडियो शामिल होती हैं।",
+  fn_t9_b2: "फोटो या वीडियो को क्रॉप करने से ज़रूरी संदर्भ हट सकता है और उसका मतलब बदल सकता है।",
+  fn_t9_b3: "धुंधले हिस्से, अजीब परछाइयाँ या मुड़ी हुई सीधी रेखाओं पर ध्यान से देखें — ये एडिटिंग के संकेत हैं।",
+  fn_t9_b4: "अगर मिल सके, तो असली स्रोत से सामग्री की तुलना करके अंतर पहचानें।",
+  fn_t9_b5: "ऐसी सामग्री से सावधान रहें जो गुस्सा, डर या तेज़ प्रतिक्रिया भड़काने के लिए बनाई गई लगे।",
+  fn_t9_b6: "शक होने पर खुद से पूछें: \"अगर मैं इस पर भरोसा करके शेयर करूँ, तो इससे फायदा किसे होगा?\"",
+
+  fn_t10_b1: "क्या मैंने यह खबर कम से कम एक भरोसेमंद, जाने-माने स्रोत पर जाँच ली है?",
+  fn_t10_b2: "क्या मुझे पता है कि यह सामग्री किसने बनाई या पोस्ट की है, और क्या वह असली स्रोत है?",
+  fn_t10_b3: "क्या मैंने तारीख जाँच ली है ताकि यह पक्का हो सके कि यह पुरानी खबर नहीं है?",
+  fn_t10_b4: "क्या मैंने सिर्फ हेडलाइन या छोटी क्लिप नहीं, बल्कि पूरा संदर्भ देखा है?",
+  fn_t10_b5: "अगर सामग्री फोटो या वीडियो है, तो क्या मैंने जाँचा है कि वह एडिटेड या AI-निर्मित तो नहीं लगती?",
+  fn_t10_b6: "अगर अब भी शक है, तो पुष्टि होने तक शेयर न करना ज़्यादा सुरक्षित है।"
+});
+
+Object.assign(translations.mr, {
+  fn_section_title: "प्रत्येक विषय सविस्तर जाणून घ्या",
+  fn_section_lead: "फेक न्यूज कशी ओळखावी आणि थांबवावी हे जाणून घेण्यासाठी एखाद्या विषयावर टॅप करा.",
+  fn_t1_title: "मिसइन्फॉर्मेशन (चुकीची माहिती) म्हणजे काय?",
+  fn_t2_title: "फेक न्यूज विरुद्ध दिशाभूल करणारी माहिती",
+  fn_t3_title: "एखादा दावा कसा पडताळावा",
+  fn_t4_title: "स्रोत तपासणे",
+  fn_t5_title: "रिव्हर्स-इमेज-सर्च संकल्पना",
+  fn_t6_title: "तारीख आणि संदर्भ तपासणे",
+  fn_t7_title: "AI-निर्मित मजकूर आणि डीपफेक",
+  fn_t8_title: "बनावट स्क्रीनशॉट्स",
+  fn_t9_title: "बदल केलेला मजकूर ओळखणे",
+  fn_t10_title: "शेअर करण्यापूर्वीची चेकलिस्ट",
+
+  fn_t1_b1: "मिसइन्फॉर्मेशन म्हणजे अशी माहिती जी खोटी किंवा चुकीची असते, मग ती जाणूनबुजून दिशाभूल करण्यासाठी असो वा नसो.",
+  fn_t1_b2: "डिसइन्फॉर्मेशन म्हणजे लोकांना फसवण्यासाठी जाणूनबुजून तयार केलेली आणि पसरवली जाणारी खोटी माहिती.",
+  fn_t1_b3: "मिसइन्फॉर्मेशन सोशल मीडिया, मेसेजिंग अ‍ॅप्स, टीव्ही किंवा तोंडी बोलण्यातूनही पसरू शकते.",
+  fn_t1_b4: "चांगल्या हेतूने असलेले लोकसुद्धा न तपासता शेअर करून चुकून चुकीची माहिती पसरवू शकतात.",
+  fn_t1_b5: "चुकीची माहिती आरोग्यविषयक निर्णय, निवडणुका, पैशाचे व्यवहार आणि वैयक्तिक सुरक्षेवर परिणाम करू शकते.",
+  fn_t1_b6: "धक्कादायक वाटणारी कोणतीही गोष्ट विश्वास ठेवण्यापूर्वी किंवा शेअर करण्यापूर्वी थांबा आणि विचार करा.",
+
+  fn_t2_b1: "फेक न्यूज म्हणजे पूर्णपणे बनावट किंवा खोटा मजकूर जो खऱ्या बातमीसारखा दाखवला जातो.",
+  fn_t2_b2: "दिशाभूल करणाऱ्या माहितीत काही सत्य असू शकते, पण ती अशा प्रकारे मांडली जाते की चुकीचा समज तयार होतो.",
+  fn_t2_b3: "खरा फोटो किंवा व्हिडिओ चुकीच्या कॅप्शन किंवा तारखेसह वापरणे ही दिशाभूल करणारी गोष्ट आहे, पूर्णपणे फेक नाही.",
+  fn_t2_b4: "फेक न्यूज खरी वाटावी यासाठी अनेकदा बनावट वेबसाइट, बनावट लोगो किंवा बनावट पत्रकारांची नावे वापरते.",
+  fn_t2_b5: "लक्ष वेधण्यासाठी दिशाभूल करणारे मथळे खऱ्या बातमीला वाढवून-चढवून किंवा तोडून-मोडून मांडू शकतात.",
+  fn_t2_b6: "दोन्ही प्रकारच्या मजकुरामुळे गोंधळ होऊ शकतो, म्हणून विश्वास ठेवण्यापूर्वी पडताळणी करणे गरजेचे आहे.",
+
+  fn_t3_b1: "विश्वासार्ह न्यूज चॅनेल्सही हीच बातमी दाखवत आहेत का हे पाहण्यासाठी दावा सर्च इंजिनवर शोधा.",
+  fn_t3_b2: "कमीत कमी दोन-तीन विश्वासार्ह आणि प्रसिद्ध स्रोतांवर तीच बातमी तपासा.",
+  fn_t3_b3: "व्हायरल दाव्यांची पडताळणी करण्यासाठी फॅक्ट-चेकिंग वेबसाइट्स (जसे PIB Fact Check, Alt News, किंवा Boom Live) वापरा.",
+  fn_t3_b4: "जे दावे खूप धक्कादायक, खूप छान किंवा खूप घाईचे वाटतात, त्याबाबत जास्त सावध रहा.",
+  fn_t3_b5: "दाव्यात खरी नावे, तारखा आणि ठिकाणे दिली आहेत का ते तपासा, जेणेकरून पडताळणी करता येईल.",
+  fn_t3_b6: "एखाद्या विश्वासार्ह स्रोताकडून दाव्याची पुष्टी होत नसेल, तर तो अजून शेअर करू नका.",
+
+  fn_t4_b1: "माहिती कोणी प्रकाशित केली आहे ते पहा — हा एखादा ओळखीचा, विश्वासार्ह न्यूज संस्था आहे का?",
+  fn_t4_b2: "वेबसाइटचा पत्ता (URL) काळजीपूर्वक तपासा; बनावट वेबसाइट्स अनेकदा खऱ्या नावांसारखी नावे वापरतात.",
+  fn_t4_b3: "स्रोत खरा आहे की नाही हे पाहण्यासाठी \"About Us\" पेज आणि संपर्क माहिती तपासा.",
+  fn_t4_b4: "ओळख नसलेल्या अनामिक अकाउंट्स किंवा पेजेसवरून आलेल्या पोस्टबाबत सावध रहा.",
+  fn_t4_b5: "सरकारी माहिती सहसा .gov.in वेबसाइट्स किंवा व्हेरिफाइड सोशल मीडिया अकाउंट्सवरून येते.",
+  fn_t4_b6: "खूप स्पेलिंग चुका किंवा खराब डिझाइन असलेला स्रोत सहसा कमी विश्वासार्ह असतो.",
+
+  fn_t5_b1: "रिव्हर्स इमेज सर्चमुळे एखादा फोटो इंटरनेटवर सर्वप्रथम कधी आणि कुठे दिसला हे तपासता येते.",
+  fn_t5_b2: "यामुळे फोटो जुना आहे, वेगळ्या घटनेचा आहे, की चुकीच्या संदर्भात वापरला जात आहे हे कळते.",
+  fn_t5_b3: "फोन किंवा कॉम्प्युटरवर तुम्ही Google Lens किंवा Google Images वापरून फोटो शोधू शकता.",
+  fn_t5_b4: "फोटो सेव्ह किंवा स्क्रीनशॉट करा, नंतर जुळणारे निकाल पाहण्यासाठी तो सर्च टूलमध्ये अपलोड करा.",
+  fn_t5_b5: "तोच फोटो वेगवेगळ्या कॅप्शन किंवा तारखांसह दिसत असेल, तर तो दिशाभूल करण्यासाठी वापरला जात असू शकतो.",
+  fn_t5_b6: "अपघात, दंगली किंवा आपत्तींशी संबंधित व्हायरल फोटोंच्या पडताळणीसाठी रिव्हर्स इमेज सर्च विशेष उपयुक्त आहे.",
+
+  fn_t6_b1: "एखाद्या फोटो, व्हिडिओ किंवा बातमीवर विश्वास ठेवण्यापूर्वी किंवा शेअर करण्यापूर्वी नेहमी त्याची तारीख तपासा.",
+  fn_t6_b2: "कधीकधी जुन्या बातम्या किंवा जुने फोटो असे शेअर केले जातात की जणू ते आत्ता घडत आहेत.",
+  fn_t6_b3: "खरा संदर्भ समजण्यासाठी फक्त मथळा नाही, तर पूर्ण लेख वाचा.",
+  fn_t6_b4: "उल्लेख केलेली घटना खरोखर त्याच ठिकाणी आणि त्याच वेळी घडली का हे तपासा.",
+  fn_t6_b5: "अपडेट्स किंवा सुधारणा पहा — कधीकधी सुरुवातीची बातमी नंतर अधिक तथ्ये समोर आल्यावर बदलते.",
+  fn_t6_b6: "एखादी व्हिडिओ क्लिप तिच्या मूळ संदर्भातून काढून दाखवल्यास पूर्णपणे चुकीचा समज तयार होऊ शकतो.",
+
+  fn_t7_b1: "डीपफेक म्हणजे AI ने तयार केलेले व्हिडिओ किंवा ऑडिओ, ज्यात लोक असे काही बोलताना किंवा करताना दिसतात जे त्यांनी कधीच केलेले नसते.",
+  fn_t7_b2: "AI कधीही अस्तित्वात नसलेल्या लोकांचे, ठिकाणांचे किंवा घटनांचे खऱ्यासारखे दिसणारे फोटोही तयार करू शकते.",
+  fn_t7_b3: "व्हिडिओमध्ये अनैसर्गिक डोळे मिचकावणे, विचित्र प्रकाश, अस्पष्ट कडा किंवा ओठांच्या हालचालीत विसंगती पहा.",
+  fn_t7_b4: "पैसे मागणाऱ्या घाईगडबडीच्या व्हॉइस मेसेज किंवा कॉल्सबाबत सावध रहा — आवाजसुद्धा क्लोन केला जाऊ शकतो.",
+  fn_t7_b5: "रिव्हर्स इमेज सर्च आणि फॅक्ट-चेकिंग टूल्स कधीकधी AI-निर्मित फोटो ओळखण्यास मदत करू शकतात.",
+  fn_t7_b6: "एखादी व्हिडिओ किंवा ऑडिओ क्लिप त्या व्यक्तीसाठी धक्कादायक किंवा असामान्य वाटत असेल, तर विश्वास ठेवण्यापूर्वी पडताळणी करा.",
+
+  fn_t8_b1: "बातमी, चॅट किंवा सोशल मीडिया पोस्टचे स्क्रीनशॉट साध्या अ‍ॅप्सने सहज एडिट करता येतात.",
+  fn_t8_b2: "बनावट स्क्रीनशॉटमध्ये असा मेसेज, ट्वीट किंवा मथळा दिसू शकतो जो प्रत्यक्षात कधीच पोस्ट झालेला नसतो.",
+  fn_t8_b3: "तोच मेसेज किंवा पोस्ट मूळ अ‍ॅप किंवा वेबसाइटवर थेट सापडते का ते तपासा.",
+  fn_t8_b4: "वेगवेगळे फॉन्ट, स्पेसिंग किंवा लोगो लक्षात घ्या, ही एडिटिंगची चिन्हे असू शकतात.",
+  fn_t8_b5: "तारीख, युजरनेम किंवा व्हेरिफाइड अकाउंटचे चिन्ह नसलेल्या स्क्रीनशॉट्सबाबत सावध रहा.",
+  fn_t8_b6: "स्क्रीनशॉटची पडताळणी इतरत्र होत नसेल, तर तो अपुष्ट समजा.",
+
+  fn_t9_b1: "बदल केलेल्या मजकुरात एडिट केलेले फोटो, क्रॉप केलेल्या इमेज किंवा वेग/आवाज बदललेले व्हिडिओ यांचा समावेश होतो.",
+  fn_t9_b2: "फोटो किंवा व्हिडिओ क्रॉप केल्याने महत्त्वाचा संदर्भ निघून जाऊ शकतो आणि त्याचा अर्थ बदलू शकतो.",
+  fn_t9_b3: "अस्पष्ट भाग, विचित्र सावल्या किंवा वाकलेल्या सरळ रेषांकडे बारकाईने लक्ष द्या — ही एडिटिंगची चिन्हे आहेत.",
+  fn_t9_b4: "शक्य असल्यास मूळ स्रोताशी मजकूर ताडून पाहा आणि फरक ओळखा.",
+  fn_t9_b5: "राग, भीती किंवा तीव्र प्रतिक्रिया भडकवण्यासाठी तयार केलेला वाटणारा मजकूर याबाबत सावध रहा.",
+  fn_t9_b6: "शंका असल्यास स्वतःला विचारा: \"मी यावर विश्वास ठेवून शेअर केल्यास याचा फायदा कोणाला होईल?\"",
+
+  fn_t10_b1: "मी ही बातमी किमान एका विश्वासार्ह, प्रसिद्ध स्रोतावर तपासली आहे का?",
+  fn_t10_b2: "हा मजकूर कोणी तयार केला किंवा पोस्ट केला हे मला माहीत आहे का, आणि तो खरा स्रोत आहे का?",
+  fn_t10_b3: "ही जुनी बातमी नाही याची खात्री करण्यासाठी मी तारीख तपासली आहे का?",
+  fn_t10_b4: "मी फक्त मथळा किंवा छोटी क्लिप नाही, तर पूर्ण संदर्भ पाहिला आहे का?",
+  fn_t10_b5: "मजकूर फोटो किंवा व्हिडिओ असेल, तर तो एडिटेड किंवा AI-निर्मित वाटतो का हे मी तपासले आहे का?",
+  fn_t10_b6: "अजूनही शंका असेल, तर पडताळणी होईपर्यंत शेअर न करणे अधिक सुरक्षित आहे."
+});
+
+if (typeof dsApplyTranslations === 'function') { dsApplyTranslations(); }
+
+const scOptions = ["Forward it immediately to warn everyone", "Check a trusted news source to verify it first", "Assume it's true because it sounds serious", "Reply asking who sent it originally"];
+const scCorrect = 1;
+const scExplanation = "Verifying with a trusted, reputable news source before sharing helps stop the spread of misinformation.";
+const optWrap = document.getElementById('scenarioOptions');
+const feedbackEl = document.getElementById('scenarioFeedback');
+scOptions.forEach((text, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = String.fromCharCode(65 + idx) + '. ' + text;
+    btn.addEventListener('click', () => {
+        const buttons = optWrap.querySelectorAll('button');
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === scCorrect) b.classList.add('correct');
+        });
+        if (idx !== scCorrect) btn.classList.add('incorrect');
+        feedbackEl.textContent = (idx === scCorrect ? '✅ Correct! ' : '❌ Not quite. ') + scExplanation;
+    
+        if (typeof dsMarkLessonComplete === 'function' && !dsIsLessonComplete('fake-news')) {
+            dsMarkLessonComplete('fake-news');
+        }
+    });
+    optWrap.appendChild(btn);
+});
+</script>
+<script>
+/* Trilingual lesson-page copy. */
+Object.assign(translations.en, {
+  "fake-news_hero_title": "📰 Fake News Awareness",
+  "fake-news_flow_learn": "LEARN",
+  "fake-news_flow_practice": "PRACTICE",
+  "fake-news_flow_quiz": "QUIZ",
+  "fake-news_flow_score": "SCORE",
+  "fake-news_flow_progress": "PROGRESS",
+  "fake-news_simple_title": "Simple Explanation",
+  "fake-news_simple_text": "Fake news is false or misleading information shared as if it were true. It can spread quickly, especially through social media and messaging apps.",
+  "fake-news_examples_title": "Practical Examples",
+  "fake-news_ex1": "A forwarded message with an alarming claim may have no real source behind it.",
+  "fake-news_ex2": "Checking multiple trusted news sources helps confirm whether something is actually true.",
+  "fake-news_ex3": "Doctored images or old photos are sometimes shared out of context to mislead people.",
+  "fake-news_safety_title": "Safety Tips",
+  "fake-news_safe1": "Check a trusted news source before believing or sharing anything surprising.",
+  "fake-news_safe2": "Many forwards do not mean something is true.",
+  "fake-news_safe3": "Use fact-checking websites to verify claims.",
+  "fake-news_safe4": "Be cautious of ALL CAPS or urgent-sounding headlines.",
+  "fake-news_safe5": "Think twice before sharing — verify first.",
+  "fake-news_scenario_title": "Real-World Scenario — Practice",
+  "fake-news_scenario_text": "You receive a WhatsApp forward claiming a well-known company is shutting down, with no source mentioned.",
+  "fake-news_scenario_question": "What should you do?",
+  "fake-news_scenario_opt1": "Forward it immediately to warn everyone",
+  "fake-news_scenario_opt2": "Check a trusted news source to verify it first",
+  "fake-news_scenario_opt3": "Assume it's true because it sounds serious",
+  "fake-news_scenario_opt4": "Reply asking who sent it originally",
+  "fake-news_scenario_correct": "Correct!",
+  "fake-news_scenario_incorrect": "Not quite.",
+  "fake-news_scenario_explanation": "Verifying with a trusted, reputable news source before sharing helps stop the spread of misinformation.",
+  "fake-news_quiz_btn": "Take the Fake News Awareness Quiz",
+  "fake-news_next_btn": "Next: Government Services",
+});
+Object.assign(translations.hi, {
+  "fake-news_hero_title": "📰 फेक न्यूज़ जागरूकता",
+  "fake-news_flow_learn": "सीखें",
+  "fake-news_flow_practice": "अभ्यास",
+  "fake-news_flow_quiz": "क्विज़",
+  "fake-news_flow_score": "स्कोर",
+  "fake-news_flow_progress": "प्रगति",
+  "fake-news_simple_title": "सरल समझ",
+  "fake-news_simple_text": "फेक न्यूज़ झूठी या भ्रामक जानकारी होती है जिसे सच की तरह साझा किया जाता है। यह खासकर सोशल मीडिया और मैसेजिंग ऐप्स के जरिए तेजी से फैल सकती है।",
+  "fake-news_examples_title": "व्यावहारिक उदाहरण",
+  "fake-news_ex1": "डराने वाले दावे वाला फॉरवर्ड संदेश किसी वास्तविक स्रोत पर आधारित न हो सकता है।",
+  "fake-news_ex2": "कई भरोसेमंद समाचार स्रोतों की जांच करने से पता चलता है कि बात वास्तव में सच है या नहीं।",
+  "fake-news_ex3": "लोगों को गुमराह करने के लिए बदली हुई तस्वीरें या पुरानी तस्वीरें कभी-कभी गलत संदर्भ में साझा की जाती हैं।",
+  "fake-news_safety_title": "सुरक्षा सुझाव",
+  "fake-news_safe1": "किसी हैरान करने वाली बात पर विश्वास या साझा करने से पहले भरोसेमंद समाचार स्रोत जांचें।",
+  "fake-news_safe2": "कई फॉरवर्ड होने का मतलब यह नहीं कि बात सच है।",
+  "fake-news_safe3": "दावों की पुष्टि के लिए फैक्ट-चेकिंग वेबसाइटों का उपयोग करें।",
+  "fake-news_safe4": "ALL CAPS या बहुत जरूरी लगने वाली हेडलाइन्स से सावधान रहें।",
+  "fake-news_safe5": "साझा करने से पहले दो बार सोचें — पहले पुष्टि करें।",
+  "fake-news_scenario_title": "वास्तविक जीवन की स्थिति — अभ्यास",
+  "fake-news_scenario_text": "आपको WhatsApp पर एक फॉरवर्ड मिलता है जिसमें दावा है कि एक जानी-मानी कंपनी बंद हो रही है, लेकिन कोई स्रोत नहीं दिया गया है।",
+  "fake-news_scenario_question": "आपको क्या करना चाहिए?",
+  "fake-news_scenario_opt1": "सबको चेतावनी देने के लिए तुरंत फॉरवर्ड करें",
+  "fake-news_scenario_opt2": "पहले किसी भरोसेमंद समाचार स्रोत से इसकी पुष्टि करें",
+  "fake-news_scenario_opt3": "इसे सच मान लें क्योंकि बात गंभीर लगती है",
+  "fake-news_scenario_opt4": "जवाब देकर पूछें कि इसे सबसे पहले किसने भेजा",
+  "fake-news_scenario_correct": "सही!",
+  "fake-news_scenario_incorrect": "पूरी तरह सही नहीं।",
+  "fake-news_scenario_explanation": "साझा करने से पहले भरोसेमंद समाचार स्रोत से पुष्टि करने से गलत जानकारी के फैलाव को रोकने में मदद मिलती है।",
+  "fake-news_quiz_btn": "फेक न्यूज़ जागरूकता क्विज़ लें",
+  "fake-news_next_btn": "अगला: सरकारी सेवाएं",
+});
+Object.assign(translations.mr, {
+  "fake-news_hero_title": "📰 फेक न्यूज जागरूकता",
+  "fake-news_flow_learn": "शिका",
+  "fake-news_flow_practice": "सराव",
+  "fake-news_flow_quiz": "क्विझ",
+  "fake-news_flow_score": "गुण",
+  "fake-news_flow_progress": "प्रगती",
+  "fake-news_simple_title": "सोपे स्पष्टीकरण",
+  "fake-news_simple_text": "फेक न्यूज म्हणजे खोटी किंवा दिशाभूल करणारी माहिती जी खरी असल्याप्रमाणे शेअर केली जाते. ती विशेषतः सोशल मीडिया आणि मेसेजिंग अ‍ॅप्समधून वेगाने पसरू शकते.",
+  "fake-news_examples_title": "व्यावहारिक उदाहरणे",
+  "fake-news_ex1": "घाबरवणारा दावा असलेल्या फॉरवर्ड संदेशामागे कोणताही खरा स्रोत नसू शकतो.",
+  "fake-news_ex2": "अनेक विश्वासार्ह बातमी स्रोत तपासल्याने एखादी गोष्ट खरोखर खरी आहे का हे समजण्यास मदत होते.",
+  "fake-news_ex3": "लोकांची दिशाभूल करण्यासाठी बदललेली चित्रे किंवा जुने फोटो कधी कधी चुकीच्या संदर्भात शेअर केले जातात.",
+  "fake-news_safety_title": "सुरक्षिततेच्या टिप्स",
+  "fake-news_safe1": "आश्चर्यकारक माहितीवर विश्वास ठेवण्यापूर्वी किंवा ती शेअर करण्यापूर्वी विश्वासार्ह बातमी स्रोत तपासा.",
+  "fake-news_safe2": "एखादी गोष्ट अनेकदा फॉरवर्ड झाली म्हणजे ती खरी आहे असे नाही.",
+  "fake-news_safe3": "दाव्यांची पडताळणी करण्यासाठी फॅक्ट-चेकिंग वेबसाइट्स वापरा.",
+  "fake-news_safe4": "ALL CAPS किंवा अतितातडीच्या वाटणाऱ्या मथळ्यांपासून सावध रहा.",
+  "fake-news_safe5": "शेअर करण्यापूर्वी दोनदा विचार करा — आधी पडताळणी करा.",
+  "fake-news_scenario_title": "वास्तविक जीवनातील प्रसंग — सराव",
+  "fake-news_scenario_text": "तुम्हाला WhatsApp वर एक फॉरवर्ड मिळतो ज्यात एका प्रसिद्ध कंपनीचे काम बंद होणार असल्याचा दावा आहे, पण कोणताही स्रोत दिलेला नाही.",
+  "fake-news_scenario_question": "तुम्ही काय कराल?",
+  "fake-news_scenario_opt1": "सर्वांना सावध करण्यासाठी ते लगेच फॉरवर्ड करा",
+  "fake-news_scenario_opt2": "आधी विश्वासार्ह बातमी स्रोतावरून त्याची पडताळणी करा",
+  "fake-news_scenario_opt3": "गोष्ट गंभीर वाटते म्हणून ती खरी मानून घ्या",
+  "fake-news_scenario_opt4": "उत्तर देऊन विचारा की हे मूळात कोणी पाठवले",
+  "fake-news_scenario_correct": "बरोबर!",
+  "fake-news_scenario_incorrect": "पूर्णपणे बरोबर नाही.",
+  "fake-news_scenario_explanation": "शेअर करण्यापूर्वी विश्वासार्ह बातमी स्रोताकडून पडताळणी केल्याने चुकीची माहिती पसरू नये यास मदत होते.",
+  "fake-news_quiz_btn": "फेक न्यूज जागरूकता क्विझ घ्या",
+  "fake-news_next_btn": "पुढील: सरकारी सेवा",
+});
+function applyScenarioLanguage() {
+  const buttons = document.querySelectorAll('#scenarioOptions button');
+  buttons.forEach((btn, idx) => { const key = 'fake-news_scenario_opt' + (idx + 1); btn.textContent = String.fromCharCode(65 + idx) + '. ' + dsT(key); });
+  const feedback = document.getElementById('scenarioFeedback');
+  if (feedback && buttons.length) {
+    const incorrect = Array.from(buttons).findIndex(btn => btn.classList.contains('incorrect'));
+    const answered = incorrect !== -1 ? incorrect : Array.from(buttons).findIndex(btn => btn.classList.contains('correct'));
+    if (answered !== -1) feedback.textContent = (answered === 1 ? dsT('fake-news_scenario_correct') + ' ' : dsT('fake-news_scenario_incorrect') + ' ') + dsT('fake-news_scenario_explanation');
+  }
+}
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+applyScenarioLanguage();
+const lessonLangSelect = document.getElementById('langSelect');
+if (lessonLangSelect) lessonLangSelect.addEventListener('change', () => setTimeout(applyScenarioLanguage, 0));
+document.querySelectorAll('#scenarioOptions button').forEach(btn => btn.addEventListener('click', () => setTimeout(applyScenarioLanguage, 0)));
+</script>
+</body>
+</html>

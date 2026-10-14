@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can You Spot the Scam? — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1 data-i18n="scam_game_title">🚨 Can You Spot the Scam?</h1>
+  <p class="subtitle" data-i18n="scam_game_lead">Read each scenario and decide what you should do.</p>
+</section>
+
+<div id="scamGameArea"></div>
+
+<div id="scamGameResult" class="result-card hidden" style="max-width:650px;margin:20px auto;">
+  <h3 data-i18n="scam_game_result_title">Scams Identified</h3>
+  <div class="result-score" id="scamScore"></div>
+  <div class="result-percent" id="scamPercent"></div>
+  <p id="scamFeedbackMsg"></p>
+  <div class="result-actions">
+    <button id="scamRestartBtn" class="btn btn-primary">Try Again</button>
+    <a href="dashboard.html" class="btn btn-secondary" data-i18n="quiz_back_dashboard">Back to Dashboard</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+<script>
+const scamScenarios = [
+  { text:{en:"You receive a message: 'Your bank account will be blocked unless you share the OTP sent to your phone.'",hi:"आपको एक संदेश मिलता है: 'फोन पर भेजा गया OTP साझा नहीं करने पर आपका बैंक खाता ब्लॉक कर दिया जाएगा।'",mr:"तुम्हाला संदेश येतो: 'फोनवर आलेला OTP शेअर केला नाही तर तुमचे बँक खाते ब्लॉक केले जाईल.'"}, options:{en:["Share the OTP immediately to avoid being blocked","Ignore the message and never share the OTP with anyone","Call the number in the message to confirm","Forward it to family to warn them"],hi:["ब्लॉक होने से बचने के लिए तुरंत OTP साझा करें","संदेश को नज़रअंदाज़ करें और OTP किसी के साथ साझा न करें","पुष्टि करने के लिए संदेश में दिए नंबर पर कॉल करें","परिवार को चेतावनी देने के लिए संदेश आगे भेजें"],mr:["ब्लॉक होऊ नये म्हणून लगेच OTP शेअर करा","संदेशाकडे दुर्लक्ष करा आणि OTP कोणाशीही शेअर करू नका","खात्री करण्यासाठी संदेशातील नंबरवर कॉल करा","कुटुंबाला सावध करण्यासाठी संदेश पुढे पाठवा"]}, correct:1, explanation:{en:"Banks never ask for your OTP. This message is designed to create panic so you share sensitive information.",hi:"बैंक कभी भी आपका OTP नहीं मांगते। यह संदेश घबराहट पैदा करके संवेदनशील जानकारी साझा करवाने की कोशिश करता है।",mr:"बँका कधीही तुमचा OTP मागत नाहीत. हा संदेश घाबरवून संवेदनशील माहिती शेअर करण्यासाठी तयार केला आहे."} },
+  { text:{en:"A message says: 'Scan this QR code to receive ₹5,000 cashback instantly!'",hi:"एक संदेश कहता है: 'तुरंत ₹5,000 कैशबैक पाने के लिए इस QR कोड को स्कैन करें!'",mr:"एका संदेशात लिहिले आहे: 'ताबडतोब ₹5,000 कॅशबॅक मिळवण्यासाठी हा QR कोड स्कॅन करा!'"}, options:{en:["Scan it right away to get the cashback","Ignore it — QR codes are only used to SEND money, not receive it","Share it with 5 friends first","Scan it and enter your PIN twice to be sure"],hi:["कैशबैक पाने के लिए तुरंत स्कैन करें","इसे नज़रअंदाज़ करें — QR कोड से भुगतान किया जा सकता है, इसलिए अनपेक्षित अनुरोध की पुष्टि करें","पहले इसे 5 दोस्तों के साथ साझा करें","इसे स्कैन करके पुष्टि के लिए PIN दो बार डालें"],mr:["कॅशबॅक मिळवण्यासाठी लगेच स्कॅन करा","दुर्लक्ष करा — QR कोडने पेमेंट करता येते, त्यामुळे अनपेक्षित विनंतीची खात्री करा","आधी ते 5 मित्रांना शेअर करा","स्कॅन करून खात्रीसाठी PIN दोनदा टाका"]}, correct:1, explanation:{en:"QR codes and UPI PINs are only needed to send money. Being asked to scan one to 'receive' money is a classic scam.",hi:"QR कोड से भुगतान किया जा सकता है। पैसे 'प्राप्त करने' के लिए अनजान QR कोड स्कैन करने को कहना स्कैम हो सकता है।",mr:"QR कोडचा वापर पेमेंट करण्यासाठी होऊ शकतो. पैसे 'मिळवण्यासाठी' अनोळखी QR कोड स्कॅन करण्यास सांगणे स्कॅम असू शकते."} },
+  { text:{en:"You get a call from someone claiming to be bank customer care, asking you to install a remote-access app to 'fix an issue' with your account.",hi:"आपको बैंक कस्टमर केयर बनकर एक कॉल आता है और खाते की 'समस्या ठीक करने' के लिए रिमोट-एक्सेस ऐप इंस्टॉल करने को कहा जाता है।",mr:"बँक कस्टमर केअर असल्याचे सांगणारा फोन येतो आणि खात्याची 'समस्या सोडवण्यासाठी' रिमोट-ॲक्सेस अॅप इन्स्टॉल करण्यास सांगितले जाते."}, options:{en:["Install the app since they sound official","Refuse and hang up — legitimate support never needs remote access this way","Install it but don't share your PIN","Ask them to call back on WhatsApp instead"],hi:["वे आधिकारिक लग रहे हैं, इसलिए ऐप इंस्टॉल करें","मना करें और कॉल काट दें — अनजान कॉलर को रिमोट एक्सेस न दें","ऐप इंस्टॉल करें लेकिन PIN साझा न करें","उन्हें WhatsApp पर दोबारा कॉल करने को कहें"],mr:["ते अधिकृत वाटत आहेत म्हणून अॅप इन्स्टॉल करा","नकार द्या आणि फोन कट करा — अनोळखी कॉलरला रिमोट ॲक्सेस देऊ नका","अॅप इन्स्टॉल करा पण PIN शेअर करू नका","त्यांना WhatsApp वर पुन्हा कॉल करण्यास सांगा"]}, correct:1, explanation:{en:"Scammers use remote-access apps to see your screen and steal your PIN or OTP directly. Real support doesn't operate this way over an unsolicited call.",hi:"बिना मांगे रिमोट-एक्सेस की मांग बड़ा चेतावनी संकेत है। स्कैमर इसका उपयोग आपकी स्क्रीन देखने या नियंत्रित करने के लिए कर सकता है।",mr:"अनोळखी व्यक्तीकडून रिमोट ॲक्सेसची मागणी हा मोठा धोक्याचा संकेत आहे. स्कॅमर तुमची स्क्रीन पाहण्यासाठी किंवा नियंत्रित करण्यासाठी त्याचा वापर करू शकतो."} },
+  { text:{en:"An email from 'yourbank-verify.com' asks you to click a link and log in to 'confirm your details' within 24 hours.",hi:"'yourbank-verify.com' से ईमेल आपको 24 घंटे के भीतर 'विवरण की पुष्टि' करने के लिए लिंक पर क्लिक करके लॉग इन करने को कहता है।",mr:"'yourbank-verify.com' वरून आलेला ईमेल तुम्हाला 24 तासांत 'माहितीची खात्री' करण्यासाठी लिंकवर क्लिक करून लॉग इन करण्यास सांगतो."}, options:{en:["Click the link immediately since there's a deadline","Check the domain carefully — it doesn't match your real bank, so don't click it","Log in and see what happens","Reply to the email with your account number"],hi:["समय-सीमा है इसलिए तुरंत लिंक पर क्लिक करें","डोमेन ध्यान से जांचें — यह आपके बैंक की ज्ञात वेबसाइट से मेल नहीं खाता","लॉग इन करके देखें क्या होता है","ईमेल का जवाब देकर अपना खाता नंबर भेजें"],mr:["वेळेची मर्यादा आहे म्हणून लगेच लिंकवर क्लिक करा","डोमेन काळजीपूर्वक तपासा — ते तुमच्या बँकेच्या माहित असलेल्या वेबसाइटशी जुळत नाही","लॉग इन करून काय होते ते पाहा","ईमेलला उत्तर देऊन खाते क्रमांक पाठवा"]}, correct:1, explanation:{en:"An unfamiliar or misleading domain plus urgency is a phishing warning sign. Use your bank's known official app or website instead.",hi:"अपरिचित या भ्रामक डोमेन और जल्दी करने का दबाव फिशिंग के चेतावनी संकेत हैं। इसके बजाय बैंक की ज्ञात आधिकारिक ऐप या वेबसाइट का उपयोग करें।",mr:"अपरिचित किंवा दिशाभूल करणारे डोमेन आणि घाई करण्याचा दबाव हे फिशिंगचे संकेत आहेत. त्याऐवजी बँकेचे अधिकृत अॅप किंवा माहित असलेली वेबसाइट वापरा."} },
+  { text:{en:"A job posting offers a work-from-home role paying very well, but asks you to pay a 'registration fee' before starting.",hi:"एक नौकरी का विज्ञापन बहुत अच्छी तनख्वाह वाली वर्क-फ्रॉम-होम नौकरी देता है, लेकिन शुरू करने से पहले 'रजिस्ट्रेशन फीस' मांगता है।",mr:"एक नोकरीची जाहिरात चांगल्या पगाराची वर्क-फ्रॉम-होम नोकरी देते, पण सुरुवात करण्यापूर्वी 'नोंदणी शुल्क' मागते."}, options:{en:["Pay the fee since the job pays well","Be cautious — genuine employers don't ask candidates to pay money upfront","Pay half the fee to test it out","Share your bank details as requested"],hi:["नौकरी अच्छी है इसलिए फीस भरें","सावधान रहें — नियोक्ता की पुष्टि करें और नौकरी के लिए पहले से पैसे न दें","जांचने के लिए आधी फीस दें","मांगे गए अनुसार बैंक विवरण साझा करें"],mr:["नोकरीचा पगार चांगला आहे म्हणून शुल्क भरा","सावध रहा — नियोक्त्याची खात्री करा आणि नोकरीसाठी आधी पैसे देऊ नका","तपासण्यासाठी अर्धे शुल्क भरा","मागितल्याप्रमाणे बँकेची माहिती शेअर करा"]}, correct:1, explanation:{en:"An upfront payment request is a common job-scam warning sign. Verify the employer through trusted channels before sharing information or money.",hi:"पहले पैसे मांगना नौकरी स्कैम का आम चेतावनी संकेत है। जानकारी या पैसे देने से पहले विश्वसनीय माध्यमों से नियोक्ता की पुष्टि करें।",mr:"आधी पैसे मागणे हा जॉब स्कॅमचा सामान्य धोक्याचा संकेत आहे. माहिती किंवा पैसे देण्यापूर्वी विश्वासार्ह माध्यमातून नियोक्त्याची खात्री करा."} },
+  { text:{en:"You get an SMS: 'Your parcel delivery failed. Pay a small ₹10 redelivery fee here: [link]' from an unknown number.",hi:"आपको अनजान नंबर से SMS मिलता है: 'आपका पार्सल डिलीवर नहीं हुआ। यहां ₹10 का छोटा री-डिलीवरी शुल्क भरें: [लिंक]'",mr:"तुम्हाला अनोळखी नंबरवरून SMS येतो: 'तुमचे पार्सल डिलिव्हर झाले नाही. येथे ₹10 चे छोटे री-डिलिव्हरी शुल्क भरा: [लिंक]'"}, options:{en:["Click the link and pay the small fee","Be suspicious of unexpected delivery fee requests via SMS links, and verify directly with the courier company","Pay it since it's a small amount","Forward the link to a friend to check"],hi:["लिंक पर क्लिक करके छोटा शुल्क भरें","अनपेक्षित डिलीवरी-फीस लिंक से सावधान रहें और कूरियर से सीधे पुष्टि करें","राशि छोटी है इसलिए भुगतान करें","जांचने के लिए लिंक किसी दोस्त को भेजें"],mr:["लिंकवर क्लिक करून छोटे शुल्क भरा","अनपेक्षित डिलिव्हरी-फी लिंकपासून सावध रहा आणि कुरिअरकडून थेट खात्री करा","रक्कम कमी आहे म्हणून पैसे भरा","तपासण्यासाठी लिंक मित्राला पाठवा"]}, correct:1, explanation:{en:"Fake delivery fee messages are a common scam, using a very small amount to seem low-risk. Verify directly through the courier's official app or website.",hi:"अनपेक्षित डिलीवरी-फीस लिंक एक आम स्कैम तरीका है। संदेश की लिंक के बजाय कूरियर की आधिकारिक ऐप या वेबसाइट से पुष्टि करें।",mr:"अनपेक्षित डिलिव्हरी-फी लिंक हा सामान्य स्कॅमचा प्रकार आहे. संदेशातील लिंकऐवजी कुरिअरच्या अधिकृत अॅप किंवा वेबसाइटवरून खात्री करा."} },
+  { text:{en:"A government scheme message asks you to enter your Aadhaar number and bank details on a website that does not end in .gov.in.",hi:"एक सरकारी योजना का संदेश आपसे ऐसी वेबसाइट पर आधार नंबर और बैंक विवरण भरने को कहता है जिसका पता .gov.in पर समाप्त नहीं होता।",mr:"एका सरकारी योजनेचा संदेश तुम्हाला अशा वेबसाइटवर आधार क्रमांक आणि बँक माहिती भरण्यास सांगतो जिचा पत्ता .gov.in ने संपत नाही."}, options:{en:["Enter your details since it mentions a government scheme","Avoid the site and verify the scheme through an official government website","Enter only the Aadhaar number","Share it with relatives to also apply"],hi:["सरकारी योजना का नाम है इसलिए विवरण भरें","साइट से बचें और योजना की पुष्टि आधिकारिक सरकारी वेबसाइट से करें","केवल आधार नंबर भरें","रिश्तेदारों को भी आवेदन करने के लिए भेजें"],mr:["सरकारी योजनेचे नाव आहे म्हणून माहिती भरा","साइट टाळा आणि योजनेची खात्री अधिकृत सरकारी वेबसाइटवरून करा","फक्त आधार क्रमांक भरा","नातेवाईकांनाही अर्ज करण्यासाठी पाठवा"]}, correct:1, explanation:{en:"Legitimate government schemes are accessed through official .gov.in websites, not unofficial look-alike sites.",hi:"जो वेबसाइट पता अपेक्षित आधिकारिक सरकारी डोमेन का नहीं है, उससे सावधान रहें। आधिकारिक सरकारी माध्यमों से पुष्टि करें।",mr:"अपेक्षित अधिकृत सरकारी डोमेन नसलेल्या वेबसाइटबाबत सावध राहा. अधिकृत सरकारी माध्यमातून खात्री करा."} },
+  { text:{en:"Someone you just connected with on social media quickly starts asking for money for an 'emergency.'",hi:"सोशल मीडिया पर अभी जुड़े व्यक्ति ने तुरंत 'आपातकाल' के लिए पैसे मांगने शुरू कर दिए।",mr:"सोशल मीडियावर नुकत्याच जोडलेल्या व्यक्तीने लगेच 'आपत्कालीन परिस्थितीसाठी' पैसे मागायला सुरुवात केली."}, options:{en:["Send the money to help immediately","Be cautious — this is a common social media scam pattern with new or unverified connections","Ask them to prove it first, then send money","Give them your bank login to help directly"],hi:["मदद करने के लिए तुरंत पैसे भेजें","सावधान रहें — व्यक्ति की पहचान और आपात स्थिति की स्वतंत्र रूप से पुष्टि करें","पहले सबूत मांगें, फिर पैसे भेजें","सीधे मदद करने के लिए अपना बैंक लॉगिन दें"],mr:["मदत करण्यासाठी लगेच पैसे पाठवा","सावध रहा — व्यक्तीची ओळख आणि आपत्कालीन परिस्थितीची स्वतंत्रपणे खात्री करा","आधी पुरावा मागा, मग पैसे पाठवा","थेट मदत करण्यासाठी तुमचे बँक लॉगिन द्या"]}, correct:1, explanation:{en:"Urgent money requests from new or unverified online connections are a classic scam pattern.",hi:"नए या अप्रमाणित ऑनलाइन संपर्कों से अचानक पैसे की मांग एक आम स्कैम तरीका है। कार्रवाई करने से पहले स्वतंत्र रूप से पुष्टि करें।",mr:"नवीन किंवा अप्रमाणित ऑनलाइन संपर्काकडून अचानक पैशांची मागणी हा सामान्य स्कॅमचा प्रकार आहे. कृती करण्यापूर्वी स्वतंत्रपणे खात्री करा."} },
+  { text:{en:"A pop-up on a website says 'Congratulations! You are the 1,000,000th visitor — claim your prize now!'",hi:"वेबसाइट पर पॉप-अप कहता है: 'बधाई! आप 10,00,000वें विज़िटर हैं — अभी अपना इनाम लें!'",mr:"वेबसाइटवरील पॉप-अप म्हणतो: 'अभिनंदन! तुम्ही 10,00,000 वे अभ्यागत आहात — आत्ताच बक्षीस मिळवा!'"}, options:{en:["Click it and claim the prize","Close the pop-up — this is almost always a scam or malware trap","Enter your email to see what happens","Share the link with friends so they can also win"],hi:["क्लिक करके इनाम लें","पॉप-अप बंद करें — ऐसे अनपेक्षित इनाम वाले पॉप-अप स्कैम या मैलवेयर का जाल हो सकते हैं","देखने के लिए अपना ईमेल दर्ज करें","दोस्तों के जीतने के लिए लिंक साझा करें"],mr:["क्लिक करून बक्षीस घ्या","पॉप-अप बंद करा — असे अनपेक्षित बक्षीस पॉप-अप स्कॅम किंवा मालवेअरचा सापळा असू शकतात","काय होते ते पाहण्यासाठी ईमेल टाका","मित्रांनाही जिंकता यावे म्हणून लिंक शेअर करा"]}, correct:1, explanation:{en:"'You've won' pop-ups are designed to trick you into giving personal information or installing malware.",hi:"अनपेक्षित 'आप जीत गए' पॉप-अप लोगों को जानकारी साझा करने या असुरक्षित लिंक पर क्लिक करने के लिए उकसा सकते हैं। इन्हें बंद करना सुरक्षित है।",mr:"अनपेक्षित 'तुम्ही जिंकलात' पॉप-अप लोकांना माहिती शेअर करण्यास किंवा असुरक्षित लिंकवर क्लिक करण्यास प्रवृत्त करू शकतात. ते बंद करणे सुरक्षित आहे."} },
+  { text:{en:"A caller claiming to be from the electricity board says your connection will be cut tonight unless you pay immediately via a personal UPI ID they provide.",hi:"बिजली बोर्ड का कर्मचारी होने का दावा करने वाला कॉलर कहता है कि आज रात कनेक्शन काट दिया जाएगा, जब तक आप उसके दिए निजी UPI ID पर तुरंत भुगतान नहीं करते।",mr:"वीज मंडळातून बोलत असल्याचा दावा करणारा कॉलर म्हणतो की आज रात्री कनेक्शन कापले जाईल, जोपर्यंत तुम्ही त्याने दिलेल्या वैयक्तिक UPI ID वर लगेच पैसे भरत नाही."}, options:{en:["Pay immediately using the UPI ID given by the caller","Refuse and verify directly with the electricity board through its official channels","Ask them to send proof over SMS first, then pay","Pay half now and half later"],hi:["कॉलर द्वारा दिए UPI ID पर तुरंत भुगतान करें","मना करें और बिजली बोर्ड के आधिकारिक माध्यमों से सीधे पुष्टि करें","पहले SMS पर सबूत मांगें, फिर भुगतान करें","आधा अभी और आधा बाद में भुगतान करें"],mr:["कॉलरने दिलेल्या UPI ID वर लगेच पैसे भरा","नकार द्या आणि वीज मंडळाच्या अधिकृत माध्यमातून थेट खात्री करा","आधी SMS वर पुरावा मागा, मग पैसे भरा","आधी अर्धे आणि नंतर अर्धे पैसे भरा"]}, correct:1, explanation:{en:"Utility companies don't collect urgent payments through a caller's personal UPI ID. This is a pressure-based scam.",hi:"निजी UPI ID पर तुरंत भुगतान करने का दबाव बड़ा स्कैम चेतावनी संकेत है। आधिकारिक माध्यमों से बिल की पुष्टि करें।",mr:"वैयक्तिक UPI ID वर लगेच पैसे भरण्याचा दबाव हा मोठा स्कॅमचा संकेत आहे. अधिकृत माध्यमातून बिलाची खात्री करा."} }
+];
+
+const scUI = {
+  en:{do:"What should you do?",correct:"Correct!",wrong:"Not quite.",next:"Next",result:"See Result",again:"Try Again",great:"Great job! You identified most warning signs.",effort:"Good effort! Review the explanations above to sharpen your scam-spotting skills.",resultTitle:"Scams Identified",dashboard:"Back to Dashboard"},
+  hi:{do:"आपको क्या करना चाहिए?",correct:"सही!",wrong:"पूरी तरह सही नहीं।",next:"अगला",result:"परिणाम देखें",again:"फिर से कोशिश करें",great:"बहुत बढ़िया! आपने ज़्यादातर चेतावनी संकेत पहचान लिए।",effort:"अच्छी कोशिश! स्कैम पहचानने की क्षमता बेहतर करने के लिए ऊपर दिए स्पष्टीकरण देखें।",resultTitle:"पहचाने गए स्कैम",dashboard:"डैशबोर्ड पर वापस जाएं"},
+  mr:{do:"तुम्ही काय करावे?",correct:"बरोबर!",wrong:"पूर्णपणे बरोबर नाही.",next:"पुढील",result:"निकाल पहा",again:"पुन्हा प्रयत्न करा",great:"छान केले! तुम्ही बहुतेक धोक्याचे संकेत ओळखले.",effort:"चांगला प्रयत्न! स्कॅम ओळखण्याची क्षमता सुधारण्यासाठी वरील स्पष्टीकरणे पाहा.",resultTitle:"ओळखलेले स्कॅम",dashboard:"डॅशबोर्डवर परत जा"}
+};
+let scCurrent=0, scScore=0;
+const scamArea=document.getElementById('scamGameArea'), scamResult=document.getElementById('scamGameResult'), scamScoreEl=document.getElementById('scamScore'), scamPercentEl=document.getElementById('scamPercent'), scamFeedbackMsg=document.getElementById('scamFeedbackMsg'), scamRestartBtn=document.getElementById('scamRestartBtn');
+function scLang(){return typeof dsGetLang==='function'?dsGetLang():'en';}
+function renderScamScenario(){
+  if(scCurrent>=scamScenarios.length){showScamResult();return;}
+  const lang=scLang(), ui=scUI[lang]||scUI.en, item=scamScenarios[scCurrent];
+  const card=document.createElement('div'); card.className='scenario-game-card';
+  card.innerHTML=`<div class="scenario-text">${item.text[lang]}</div><p><strong>${ui.do}</strong></p><div class="scenario-options" id="scamOptionsWrap"></div><div class="feedback" id="scamFeedback"></div>`;
+  scamArea.innerHTML=''; scamArea.appendChild(card);
+  const optWrap=card.querySelector('#scamOptionsWrap'), feedback=card.querySelector('#scamFeedback');
+  item.options[lang].forEach((text,idx)=>{const btn=document.createElement('button');btn.textContent=text;btn.addEventListener('click',()=>{optWrap.querySelectorAll('button').forEach((b,i)=>{b.disabled=true;if(i===item.correct)b.classList.add('correct');});if(idx===item.correct){scScore++;feedback.textContent='✅ '+ui.correct+' '+item.explanation[lang];}else{btn.classList.add('incorrect');feedback.textContent='❌ '+ui.wrong+' '+item.explanation[lang];}const nextBtn=document.createElement('button');nextBtn.className='btn btn-primary';nextBtn.textContent=scCurrent===scamScenarios.length-1?ui.result:ui.next;nextBtn.style.marginTop='14px';nextBtn.style.display='block';nextBtn.style.marginLeft='auto';nextBtn.style.marginRight='auto';nextBtn.addEventListener('click',()=>{scCurrent++;renderScamScenario();});card.appendChild(nextBtn);});optWrap.appendChild(btn);});
+}
+function showScamResult(){const lang=scLang(),ui=scUI[lang]||scUI.en;scamArea.innerHTML='';scamResult.classList.remove('hidden');const percent=Math.round(scScore/scamScenarios.length*100);scamScoreEl.textContent=`${scScore} / ${scamScenarios.length}`;scamPercentEl.textContent=`${percent}%`;scamFeedbackMsg.textContent=percent>=80?ui.great:ui.effort;document.querySelector('#scamGameResult h3').textContent=ui.resultTitle;scamRestartBtn.textContent=ui.again;const dash=scamResult.querySelector('a[href="dashboard.html"]');if(dash)dash.textContent=ui.dashboard;if(typeof dsRecordScamChallenge==='function')dsRecordScamChallenge(scScore);}
+scamRestartBtn.addEventListener('click',()=>{scCurrent=0;scScore=0;scamResult.classList.add('hidden');renderScamScenario();});
+window.dsQuizLanguageChanged=()=>{if(document.getElementById('scamGameArea')){if(!scamResult.classList.contains('hidden'))showScamResult();else renderScamScenario();}};
+document.addEventListener('DOMContentLoaded', renderScamScenario);
+</script>
+
+<script src="js/gamification.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

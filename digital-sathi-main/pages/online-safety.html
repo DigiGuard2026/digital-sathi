@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Safety — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Scoped styles for the Online Safety subtopic accordion only */
+  .subtopics-wrap { margin-top: 10px; }
+  .subtopic-block {
+    background: #fff;
+    border: 1px solid var(--blue-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .subtopic-block summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtopic-block summary::-webkit-details-marker { display: none; }
+  .subtopic-block summary::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; }
+  .subtopic-block[open] summary::before { transform: rotate(90deg); }
+  .subtopic-block .tips-list { padding: 12px 20px 16px 42px; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="../index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="../index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="../safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="learn-hero">
+  <h1 data-i18n="online-safety_hero_title">🔐 Online Safety</h1>
+  <div class="learn-flow">
+    <span data-i18n="online-safety_flow_learn">LEARN</span> → <span data-i18n="online-safety_flow_practice">PRACTICE</span> → <span data-i18n="online-safety_flow_quiz">QUIZ</span> → <span data-i18n="online-safety_flow_score">SCORE</span> → <span data-i18n="online-safety_flow_progress">PROGRESS</span>
+  </div>
+</div>
+
+<div class="learn-section">
+
+  <div class="info-block">
+    <h3 data-i18n="online-safety_simple_title">Simple Explanation</h3>
+    <p data-i18n="online-safety_simple_text">Staying safe online means protecting your passwords, personal information, and being alert to common tricks scammers use.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="online-safety_examples_title">Practical Examples</h3>
+    <ul class="tips-list">
+      <li data-i18n="online-safety_ex1">A strong, unique password for each account makes it much harder for hackers to break in.</li>
+      <li data-i18n="online-safety_ex2">Two-factor authentication adds an extra step, like a code sent to your phone, for extra security.</li>
+      <li data-i18n="online-safety_ex3">Phishing messages look official but are designed to steal your information — always double-check before clicking.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="online-safety_safety_title">Safety Tips</h3>
+    <ul class="tips-list">
+      <li data-i18n="online-safety_safe1">Use a unique, strong password for each account.</li>
+      <li data-i18n="online-safety_safe2">Turn on two-step verification wherever available.</li>
+      <li data-i18n="online-safety_safe3">Never share your OTP or password with anyone.</li>
+      <li data-i18n="online-safety_safe4">Don't click links from unknown senders.</li>
+      <li data-i18n="online-safety_safe5">Review your social media privacy settings regularly.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="os_section_title">Explore Each Topic in Detail</h3>
+    <p data-i18n="os_section_lead">Tap on a topic to see simple steps and safety tips.</p>
+    <div class="subtopics-wrap">
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t1_title">Strong Passwords</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t1_b1">Use a different, unique password for every important account.</li>
+          <li data-i18n="os_t1_b2">A strong password mixes uppercase, lowercase, numbers, and symbols.</li>
+          <li data-i18n="os_t1_b3">Avoid using your name, birth date, or common words as your password.</li>
+          <li data-i18n="os_t1_b4">Make passwords at least 8-10 characters long — longer is safer.</li>
+          <li data-i18n="os_t1_b5">Never write your password on paper or share it in a message.</li>
+          <li data-i18n="os_t1_b6">Consider using a password manager to remember strong passwords safely.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t2_title">Two-Factor Authentication (2FA)</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t2_b1">2FA adds a second security step after your password, like an OTP or app code.</li>
+          <li data-i18n="os_t2_b2">Turn on 2FA for email, banking, and social media accounts wherever available.</li>
+          <li data-i18n="os_t2_b3">Even if someone learns your password, 2FA can still keep your account safe.</li>
+          <li data-i18n="os_t2_b4">Common 2FA methods include SMS codes, authenticator apps, or fingerprint checks.</li>
+          <li data-i18n="os_t2_b5">Never share your 2FA code with anyone, even someone claiming to be support staff.</li>
+          <li data-i18n="os_t2_b6">Set up backup options for 2FA in case you lose your phone.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t3_title">Phishing</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t3_b1">Phishing is a trick where fake messages or emails try to steal your personal information.</li>
+          <li data-i18n="os_t3_b2">Phishing messages often create urgency, like "Act now or your account will be closed."</li>
+          <li data-i18n="os_t3_b3">Check the sender's email address or number carefully — it often looks slightly wrong.</li>
+          <li data-i18n="os_t3_b4">Legitimate companies never ask for your password or OTP through email or SMS.</li>
+          <li data-i18n="os_t3_b5">Look for spelling mistakes or odd formatting — common signs of phishing.</li>
+          <li data-i18n="os_t3_b6">When in doubt, contact the company directly using their official website or number.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t4_title">Suspicious Links</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t4_b1">Hover over or long-press a link to preview the actual web address before clicking.</li>
+          <li data-i18n="os_t4_b2">Be cautious of shortened links (like bit.ly) that hide the real destination.</li>
+          <li data-i18n="os_t4_b3">Avoid clicking links in unexpected messages, even from known contacts.</li>
+          <li data-i18n="os_t4_b4">Fake websites often use URLs that look almost like the real one, with small changes.</li>
+          <li data-i18n="os_t4_b5">Never enter your password or personal details after clicking an unknown link.</li>
+          <li data-i18n="os_t4_b6">If a link seems too good to be true (free prizes, huge discounts), it's likely a scam.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t5_title">Privacy Settings</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t5_b1">Privacy settings control who can see your personal information and posts online.</li>
+          <li data-i18n="os_t5_b2">Set your social media profiles to "Friends only" instead of fully public.</li>
+          <li data-i18n="os_t5_b3">Regularly review which apps and websites have access to your accounts.</li>
+          <li data-i18n="os_t5_b4">Turn off location sharing for apps that don't need to know where you are.</li>
+          <li data-i18n="os_t5_b5">Limit the personal details you share publicly, like your phone number or address.</li>
+          <li data-i18n="os_t5_b6">Check privacy settings again after app updates, as they sometimes reset.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t6_title">App Permissions</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t6_b1">Permissions control what an app can access, like your camera, contacts, or location.</li>
+          <li data-i18n="os_t6_b2">Only grant permissions an app truly needs to work properly.</li>
+          <li data-i18n="os_t6_b3">Review app permissions regularly in your phone's Settings menu.</li>
+          <li data-i18n="os_t6_b4">Be cautious of apps asking for permissions unrelated to their purpose.</li>
+          <li data-i18n="os_t6_b5">Deny a permission if unsure — most apps will ask again only if needed.</li>
+          <li data-i18n="os_t6_b6">Uninstall apps you no longer use to reduce unnecessary access to your data.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t7_title">Public Wi-Fi</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t7_b1">Public Wi-Fi (in cafes, airports, malls) is often unsecured and riskier than home internet.</li>
+          <li data-i18n="os_t7_b2">Avoid online banking or entering passwords while connected to public Wi-Fi.</li>
+          <li data-i18n="os_t7_b3">Turn off auto-connect to Wi-Fi so your phone doesn't join unknown networks automatically.</li>
+          <li data-i18n="os_t7_b4">Use mobile data instead of public Wi-Fi for anything sensitive, if possible.</li>
+          <li data-i18n="os_t7_b5">A VPN can add extra protection when you must use public Wi-Fi.</li>
+          <li data-i18n="os_t7_b6">Forget public Wi-Fi networks after use so your phone doesn't reconnect automatically.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t8_title">Social-Media Safety</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t8_b1">Think twice before sharing personal details like your address, travel plans, or daily routine.</li>
+          <li data-i18n="os_t8_b2">Be cautious accepting friend requests from people you don't know in real life.</li>
+          <li data-i18n="os_t8_b3">Avoid sharing photos of documents like ID cards, tickets, or bank details.</li>
+          <li data-i18n="os_t8_b4">Report and block accounts that harass, threaten, or seem suspicious.</li>
+          <li data-i18n="os_t8_b5">Check tagged photos and posts regularly to control what's visible on your profile.</li>
+          <li data-i18n="os_t8_b6">Think before you post — once shared online, content can be hard to fully remove.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t9_title">Account Recovery</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t9_b1">Set up a recovery email and phone number for your important accounts in advance.</li>
+          <li data-i18n="os_t9_b2">Recovery options let you regain access if you forget your password or lose your phone.</li>
+          <li data-i18n="os_t9_b3">Keep your recovery information updated whenever you change your number or email.</li>
+          <li data-i18n="os_t9_b4">Note down or save any backup codes given when you set up 2FA.</li>
+          <li data-i18n="os_t9_b5">If you lose access, use the platform's official "Forgot Password" or "Account Recovery" option.</li>
+          <li data-i18n="os_t9_b6">Be alert — scammers sometimes pretend to help with "account recovery" to steal access.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-i18n="os_t10_title">Cybercrime Reporting</summary>
+        <ul class="tips-list">
+          <li data-i18n="os_t10_b1">If you face online fraud or harassment, report it as soon as possible.</li>
+          <li data-i18n="os_t10_b2">You can report cybercrime online at cybercrime.gov.in or call the helpline 1930.</li>
+          <li data-i18n="os_t10_b3">Save evidence like screenshots, messages, and transaction details before reporting.</li>
+          <li data-i18n="os_t10_b4">Report suspicious or fraudulent accounts directly on the social media platform too.</li>
+          <li data-i18n="os_t10_b5">Inform your bank immediately if the cybercrime involves money or account details.</li>
+          <li data-i18n="os_t10_b6">Local police stations also accept cybercrime complaints if online reporting isn't possible.</li>
+        </ul>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="online-safety_scenario_title">Real-World Scenario — Practice</h3>
+    <div class="scenario-box">
+      <p data-i18n="online-safety_scenario_text">An email from 'yourbank-verify.com' asks you to log in urgently to confirm your account details.</p>
+      <p><strong data-i18n="online-safety_scenario_question">What should you do?</strong></p>
+    </div>
+    <div class="scenario-options" id="scenarioOptions"></div>
+    <div class="scenario-feedback" id="scenarioFeedback"></div>
+  </div>
+
+  <div class="learn-page-actions">
+    <a href="../quizzes/online-safety-quiz.html" class="btn btn-primary"><span data-i18n="online-safety_quiz_btn">Take the Online Safety Quiz</span></a>
+    <a href="fake-news.html" class="btn btn-secondary"><span data-i18n="online-safety_next_btn">Next: Fake News Awareness</span></a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="../index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="../safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="../about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="../index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+
+<script src="../js/gamification.js"></script>
+<script src="../js/main.js"></script>
+<script>
+/* Online Safety — subtopic translations.
+   Extends the existing site-wide `translations` object from main.js
+   so the Hindi/Marathi language switcher (langSelect) works for this
+   page's new content exactly as it does for the rest of the site. */
+Object.assign(translations.en, {
+  os_section_title: "Explore Each Topic in Detail",
+  os_section_lead: "Tap on a topic to see simple steps and safety tips.",
+  os_t1_title: "Strong Passwords",
+  os_t1_b1: "Use a different, unique password for every important account.",
+  os_t1_b2: "A strong password mixes uppercase, lowercase, numbers, and symbols.",
+  os_t1_b3: "Avoid using your name, birth date, or common words as your password.",
+  os_t1_b4: "Make passwords at least 8-10 characters long — longer is safer.",
+  os_t1_b5: "Never write your password on paper or share it in a message.",
+  os_t1_b6: "Consider using a password manager to remember strong passwords safely.",
+
+  os_t2_title: "Two-Factor Authentication (2FA)",
+  os_t2_b1: "2FA adds a second security step after your password, like an OTP or app code.",
+  os_t2_b2: "Turn on 2FA for email, banking, and social media accounts wherever available.",
+  os_t2_b3: "Even if someone learns your password, 2FA can still keep your account safe.",
+  os_t2_b4: "Common 2FA methods include SMS codes, authenticator apps, or fingerprint checks.",
+  os_t2_b5: "Never share your 2FA code with anyone, even someone claiming to be support staff.",
+  os_t2_b6: "Set up backup options for 2FA in case you lose your phone.",
+
+  os_t3_title: "Phishing",
+  os_t3_b1: "Phishing is a trick where fake messages or emails try to steal your personal information.",
+  os_t3_b2: "Phishing messages often create urgency, like \"Act now or your account will be closed.\"",
+  os_t3_b3: "Check the sender's email address or number carefully — it often looks slightly wrong.",
+  os_t3_b4: "Legitimate companies never ask for your password or OTP through email or SMS.",
+  os_t3_b5: "Look for spelling mistakes or odd formatting — common signs of phishing.",
+  os_t3_b6: "When in doubt, contact the company directly using their official website or number.",
+
+  os_t4_title: "Suspicious Links",
+  os_t4_b1: "Hover over or long-press a link to preview the actual web address before clicking.",
+  os_t4_b2: "Be cautious of shortened links (like bit.ly) that hide the real destination.",
+  os_t4_b3: "Avoid clicking links in unexpected messages, even from known contacts.",
+  os_t4_b4: "Fake websites often use URLs that look almost like the real one, with small changes.",
+  os_t4_b5: "Never enter your password or personal details after clicking an unknown link.",
+  os_t4_b6: "If a link seems too good to be true (free prizes, huge discounts), it's likely a scam.",
+
+  os_t5_title: "Privacy Settings",
+  os_t5_b1: "Privacy settings control who can see your personal information and posts online.",
+  os_t5_b2: "Set your social media profiles to \"Friends only\" instead of fully public.",
+  os_t5_b3: "Regularly review which apps and websites have access to your accounts.",
+  os_t5_b4: "Turn off location sharing for apps that don't need to know where you are.",
+  os_t5_b5: "Limit the personal details you share publicly, like your phone number or address.",
+  os_t5_b6: "Check privacy settings again after app updates, as they sometimes reset.",
+
+  os_t6_title: "App Permissions",
+  os_t6_b1: "Permissions control what an app can access, like your camera, contacts, or location.",
+  os_t6_b2: "Only grant permissions an app truly needs to work properly.",
+  os_t6_b3: "Review app permissions regularly in your phone's Settings menu.",
+  os_t6_b4: "Be cautious of apps asking for permissions unrelated to their purpose.",
+  os_t6_b5: "Deny a permission if unsure — most apps will ask again only if needed.",
+  os_t6_b6: "Uninstall apps you no longer use to reduce unnecessary access to your data.",
+
+  os_t7_title: "Public Wi-Fi",
+  os_t7_b1: "Public Wi-Fi (in cafes, airports, malls) is often unsecured and riskier than home internet.",
+  os_t7_b2: "Avoid online banking or entering passwords while connected to public Wi-Fi.",
+  os_t7_b3: "Turn off auto-connect to Wi-Fi so your phone doesn't join unknown networks automatically.",
+  os_t7_b4: "Use mobile data instead of public Wi-Fi for anything sensitive, if possible.",
+  os_t7_b5: "A VPN can add extra protection when you must use public Wi-Fi.",
+  os_t7_b6: "Forget public Wi-Fi networks after use so your phone doesn't reconnect automatically.",
+
+  os_t8_title: "Social-Media Safety",
+  os_t8_b1: "Think twice before sharing personal details like your address, travel plans, or daily routine.",
+  os_t8_b2: "Be cautious accepting friend requests from people you don't know in real life.",
+  os_t8_b3: "Avoid sharing photos of documents like ID cards, tickets, or bank details.",
+  os_t8_b4: "Report and block accounts that harass, threaten, or seem suspicious.",
+  os_t8_b5: "Check tagged photos and posts regularly to control what's visible on your profile.",
+  os_t8_b6: "Think before you post — once shared online, content can be hard to fully remove.",
+
+  os_t9_title: "Account Recovery",
+  os_t9_b1: "Set up a recovery email and phone number for your important accounts in advance.",
+  os_t9_b2: "Recovery options let you regain access if you forget your password or lose your phone.",
+  os_t9_b3: "Keep your recovery information updated whenever you change your number or email.",
+  os_t9_b4: "Note down or save any backup codes given when you set up 2FA.",
+  os_t9_b5: "If you lose access, use the platform's official \"Forgot Password\" or \"Account Recovery\" option.",
+  os_t9_b6: "Be alert — scammers sometimes pretend to help with \"account recovery\" to steal access.",
+
+  os_t10_title: "Cybercrime Reporting",
+  os_t10_b1: "If you face online fraud or harassment, report it as soon as possible.",
+  os_t10_b2: "You can report cybercrime online at cybercrime.gov.in or call the helpline 1930.",
+  os_t10_b3: "Save evidence like screenshots, messages, and transaction details before reporting.",
+  os_t10_b4: "Report suspicious or fraudulent accounts directly on the social media platform too.",
+  os_t10_b5: "Inform your bank immediately if the cybercrime involves money or account details.",
+  os_t10_b6: "Local police stations also accept cybercrime complaints if online reporting isn't possible."
+});
+
+Object.assign(translations.hi, {
+  os_section_title: "हर विषय को विस्तार से जानें",
+  os_section_lead: "आसान स्टेप्स और सुरक्षा टिप्स देखने के लिए किसी विषय पर टैप करें।",
+  os_t1_title: "मजबूत पासवर्ड",
+  os_t1_b1: "हर ज़रूरी अकाउंट के लिए एक अलग और यूनीक पासवर्ड इस्तेमाल करें।",
+  os_t1_b2: "मजबूत पासवर्ड में बड़े-छोटे अक्षर, नंबर और चिन्ह (symbols) मिले होते हैं।",
+  os_t1_b3: "अपना नाम, जन्मतिथि या आम शब्दों को पासवर्ड के तौर पर इस्तेमाल न करें।",
+  os_t1_b4: "पासवर्ड कम से कम 8-10 अक्षरों का रखें — जितना लंबा हो, उतना सुरक्षित।",
+  os_t1_b5: "अपना पासवर्ड कभी कागज़ पर न लिखें या किसी मैसेज में शेयर न करें।",
+  os_t1_b6: "मजबूत पासवर्ड सुरक्षित रूप से याद रखने के लिए पासवर्ड मैनेजर का इस्तेमाल करें।",
+
+  os_t2_title: "टू-फैक्टर ऑथेंटिकेशन (2FA)",
+  os_t2_b1: "2FA आपके पासवर्ड के बाद एक और सुरक्षा स्टेप जोड़ता है, जैसे OTP या ऐप कोड।",
+  os_t2_b2: "जहां भी उपलब्ध हो, ईमेल, बैंकिंग और सोशल मीडिया अकाउंट में 2FA ऑन करें।",
+  os_t2_b3: "अगर किसी को आपका पासवर्ड पता चल भी जाए, तो 2FA आपके अकाउंट को सुरक्षित रख सकता है।",
+  os_t2_b4: "आम 2FA तरीकों में SMS कोड, ऑथेंटिकेटर ऐप या फिंगरप्रिंट शामिल हैं।",
+  os_t2_b5: "अपना 2FA कोड किसी के साथ साझा न करें, चाहे वह खुद को सपोर्ट स्टाफ ही क्यों न बताए।",
+  os_t2_b6: "फोन खो जाने की स्थिति के लिए 2FA का बैकअप विकल्प पहले से सेट कर रखें।",
+
+  os_t3_title: "फिशिंग",
+  os_t3_b1: "फिशिंग एक ऐसा तरीका है जिसमें फर्जी मैसेज या ईमेल से आपकी निजी जानकारी चुराई जाती है।",
+  os_t3_b2: "फिशिंग मैसेज अक्सर जल्दबाज़ी दिखाते हैं, जैसे \"तुरंत करें वरना अकाउंट बंद हो जाएगा।\"",
+  os_t3_b3: "भेजने वाले का ईमेल या नंबर ध्यान से जांचें — यह अक्सर थोड़ा गलत दिखता है।",
+  os_t3_b4: "असली कंपनियां कभी भी ईमेल या SMS के ज़रिए आपका पासवर्ड या OTP नहीं मांगतीं।",
+  os_t3_b5: "स्पेलिंग की गलतियां या अजीब फॉर्मेटिंग देखें — ये फिशिंग के आम संकेत हैं।",
+  os_t3_b6: "शक होने पर कंपनी की आधिकारिक वेबसाइट या नंबर से सीधे संपर्क करें।",
+
+  os_t4_title: "संदिग्ध लिंक",
+  os_t4_b1: "क्लिक करने से पहले लिंक पर देर तक दबाकर असली वेब एड्रेस देखें।",
+  os_t4_b2: "छोटे किए गए लिंक (जैसे bit.ly) से सावधान रहें, ये असली पता छुपाते हैं।",
+  os_t4_b3: "अनजान मैसेज में आए लिंक पर क्लिक न करें, भले ही वह किसी जान-पहचान वाले से क्यों न आया हो।",
+  os_t4_b4: "फर्जी वेबसाइट्स का URL असली जैसा दिखता है, पर उसमें थोड़ा बदलाव होता है।",
+  os_t4_b5: "किसी अनजान लिंक पर क्लिक करने के बाद कभी अपना पासवर्ड या निजी जानकारी न डालें।",
+  os_t4_b6: "अगर कोई ऑफर (मुफ्त इनाम, बड़ा डिस्काउंट) बहुत अच्छा लगे, तो अक्सर वह धोखा होता है।",
+
+  os_t5_title: "प्राइवेसी सेटिंग्स",
+  os_t5_b1: "प्राइवेसी सेटिंग्स तय करती हैं कि आपकी जानकारी और पोस्ट कौन देख सकता है।",
+  os_t5_b2: "अपने सोशल मीडिया प्रोफाइल को पूरी तरह पब्लिक रखने की बजाय \"सिर्फ फ्रेंड्स\" पर सेट करें।",
+  os_t5_b3: "समय-समय पर जांचें कि कौन-से ऐप्स और वेबसाइट्स को आपके अकाउंट का एक्सेस है।",
+  os_t5_b4: "जिन ऐप्स को लोकेशन जानने की ज़रूरत नहीं, उनके लिए लोकेशन शेयरिंग बंद करें।",
+  os_t5_b5: "फोन नंबर या पता जैसी निजी जानकारी सार्वजनिक रूप से कम शेयर करें।",
+  os_t5_b6: "ऐप अपडेट के बाद प्राइवेसी सेटिंग्स दोबारा जांचें, क्योंकि ये कभी-कभी रीसेट हो जाती हैं।",
+
+  os_t6_title: "ऐप अनुमतियां (Permissions)",
+  os_t6_b1: "Permissions तय करती हैं कि ऐप आपके कैमरे, कॉन्टैक्ट्स या लोकेशन तक पहुंच सकता है या नहीं।",
+  os_t6_b2: "ऐप को सिर्फ वही अनुमति दें जो उसके सही तरीके से काम करने के लिए ज़रूरी हो।",
+  os_t6_b3: "फोन की Settings में जाकर समय-समय पर ऐप अनुमतियां जांचें।",
+  os_t6_b4: "जो अनुमतियां ऐप के काम से मेल न खाएं, उनसे सावधान रहें।",
+  os_t6_b5: "शक होने पर अनुमति न दें — ज़रूरत पड़ने पर ज़्यादातर ऐप्स दोबारा पूछ लेते हैं।",
+  os_t6_b6: "जिन ऐप्स का इस्तेमाल नहीं करते, उन्हें हटा दें ताकि अनावश्यक एक्सेस कम हो।",
+
+  os_t7_title: "पब्लिक Wi-Fi",
+  os_t7_b1: "पब्लिक Wi-Fi (कैफे, एयरपोर्ट, मॉल में) अक्सर असुरक्षित होता है और घर के इंटरनेट से ज़्यादा जोखिम भरा होता है।",
+  os_t7_b2: "पब्लिक Wi-Fi से जुड़े होने पर ऑनलाइन बैंकिंग या पासवर्ड डालने से बचें।",
+  os_t7_b3: "फोन में ऑटो-कनेक्ट बंद रखें ताकि वह अनजान नेटवर्क से अपने आप न जुड़े।",
+  os_t7_b4: "संभव हो तो निजी काम के लिए पब्लिक Wi-Fi की बजाय मोबाइल डेटा इस्तेमाल करें।",
+  os_t7_b5: "जब पब्लिक Wi-Fi इस्तेमाल करना ही पड़े, तो VPN अतिरिक्त सुरक्षा दे सकता है।",
+  os_t7_b6: "इस्तेमाल के बाद पब्लिक Wi-Fi नेटवर्क को \"भूल\" (forget) जाएं ताकि फोन दोबारा अपने आप न जुड़े।",
+
+  os_t8_title: "सोशल मीडिया सुरक्षा",
+  os_t8_b1: "पता, यात्रा की योजना या रोज़ की दिनचर्या जैसी निजी जानकारी शेयर करने से पहले सोचें।",
+  os_t8_b2: "असल ज़िंदगी में न जानने वाले लोगों की फ्रेंड रिक्वेस्ट स्वीकार करते समय सावधान रहें।",
+  os_t8_b3: "ID कार्ड, टिकट या बैंक डिटेल्स जैसे दस्तावेज़ों की फोटो शेयर करने से बचें।",
+  os_t8_b4: "परेशान करने, धमकाने या संदिग्ध लगने वाले अकाउंट को रिपोर्ट और ब्लॉक करें।",
+  os_t8_b5: "अपनी प्रोफाइल पर क्या दिख रहा है, यह नियंत्रित करने के लिए टैग की गई फोटो और पोस्ट जांचते रहें।",
+  os_t8_b6: "पोस्ट करने से पहले सोचें — एक बार ऑनलाइन शेयर होने के बाद कंटेंट को पूरी तरह हटाना मुश्किल होता है।",
+
+  os_t9_title: "अकाउंट रिकवरी",
+  os_t9_b1: "अपने ज़रूरी अकाउंट के लिए पहले से एक रिकवरी ईमेल और फोन नंबर सेट करें।",
+  os_t9_b2: "अगर पासवर्ड भूल जाएं या फोन खो जाए, तो रिकवरी विकल्प से आप दोबारा एक्सेस पा सकते हैं।",
+  os_t9_b3: "नंबर या ईमेल बदलने पर अपनी रिकवरी जानकारी भी अपडेट करें।",
+  os_t9_b4: "2FA सेट करते समय मिले बैकअप कोड को नोट करके सुरक्षित रखें।",
+  os_t9_b5: "एक्सेस खो जाने पर प्लेटफॉर्म के आधिकारिक \"Forgot Password\" या \"Account Recovery\" विकल्प का इस्तेमाल करें।",
+  os_t9_b6: "सतर्क रहें — कुछ धोखेबाज़ \"अकाउंट रिकवरी\" में मदद के बहाने एक्सेस चुराने की कोशिश करते हैं।",
+
+  os_t10_title: "साइबर अपराध की रिपोर्टिंग",
+  os_t10_b1: "अगर आप ऑनलाइन धोखाधड़ी या परेशानी का सामना करें, तो जल्द से जल्द उसकी रिपोर्ट करें।",
+  os_t10_b2: "आप cybercrime.gov.in पर ऑनलाइन रिपोर्ट कर सकते हैं या हेल्पलाइन नंबर 1930 पर कॉल कर सकते हैं।",
+  os_t10_b3: "रिपोर्ट करने से पहले स्क्रीनशॉट, मैसेज और लेन-देन की जानकारी जैसे सबूत सेव कर लें।",
+  os_t10_b4: "संदिग्ध या फर्जी अकाउंट की सीधे सोशल मीडिया प्लेटफॉर्म पर भी रिपोर्ट करें।",
+  os_t10_b5: "अगर मामले में पैसे या अकाउंट की जानकारी शामिल हो, तो तुरंत अपने बैंक को बताएं।",
+  os_t10_b6: "अगर ऑनलाइन रिपोर्ट करना संभव न हो, तो नज़दीकी पुलिस स्टेशन में भी साइबर अपराध की शिकायत दर्ज कराई जा सकती है।"
+});
+
+Object.assign(translations.mr, {
+  os_section_title: "प्रत्येक विषय सविस्तर जाणून घ्या",
+  os_section_lead: "सोप्या स्टेप्स आणि सुरक्षा टिप्स पाहण्यासाठी एखाद्या विषयावर टॅप करा.",
+  os_t1_title: "मजबूत पासवर्ड",
+  os_t1_b1: "प्रत्येक महत्त्वाच्या खात्यासाठी वेगळा आणि युनिक पासवर्ड वापरा.",
+  os_t1_b2: "मजबूत पासवर्डमध्ये मोठी-छोटी अक्षरे, आकडे आणि चिन्हे यांचा मिलाफ असतो.",
+  os_t1_b3: "तुमचे नाव, जन्मतारीख किंवा सर्वसामान्य शब्द पासवर्ड म्हणून वापरू नका.",
+  os_t1_b4: "पासवर्ड किमान 8-10 अक्षरांचा ठेवा — जितका मोठा तितका सुरक्षित.",
+  os_t1_b5: "तुमचा पासवर्ड कधीही कागदावर लिहू नका किंवा मेसेजमध्ये शेअर करू नका.",
+  os_t1_b6: "मजबूत पासवर्ड सुरक्षितपणे लक्षात ठेवण्यासाठी पासवर्ड मॅनेजर वापरा.",
+
+  os_t2_title: "टू-फॅक्टर ऑथेंटिकेशन (2FA)",
+  os_t2_b1: "2FA मुळे तुमच्या पासवर्डनंतर आणखी एक सुरक्षा स्टेप जोडली जाते, जसे OTP किंवा अ‍ॅप कोड.",
+  os_t2_b2: "उपलब्ध असेल तिथे ईमेल, बँकिंग आणि सोशल मीडिया खात्यांवर 2FA सुरू करा.",
+  os_t2_b3: "एखाद्याला तुमचा पासवर्ड कळला तरी 2FA तुमचे खाते सुरक्षित ठेवू शकते.",
+  os_t2_b4: "सामान्य 2FA पद्धतींमध्ये SMS कोड, ऑथेंटिकेटर अ‍ॅप किंवा फिंगरप्रिंट यांचा समावेश होतो.",
+  os_t2_b5: "तुमचा 2FA कोड कोणासोबतही शेअर करू नका, तो सपोर्ट स्टाफ असल्याचे सांगणाराही असो.",
+  os_t2_b6: "फोन हरवल्यास उपयोगी पडावा म्हणून 2FA साठी आधीच बॅकअप पर्याय सेट करा.",
+
+  os_t3_title: "फिशिंग",
+  os_t3_b1: "फिशिंग म्हणजे बनावट मेसेज किंवा ईमेलद्वारे तुमची वैयक्तिक माहिती चोरण्याचा प्रयत्न.",
+  os_t3_b2: "फिशिंग मेसेजमध्ये अनेकदा घाई दाखवली जाते, जसे \"लगेच करा नाहीतर खाते बंद होईल.\"",
+  os_t3_b3: "पाठवणाऱ्याचा ईमेल किंवा नंबर काळजीपूर्वक तपासा — तो अनेकदा थोडा वेगळा दिसतो.",
+  os_t3_b4: "खऱ्या कंपन्या कधीही ईमेल किंवा SMS द्वारे तुमचा पासवर्ड किंवा OTP मागत नाहीत.",
+  os_t3_b5: "स्पेलिंगच्या चुका किंवा विचित्र फॉरमॅटिंग पाहा — हे फिशिंगचे सामान्य संकेत आहेत.",
+  os_t3_b6: "शंका असल्यास कंपनीच्या अधिकृत वेबसाइट किंवा नंबरवरून थेट संपर्क साधा.",
+
+  os_t4_title: "संशयास्पद लिंक",
+  os_t4_b1: "क्लिक करण्याआधी लिंकवर दाबून/धरून खरा वेब पत्ता तपासा.",
+  os_t4_b2: "लहान केलेल्या लिंक्सपासून (उदा. bit.ly) सावध राहा, त्या खरा पत्ता लपवतात.",
+  os_t4_b3: "अनपेक्षित मेसेजमधील लिंकवर क्लिक करू नका, ती ओळखीच्या व्यक्तीकडून आली तरी.",
+  os_t4_b4: "बनावट वेबसाइट्सचा URL खऱ्यासारखा दिसतो, पण त्यात थोडा बदल असतो.",
+  os_t4_b5: "अनोळखी लिंकवर क्लिक केल्यानंतर कधीही पासवर्ड किंवा वैयक्तिक माहिती टाकू नका.",
+  os_t4_b6: "एखादी ऑफर (मोफत बक्षीस, मोठी सूट) खूपच चांगली वाटत असेल, तर ती बहुधा फसवणूक असते.",
+
+  os_t5_title: "प्रायव्हसी सेटिंग्ज",
+  os_t5_b1: "प्रायव्हसी सेटिंग्ज ठरवतात की तुमची माहिती आणि पोस्ट कोण पाहू शकते.",
+  os_t5_b2: "तुमची सोशल मीडिया प्रोफाइल पूर्णपणे पब्लिक ठेवण्याऐवजी \"फक्त मित्रांसाठी\" सेट करा.",
+  os_t5_b3: "कोणत्या अ‍ॅप्स आणि वेबसाइट्सना तुमच्या खात्याचा अ‍ॅक्सेस आहे हे वेळोवेळी तपासा.",
+  os_t5_b4: "ज्या अ‍ॅप्सना गरज नाही त्यांच्यासाठी लोकेशन शेअरिंग बंद करा.",
+  os_t5_b5: "फोन नंबर किंवा पत्त्यासारखी वैयक्तिक माहिती सार्वजनिकरित्या कमी शेअर करा.",
+  os_t5_b6: "अ‍ॅप अपडेटनंतर प्रायव्हसी सेटिंग्ज पुन्हा तपासा, कारण त्या कधीकधी रीसेट होतात.",
+
+  os_t6_title: "अ‍ॅप परवानग्या",
+  os_t6_b1: "परवानग्या ठरवतात की अ‍ॅप तुमचा कॅमेरा, कॉन्टॅक्ट्स किंवा लोकेशन वापरू शकतो का.",
+  os_t6_b2: "अ‍ॅपला फक्त त्याच्या योग्य कामासाठी आवश्यक तेवढीच परवानगी द्या.",
+  os_t6_b3: "फोनच्या Settings मध्ये जाऊन वेळोवेळी अ‍ॅप परवानग्या तपासा.",
+  os_t6_b4: "अ‍ॅपच्या कामाशी न जुळणाऱ्या परवानग्यांपासून सावध राहा.",
+  os_t6_b5: "शंका असल्यास परवानगी नाकारा — गरज असल्यास बहुतेक अ‍ॅप्स पुन्हा विचारतात.",
+  os_t6_b6: "न वापरत असलेले अ‍ॅप्स काढून टाका, म्हणजे अनावश्यक अ‍ॅक्सेस कमी होईल.",
+
+  os_t7_title: "पब्लिक Wi-Fi",
+  os_t7_b1: "पब्लिक Wi-Fi (कॅफे, विमानतळ, मॉलमधील) अनेकदा असुरक्षित असते आणि घरच्या इंटरनेटपेक्षा जास्त धोकादायक असते.",
+  os_t7_b2: "पब्लिक Wi-Fi शी जोडलेले असताना ऑनलाइन बँकिंग किंवा पासवर्ड टाकणे टाळा.",
+  os_t7_b3: "फोनवर ऑटो-कनेक्ट बंद ठेवा जेणेकरून तो अनोळखी नेटवर्कशी आपोआप जोडला जाणार नाही.",
+  os_t7_b4: "शक्य असल्यास महत्त्वाच्या कामासाठी पब्लिक Wi-Fi ऐवजी मोबाइल डेटा वापरा.",
+  os_t7_b5: "पब्लिक Wi-Fi वापरणे गरजेचे असल्यास VPN अतिरिक्त सुरक्षा देऊ शकते.",
+  os_t7_b6: "वापर झाल्यावर पब्लिक Wi-Fi नेटवर्क \"फॉरगेट\" करा जेणेकरून फोन पुन्हा आपोआप जोडला जाणार नाही.",
+
+  os_t8_title: "सोशल मीडिया सुरक्षा",
+  os_t8_b1: "पत्ता, प्रवासाची योजना किंवा रोजची दिनचर्या यांसारखी वैयक्तिक माहिती शेअर करण्याआधी विचार करा.",
+  os_t8_b2: "प्रत्यक्ष आयुष्यात ओळख नसलेल्या लोकांची फ्रेंड रिक्वेस्ट स्वीकारताना सावध राहा.",
+  os_t8_b3: "ओळखपत्र, तिकीट किंवा बँक तपशीलांसारख्या कागदपत्रांचे फोटो शेअर करणे टाळा.",
+  os_t8_b4: "त्रास देणाऱ्या, धमकावणाऱ्या किंवा संशयास्पद वाटणाऱ्या खात्यांना रिपोर्ट आणि ब्लॉक करा.",
+  os_t8_b5: "तुमच्या प्रोफाइलवर काय दिसते हे नियंत्रित करण्यासाठी टॅग केलेले फोटो आणि पोस्ट वेळोवेळी तपासा.",
+  os_t8_b6: "पोस्ट करण्याआधी विचार करा — एकदा ऑनलाइन शेअर केलेला मजकूर पूर्णपणे काढणे कठीण असते.",
+
+  os_t9_title: "अकाउंट रिकव्हरी",
+  os_t9_b1: "तुमच्या महत्त्वाच्या खात्यांसाठी आधीच रिकव्हरी ईमेल आणि फोन नंबर सेट करा.",
+  os_t9_b2: "पासवर्ड विसरल्यास किंवा फोन हरवल्यास रिकव्हरी पर्यायांमुळे तुम्ही पुन्हा अ‍ॅक्सेस मिळवू शकता.",
+  os_t9_b3: "नंबर किंवा ईमेल बदलल्यास तुमची रिकव्हरी माहितीही अपडेट करा.",
+  os_t9_b4: "2FA सेट करताना मिळालेले बॅकअप कोड नोंदवून सुरक्षित ठेवा.",
+  os_t9_b5: "अ‍ॅक्सेस गमावल्यास प्लॅटफॉर्मच्या अधिकृत \"Forgot Password\" किंवा \"Account Recovery\" पर्यायाचा वापर करा.",
+  os_t9_b6: "सतर्क राहा — काही फसवणूक करणारे \"अकाउंट रिकव्हरी\"त मदत करण्याच्या बहाण्याने अ‍ॅक्सेस चोरण्याचा प्रयत्न करतात.",
+
+  os_t10_title: "सायबर गुन्हा तक्रार",
+  os_t10_b1: "ऑनलाइन फसवणूक किंवा त्रासाचा सामना करावा लागल्यास शक्य तितक्या लवकर तक्रार करा.",
+  os_t10_b2: "तुम्ही cybercrime.gov.in वर ऑनलाइन तक्रार करू शकता किंवा हेल्पलाइन क्रमांक 1930 वर कॉल करू शकता.",
+  os_t10_b3: "तक्रार करण्यापूर्वी स्क्रीनशॉट, मेसेज आणि व्यवहाराची माहिती यांसारखे पुरावे जपून ठेवा.",
+  os_t10_b4: "संशयास्पद किंवा बनावट खात्यांची तक्रार संबंधित सोशल मीडिया प्लॅटफॉर्मवरही करा.",
+  os_t10_b5: "प्रकरणात पैसे किंवा खात्याची माहिती सामील असल्यास लगेच तुमच्या बँकेला कळवा.",
+  os_t10_b6: "ऑनलाइन तक्रार करणे शक्य नसल्यास जवळच्या पोलीस ठाण्यातही सायबर गुन्ह्याची तक्रार नोंदवता येते."
+});
+
+if (typeof dsApplyTranslations === 'function') { dsApplyTranslations(); }
+
+const scOptions = ["Click the link and log in immediately", "Reply with your account number", "Check the sender's domain carefully \u2014 it looks suspicious, so don't click it", "Forward it to your family so they can log in for you"];
+const scCorrect = 2;
+const scExplanation = "This domain does not match your real bank's official website \u2014 a classic phishing sign. Never log in through such links.";
+const optWrap = document.getElementById('scenarioOptions');
+const feedbackEl = document.getElementById('scenarioFeedback');
+scOptions.forEach((text, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = String.fromCharCode(65 + idx) + '. ' + text;
+    btn.addEventListener('click', () => {
+        const buttons = optWrap.querySelectorAll('button');
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === scCorrect) b.classList.add('correct');
+        });
+        if (idx !== scCorrect) btn.classList.add('incorrect');
+        feedbackEl.textContent = (idx === scCorrect ? '✅ Correct! ' : '❌ Not quite. ') + scExplanation;
+    
+        if (typeof dsMarkLessonComplete === 'function' && !dsIsLessonComplete('online-safety')) {
+            dsMarkLessonComplete('online-safety');
+        }
+    });
+    optWrap.appendChild(btn);
+});
+</script>
+<script>
+/* Trilingual lesson-page copy. */
+Object.assign(translations.en, {
+  "online-safety_hero_title": "🔐 Online Safety",
+  "online-safety_flow_learn": "LEARN",
+  "online-safety_flow_practice": "PRACTICE",
+  "online-safety_flow_quiz": "QUIZ",
+  "online-safety_flow_score": "SCORE",
+  "online-safety_flow_progress": "PROGRESS",
+  "online-safety_simple_title": "Simple Explanation",
+  "online-safety_simple_text": "Staying safe online means protecting your passwords, personal information, and being alert to common tricks scammers use.",
+  "online-safety_examples_title": "Practical Examples",
+  "online-safety_ex1": "A strong, unique password for each account makes it much harder for hackers to break in.",
+  "online-safety_ex2": "Two-factor authentication adds an extra step, like a code sent to your phone, for extra security.",
+  "online-safety_ex3": "Phishing messages look official but are designed to steal your information — always double-check before clicking.",
+  "online-safety_safety_title": "Safety Tips",
+  "online-safety_safe1": "Use a unique, strong password for each account.",
+  "online-safety_safe2": "Turn on two-step verification wherever available.",
+  "online-safety_safe3": "Never share your OTP or password with anyone.",
+  "online-safety_safe4": "Don't click links from unknown senders.",
+  "online-safety_safe5": "Review your social media privacy settings regularly.",
+  "online-safety_scenario_title": "Real-World Scenario — Practice",
+  "online-safety_scenario_text": "An email from 'yourbank-verify.com' asks you to log in urgently to confirm your account details.",
+  "online-safety_scenario_question": "What should you do?",
+  "online-safety_scenario_opt1": "Click the link and log in immediately",
+  "online-safety_scenario_opt2": "Reply with your account number",
+  "online-safety_scenario_opt3": "Check the sender's domain carefully — it looks suspicious, so don't click it",
+  "online-safety_scenario_opt4": "Forward it to your family so they can log in for you",
+  "online-safety_scenario_correct": "Correct!",
+  "online-safety_scenario_incorrect": "Not quite.",
+  "online-safety_scenario_explanation": "This domain does not match your real bank's official website — a classic phishing sign. Never log in through such links.",
+  "online-safety_quiz_btn": "Take the Online Safety Quiz",
+  "online-safety_next_btn": "Next: Fake News Awareness",
+});
+Object.assign(translations.hi, {
+  "online-safety_hero_title": "🔐 ऑनलाइन सुरक्षा",
+  "online-safety_flow_learn": "सीखें",
+  "online-safety_flow_practice": "अभ्यास",
+  "online-safety_flow_quiz": "क्विज़",
+  "online-safety_flow_score": "स्कोर",
+  "online-safety_flow_progress": "प्रगति",
+  "online-safety_simple_title": "सरल समझ",
+  "online-safety_simple_text": "ऑनलाइन सुरक्षित रहने का मतलब है अपने पासवर्ड और निजी जानकारी की रक्षा करना और स्कैमर्स की आम चालों से सतर्क रहना।",
+  "online-safety_examples_title": "व्यावहारिक उदाहरण",
+  "online-safety_ex1": "हर खाते के लिए मजबूत और अलग पासवर्ड रखने से हैकर्स के लिए उसमें घुसना बहुत कठिन हो जाता है।",
+  "online-safety_ex2": "टू-फैक्टर ऑथेंटिकेशन अतिरिक्त सुरक्षा के लिए एक और चरण जोड़ता है, जैसे आपके फोन पर भेजा गया कोड।",
+  "online-safety_ex3": "फिशिंग संदेश आधिकारिक दिख सकते हैं, लेकिन आपकी जानकारी चुराने के लिए बनाए जाते हैं — क्लिक करने से पहले हमेशा दोबारा जांचें।",
+  "online-safety_safety_title": "सुरक्षा सुझाव",
+  "online-safety_safe1": "हर खाते के लिए अलग और मजबूत पासवर्ड का उपयोग करें।",
+  "online-safety_safe2": "जहां उपलब्ध हो, वहां दो-चरणीय सत्यापन चालू करें।",
+  "online-safety_safe3": "अपना OTP या पासवर्ड कभी भी किसी के साथ साझा न करें।",
+  "online-safety_safe4": "अनजान प्रेषकों के लिंक पर क्लिक न करें।",
+  "online-safety_safe5": "अपनी सोशल मीडिया गोपनीयता सेटिंग्स नियमित रूप से जांचें।",
+  "online-safety_scenario_title": "वास्तविक जीवन की स्थिति — अभ्यास",
+  "online-safety_scenario_text": "'yourbank-verify.com' से एक ईमेल आपको खाता विवरण की पुष्टि करने के लिए तुरंत लॉग इन करने को कहता है।",
+  "online-safety_scenario_question": "आपको क्या करना चाहिए?",
+  "online-safety_scenario_opt1": "लिंक पर क्लिक करके तुरंत लॉग इन करें",
+  "online-safety_scenario_opt2": "अपने खाते का नंबर जवाब में भेजें",
+  "online-safety_scenario_opt3": "प्रेषक का डोमेन ध्यान से जांचें — यह संदिग्ध दिखता है, इसलिए क्लिक न करें",
+  "online-safety_scenario_opt4": "इसे परिवार को फॉरवर्ड करें ताकि वे आपके लिए लॉग इन कर सकें",
+  "online-safety_scenario_correct": "सही!",
+  "online-safety_scenario_incorrect": "पूरी तरह सही नहीं।",
+  "online-safety_scenario_explanation": "यह डोमेन आपके असली बैंक की आधिकारिक वेबसाइट से मेल नहीं खाता — यह फिशिंग का सामान्य संकेत है। ऐसे लिंक से कभी लॉग इन न करें।",
+  "online-safety_quiz_btn": "ऑनलाइन सुरक्षा क्विज़ लें",
+  "online-safety_next_btn": "अगला: फेक न्यूज़ जागरूकता",
+});
+Object.assign(translations.mr, {
+  "online-safety_hero_title": "🔐 ऑनलाइन सुरक्षा",
+  "online-safety_flow_learn": "शिका",
+  "online-safety_flow_practice": "सराव",
+  "online-safety_flow_quiz": "क्विझ",
+  "online-safety_flow_score": "गुण",
+  "online-safety_flow_progress": "प्रगती",
+  "online-safety_simple_title": "सोपे स्पष्टीकरण",
+  "online-safety_simple_text": "ऑनलाइन सुरक्षित राहणे म्हणजे तुमचे पासवर्ड आणि वैयक्तिक माहिती सुरक्षित ठेवणे आणि स्कॅमर वापरत असलेल्या सामान्य युक्त्यांबाबत सतर्क राहणे.",
+  "online-safety_examples_title": "व्यावहारिक उदाहरणे",
+  "online-safety_ex1": "प्रत्येक खात्यासाठी मजबूत आणि वेगळा पासवर्ड वापरल्याने हॅकर्सना खाते भेदणे खूप कठीण होते.",
+  "online-safety_ex2": "टू-फॅक्टर ऑथेंटिकेशन अतिरिक्त सुरक्षिततेसाठी आणखी एक पायरी जोडते, जसे तुमच्या फोनवर पाठवलेला कोड.",
+  "online-safety_ex3": "फिशिंग संदेश अधिकृत वाटू शकतात, पण ते तुमची माहिती चोरण्यासाठी बनवलेले असतात — क्लिक करण्यापूर्वी नेहमी पुन्हा तपासा.",
+  "online-safety_safety_title": "सुरक्षिततेच्या टिप्स",
+  "online-safety_safe1": "प्रत्येक खात्यासाठी वेगळा आणि मजबूत पासवर्ड वापरा.",
+  "online-safety_safe2": "जिथे उपलब्ध असेल तिथे टू-स्टेप व्हेरिफिकेशन सुरू करा.",
+  "online-safety_safe3": "तुमचा OTP किंवा पासवर्ड कधीही कोणालाही सांगू नका.",
+  "online-safety_safe4": "अनोळखी पाठवणाऱ्यांच्या लिंकवर क्लिक करू नका.",
+  "online-safety_safe5": "तुमच्या सोशल मीडिया गोपनीयता सेटिंग्ज नियमितपणे तपासा.",
+  "online-safety_scenario_title": "वास्तविक जीवनातील प्रसंग — सराव",
+  "online-safety_scenario_text": "'yourbank-verify.com' वरून आलेला ईमेल खाते तपशीलाची पुष्टी करण्यासाठी तातडीने लॉग इन करण्यास सांगतो.",
+  "online-safety_scenario_question": "तुम्ही काय कराल?",
+  "online-safety_scenario_opt1": "लिंकवर क्लिक करून त्वरित लॉग इन करा",
+  "online-safety_scenario_opt2": "तुमचा खाते क्रमांक उत्तरात पाठवा",
+  "online-safety_scenario_opt3": "पाठवणाऱ्याचे डोमेन काळजीपूर्वक तपासा — ते संशयास्पद दिसते, म्हणून क्लिक करू नका",
+  "online-safety_scenario_opt4": "तो कुटुंबाला फॉरवर्ड करा, म्हणजे ते तुमच्यासाठी लॉग इन करू शकतील",
+  "online-safety_scenario_correct": "बरोबर!",
+  "online-safety_scenario_incorrect": "पूर्णपणे बरोबर नाही.",
+  "online-safety_scenario_explanation": "हे डोमेन तुमच्या खऱ्या बँकेच्या अधिकृत वेबसाइटशी जुळत नाही — हे फिशिंगचे सामान्य लक्षण आहे. अशा लिंकद्वारे कधीही लॉग इन करू नका.",
+  "online-safety_quiz_btn": "ऑनलाइन सुरक्षा क्विझ घ्या",
+  "online-safety_next_btn": "पुढील: फेक न्यूज जागरूकता",
+});
+function applyScenarioLanguage() {
+  const buttons = document.querySelectorAll('#scenarioOptions button');
+  buttons.forEach((btn, idx) => { const key = 'online-safety_scenario_opt' + (idx + 1); btn.textContent = String.fromCharCode(65 + idx) + '. ' + dsT(key); });
+  const feedback = document.getElementById('scenarioFeedback');
+  if (feedback && buttons.length) {
+    const incorrect = Array.from(buttons).findIndex(btn => btn.classList.contains('incorrect'));
+    const answered = incorrect !== -1 ? incorrect : Array.from(buttons).findIndex(btn => btn.classList.contains('correct'));
+    if (answered !== -1) feedback.textContent = (answered === 2 ? dsT('online-safety_scenario_correct') + ' ' : dsT('online-safety_scenario_incorrect') + ' ') + dsT('online-safety_scenario_explanation');
+  }
+}
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+applyScenarioLanguage();
+const lessonLangSelect = document.getElementById('langSelect');
+if (lessonLangSelect) lessonLangSelect.addEventListener('change', () => setTimeout(applyScenarioLanguage, 0));
+document.querySelectorAll('#scenarioOptions button').forEach(btn => btn.addEventListener('click', () => setTimeout(applyScenarioLanguage, 0)));
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1 data-i18n="about_title">About Digital Saathi</h1>
+</section>
+
+<div class="about-block">
+
+  <div class="info-block">
+    <h3 data-i18n="about_problem_title">Problem</h3>
+    <p data-i18n="about_problem_text">Many people, especially beginners and less-experienced internet users, face difficulties using digital services safely and confidently.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="about_solution_title">Solution</h3>
+    <p data-i18n="about_solution_text">Digital Saathi provides simple educational content, practical scenarios, quizzes, and safety guidance to improve digital literacy.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="about_objectives_title">Objectives</h3>
+    <ul class="tips-list">
+      <li data-i18n="about_obj1">Improve digital awareness</li>
+      <li data-i18n="about_obj2">Teach safe online practices</li>
+      <li data-i18n="about_obj3">Explain digital payments</li>
+      <li data-i18n="about_obj4">Help users identify scams</li>
+      <li data-i18n="about_obj5">Promote responsible internet usage</li>
+      <li data-i18n="about_obj6">Increase confidence in using digital services</li>
+    </ul>
+  </div>
+
+</div>
+
+<h2 data-i18n="about_built_with">Built With</h2>
+<div class="tech-grid">
+  <span class="tech-chip">HTML</span>
+  <span class="tech-chip">CSS</span>
+  <span class="tech-chip">JavaScript</span>
+  <span class="tech-chip">LocalStorage</span>
+  <span class="tech-chip">Responsive Web Design</span>
+  <span class="tech-chip">AI Assistant Architecture</span>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+<script src="js/gamification.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+/* Trilingual copy for the About page content only. */
+Object.assign(translations.en, {
+  about_title: "About Digital Saathi",
+  about_problem_title: "Problem",
+  about_problem_text: "Many people, especially beginners and less-experienced internet users, face difficulties using digital services safely and confidently.",
+  about_solution_title: "Solution",
+  about_solution_text: "Digital Saathi provides simple educational content, practical scenarios, quizzes, and safety guidance to improve digital literacy.",
+  about_objectives_title: "Objectives",
+  about_obj1: "Improve digital awareness",
+  about_obj2: "Teach safe online practices",
+  about_obj3: "Explain digital payments",
+  about_obj4: "Help users identify scams",
+  about_obj5: "Promote responsible internet usage",
+  about_obj6: "Increase confidence in using digital services",
+  about_built_with: "Built With"
+});
+Object.assign(translations.hi, {
+  about_title: "डिजिटल साथी के बारे में",
+  about_problem_title: "समस्या",
+  about_problem_text: "कई लोग, खासकर शुरुआती और कम अनुभवी इंटरनेट उपयोगकर्ता, डिजिटल सेवाओं का सुरक्षित और आत्मविश्वास से उपयोग करने में कठिनाई महसूस करते हैं।",
+  about_solution_title: "समाधान",
+  about_solution_text: "डिजिटल साथी डिजिटल साक्षरता बढ़ाने के लिए सरल शैक्षिक सामग्री, व्यावहारिक परिस्थितियां, क्विज़ और सुरक्षा मार्गदर्शन प्रदान करता है।",
+  about_objectives_title: "उद्देश्य",
+  about_obj1: "डिजिटल जागरूकता बढ़ाना",
+  about_obj2: "सुरक्षित ऑनलाइन तरीकों की जानकारी देना",
+  about_obj3: "डिजिटल भुगतान समझाना",
+  about_obj4: "उपयोगकर्ताओं को स्कैम पहचानने में मदद करना",
+  about_obj5: "जिम्मेदारी से इंटरनेट इस्तेमाल करने को बढ़ावा देना",
+  about_obj6: "डिजिटल सेवाओं के उपयोग में आत्मविश्वास बढ़ाना",
+  about_built_with: "इन तकनीकों से बनाया गया"
+});
+Object.assign(translations.mr, {
+  about_title: "डिजिटल साथीबद्दल",
+  about_problem_title: "समस्या",
+  about_problem_text: "अनेक लोक, विशेषतः नवशिके आणि कमी अनुभवी इंटरनेट वापरकर्ते, डिजिटल सेवा सुरक्षितपणे आणि आत्मविश्वासाने वापरताना अडचणींचा सामना करतात.",
+  about_solution_title: "उपाय",
+  about_solution_text: "डिजिटल साक्षरता सुधारण्यासाठी डिजिटल साथी सोपी शैक्षणिक सामग्री, व्यावहारिक परिस्थिती, क्विझ आणि सुरक्षिततेबाबत मार्गदर्शन देते.",
+  about_objectives_title: "उद्दिष्टे",
+  about_obj1: "डिजिटल जागरूकता वाढवणे",
+  about_obj2: "सुरक्षित ऑनलाइन पद्धती शिकवणे",
+  about_obj3: "डिजिटल पेमेंट्स समजावून सांगणे",
+  about_obj4: "वापरकर्त्यांना स्कॅम ओळखण्यास मदत करणे",
+  about_obj5: "जबाबदारीने इंटरनेट वापरण्यास प्रोत्साहन देणे",
+  about_obj6: "डिजिटल सेवा वापरण्याचा आत्मविश्वास वाढवणे",
+  about_built_with: "या तंत्रज्ञानाने तयार केले"
+});
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+</script>
+</body>
+</html>

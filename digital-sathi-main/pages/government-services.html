@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Digital Services — Digital Saathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Government Digital Services — subtopic accordion */
+  .subtopics-wrap { margin-top: 10px; }
+  .subtopic-block {
+    background: #fff;
+    border: 1px solid var(--blue-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .subtopic-block summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: var(--blue-pale);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subtopic-block summary::-webkit-details-marker { display: none; }
+  .subtopic-block summary::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform 0.15s ease;
+  }
+  .subtopic-block[open] summary::before { transform: rotate(90deg); }
+  .subtopic-block .tips-list { padding: 12px 20px 16px 42px; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="../index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="../index.html#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="../safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="learn-hero">
+  <h1 data-i18n="government-services_hero_title">🇮🇳 Government Digital Services</h1>
+  <div class="learn-flow">
+    <span data-i18n="government-services_flow_learn">LEARN</span> → <span data-i18n="government-services_flow_practice">PRACTICE</span> → <span data-i18n="government-services_flow_quiz">QUIZ</span> → <span data-i18n="government-services_flow_score">SCORE</span> → <span data-i18n="government-services_flow_progress">PROGRESS</span>
+  </div>
+</div>
+
+<div class="learn-section">
+
+  <div class="info-block">
+    <h3 data-i18n="government-services_simple_title">Simple Explanation</h3>
+    <p data-i18n="government-services_simple_text">The government offers several official digital platforms to access documents and services safely — it's important to know how to identify the real ones.</p>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="government-services_examples_title">Practical Examples</h3>
+    <ul class="tips-list">
+      <li data-i18n="government-services_ex1">DigiLocker lets you store and access official documents like licenses and certificates digitally.</li>
+      <li data-i18n="government-services_ex2">UMANG and MyGov are official apps for accessing various government services in one place.</li>
+      <li data-i18n="government-services_ex3">Genuine government websites usually end in .gov.in or .nic.in.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="government-services_safety_title">Safety Tips</h3>
+    <ul class="tips-list">
+      <li data-i18n="government-services_safe1">Always use the official government website or app.</li>
+      <li data-i18n="government-services_safe2">Never click SMS links promising instant refunds.</li>
+      <li data-i18n="government-services_safe3">Check that a website ends in .gov.in before entering personal details.</li>
+      <li data-i18n="government-services_safe4">Never pay 'agents' extra money for guaranteed scheme approval.</li>
+      <li data-i18n="government-services_safe5">Verify news about government schemes through official press releases.</li>
+    </ul>
+  </div>
+
+
+  <div class="info-block">
+    <h3 data-gov-i18n="gov_section_title">Explore Each Topic in Detail</h3>
+    <p data-gov-i18n="gov_section_lead">Tap on a topic to see simple steps and safety tips.</p>
+    <div class="subtopics-wrap">
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t1_title">DigiLocker</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t1_b1">DigiLocker is an official platform for storing and accessing digital documents.</li>
+          <li data-gov-i18n="gov_t1_b2">You can access verified documents such as driving licences, certificates and marksheets.</li>
+          <li data-gov-i18n="gov_t1_b3">Use the official DigiLocker website or app to sign in.</li>
+          <li data-gov-i18n="gov_t1_b4">Keep your login details and OTP private.</li>
+          <li data-gov-i18n="gov_t1_b5">Check that the document shown is yours before downloading or sharing it.</li>
+          <li data-gov-i18n="gov_t1_b6">Avoid using DigiLocker through links sent by unknown people.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t2_title">UMANG</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t2_b1">UMANG brings many government services together in one app.</li>
+          <li data-gov-i18n="gov_t2_b2">Use it to find and access services from participating government departments.</li>
+          <li data-gov-i18n="gov_t2_b3">Download UMANG only from an official app store.</li>
+          <li data-gov-i18n="gov_t2_b4">Check the service name and department before submitting information.</li>
+          <li data-gov-i18n="gov_t2_b5">Never share your OTP, PIN or password with anyone.</li>
+          <li data-gov-i18n="gov_t2_b6">Log out or lock your phone if you use UMANG on a shared device.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t3_title">MyGov</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t3_b1">MyGov is the Government of India's citizen engagement platform.</li>
+          <li data-gov-i18n="gov_t3_b2">You can find government updates, campaigns, discussions and public participation activities.</li>
+          <li data-gov-i18n="gov_t3_b3">Use the official MyGov website or app for information.</li>
+          <li data-gov-i18n="gov_t3_b4">Check the date and source before believing a government-related post.</li>
+          <li data-gov-i18n="gov_t3_b5">Do not share sensitive personal information in public comments or posts.</li>
+          <li data-gov-i18n="gov_t3_b6">Follow links from MyGov only when they lead to a trusted official service.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t4_title">Aadhaar-Related Online Services</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t4_b1">Use the official UIDAI website for Aadhaar-related online services.</li>
+          <li data-gov-i18n="gov_t4_b2">Services may include checking Aadhaar status, updating details and downloading Aadhaar-related documents.</li>
+          <li data-gov-i18n="gov_t4_b3">Read the service instructions before entering your Aadhaar details.</li>
+          <li data-gov-i18n="gov_t4_b4">Never share the OTP received for an Aadhaar service with anyone.</li>
+          <li data-gov-i18n="gov_t4_b5">Avoid entering Aadhaar details on websites reached through random SMS or social-media links.</li>
+          <li data-gov-i18n="gov_t4_b6">When sharing a copy, use the appropriate masking or privacy options when available.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t5_title">Government Portals</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t5_b1">Government portals provide official information and online services.</li>
+          <li data-gov-i18n="gov_t5_b2">Many Indian government websites use domains such as .gov.in or .nic.in.</li>
+          <li data-gov-i18n="gov_t5_b3">Type the official web address yourself when possible instead of using unknown links.</li>
+          <li data-gov-i18n="gov_t5_b4">Check the website name carefully before logging in or submitting details.</li>
+          <li data-gov-i18n="gov_t5_b5">Look for clear contact information and official department details.</li>
+          <li data-gov-i18n="gov_t5_b6">Keep a bookmark of trusted government portals you use regularly.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t6_title">Online Applications</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t6_b1">Read the eligibility rules and instructions before starting an application.</li>
+          <li data-gov-i18n="gov_t6_b2">Keep required documents and correct information ready before filling the form.</li>
+          <li data-gov-i18n="gov_t6_b3">Enter your name, date of birth and other details exactly as required.</li>
+          <li data-gov-i18n="gov_t6_b4">Review the form carefully before clicking Submit.</li>
+          <li data-gov-i18n="gov_t6_b5">Save the application number or acknowledgement after submission.</li>
+          <li data-gov-i18n="gov_t6_b6">Pay fees only through the official application portal and keep the receipt.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t7_title">Digital Documents</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t7_b1">Digital documents are electronic copies or verified documents that you can access online.</li>
+          <li data-gov-i18n="gov_t7_b2">Store important documents in trusted services such as DigiLocker.</li>
+          <li data-gov-i18n="gov_t7_b3">Use a screen lock and keep your phone or computer updated.</li>
+          <li data-gov-i18n="gov_t7_b4">Share documents only with people or organisations that genuinely need them.</li>
+          <li data-gov-i18n="gov_t7_b5">Check the recipient and document before sending it.</li>
+          <li data-gov-i18n="gov_t7_b6">Keep a secure backup of important files when appropriate.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t8_title">Checking Whether a Government Website Is Genuine</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t8_b1">Check the full web address before entering any personal information.</li>
+          <li data-gov-i18n="gov_t8_b2">For Indian government services, look for trusted official domains such as .gov.in or .nic.in.</li>
+          <li data-gov-i18n="gov_t8_b3">Look for the correct department or organisation name on the website.</li>
+          <li data-gov-i18n="gov_t8_b4">Be careful with small spelling changes in the website address.</li>
+          <li data-gov-i18n="gov_t8_b5">A padlock or HTTPS helps protect the connection but does not by itself prove a site is official.</li>
+          <li data-gov-i18n="gov_t8_b6">When unsure, reach the service from a known official government portal.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t9_title">Avoiding Fake Government Websites</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t9_b1">Do not trust websites that promise guaranteed approvals, jobs, refunds or benefits.</li>
+          <li data-gov-i18n="gov_t9_b2">Avoid sites asking for unnecessary personal, banking or OTP information.</li>
+          <li data-gov-i18n="gov_t9_b3">Do not download unknown apps or files from suspicious government-looking websites.</li>
+          <li data-gov-i18n="gov_t9_b4">Do not pay extra money to an unknown person for guaranteed government benefits.</li>
+          <li data-gov-i18n="gov_t9_b5">If a message contains a link, verify the service independently before opening it.</li>
+          <li data-gov-i18n="gov_t9_b6">If a site looks suspicious, close it and use a verified official source instead.</li>
+        </ul>
+      </details>
+
+      <details class="subtopic-block">
+        <summary data-gov-i18n="gov_t10_title">Useful Official Resources</summary>
+        <ul class="tips-list">
+          <li data-gov-i18n="gov_t10_b1">DigiLocker — use the official DigiLocker website or app for digital documents.</li>
+          <li data-gov-i18n="gov_t10_b2">UMANG — use the official UMANG app or website for supported government services.</li>
+          <li data-gov-i18n="gov_t10_b3">MyGov — use the official MyGov platform for citizen engagement and government updates.</li>
+          <li data-gov-i18n="gov_t10_b4">UIDAI — use the official UIDAI website for Aadhaar-related services.</li>
+          <li data-gov-i18n="gov_t10_b5">National Portal of India — use the official government portal to find information and links to government services.</li>
+          <li data-gov-i18n="gov_t10_b6">For any service, start from a trusted official source instead of an unknown search result or message link.</li>
+        </ul>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3 data-i18n="government-services_scenario_title">Real-World Scenario — Practice</h3>
+    <div class="scenario-box">
+      <p data-i18n="government-services_scenario_text">You get an SMS: 'Claim your government subsidy now by clicking this link and entering your Aadhaar number.'</p>
+      <p><strong data-i18n="government-services_scenario_question">What should you do?</strong></p>
+    </div>
+    <div class="scenario-options" id="scenarioOptions"></div>
+    <div class="scenario-feedback" id="scenarioFeedback"></div>
+  </div>
+
+  <div class="learn-page-actions">
+    <a href="../quizzes/government-quiz.html" class="btn btn-primary"><span data-i18n="government-services_quiz_btn">Take the Government Digital Services Quiz</span></a>
+    <a href="../safety.html" class="btn btn-secondary"><span data-i18n="government-services_next_btn">Next: Scam Awareness</span></a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="../index.html" data-i18n="nav_home">Home</a>
+    <a href="../index.html#learn" data-i18n="nav_learn">Learn</a>
+    <a href="../quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="../safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="../dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="../about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="../index.html#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+
+<script src="../js/gamification.js"></script>
+<script src="../js/main.js"></script>
+<script>
+const GOV_TRANSLATIONS = {
+  "gov_section_title": { en: "Explore Each Topic in Detail", hi: "हर विषय को विस्तार से जानें", mr: "प्रत्येक विषय सविस्तर जाणून घ्या" },
+  "gov_section_lead": { en: "Tap on a topic to see simple steps and safety tips.", hi: "किसी विषय पर टैप करके आसान चरण और सुरक्षा सुझाव देखें।", mr: "सोप्या पायऱ्या आणि सुरक्षिततेच्या टिप्स पाहण्यासाठी विषयावर टॅप करा." },
+  "gov_t1_title": { en: "DigiLocker", hi: "DigiLocker", mr: "DigiLocker" },
+  "gov_t2_title": { en: "UMANG", hi: "UMANG", mr: "UMANG" },
+  "gov_t3_title": { en: "MyGov", hi: "MyGov", mr: "MyGov" },
+  "gov_t4_title": { en: "Aadhaar-Related Online Services", hi: "आधार से जुड़ी ऑनलाइन सेवाएं", mr: "आधारशी संबंधित ऑनलाइन सेवा" },
+  "gov_t5_title": { en: "Government Portals", hi: "सरकारी पोर्टल", mr: "सरकारी पोर्टल" },
+  "gov_t6_title": { en: "Online Applications", hi: "ऑनलाइन आवेदन", mr: "ऑनलाइन अर्ज" },
+  "gov_t7_title": { en: "Digital Documents", hi: "डिजिटल दस्तावेज़", mr: "डिजिटल कागदपत्रे" },
+  "gov_t8_title": { en: "Checking Whether a Government Website Is Genuine", hi: "सरकारी वेबसाइट असली है या नहीं, इसकी जांच", mr: "सरकारी वेबसाइट खरी आहे का ते तपासणे" },
+  "gov_t9_title": { en: "Avoiding Fake Government Websites", hi: "फर्जी सरकारी वेबसाइटों से बचना", mr: "बनावट सरकारी वेबसाइट्स टाळणे" },
+  "gov_t10_title": { en: "Useful Official Resources", hi: "उपयोगी आधिकारिक संसाधन", mr: "उपयुक्त अधिकृत स्रोत" },
+  "gov_t1_b1": { en: "DigiLocker is an official platform for storing and accessing digital documents.", hi: "DigiLocker डिजिटल दस्तावेज़ों को सुरक्षित रूप से रखने और देखने का एक आधिकारिक प्लेटफॉर्म है।", mr: "DigiLocker हे डिजिटल कागदपत्रे साठवण्यासाठी आणि पाहण्यासाठी अधिकृत प्लॅटफॉर्म आहे." },
+  "gov_t1_b2": { en: "You can access verified documents such as driving licences, certificates and marksheets.", hi: "आप ड्राइविंग लाइसेंस, प्रमाणपत्र और मार्कशीट जैसे सत्यापित दस्तावेज़ देख सकते हैं।", mr: "ड्रायव्हिंग लायसन्स, प्रमाणपत्रे आणि मार्कशीटसारखी पडताळलेली कागदपत्रे पाहता येतात." },
+  "gov_t1_b3": { en: "Use the official DigiLocker website or app to sign in.", hi: "साइन इन करने के लिए आधिकारिक DigiLocker वेबसाइट या ऐप का उपयोग करें।", mr: "साइन इन करण्यासाठी अधिकृत DigiLocker वेबसाइट किंवा अ‍ॅप वापरा." },
+  "gov_t1_b4": { en: "Keep your login details and OTP private.", hi: "अपनी लॉगिन जानकारी और OTP गुप्त रखें।", mr: "तुमची लॉगिन माहिती आणि OTP गुप्त ठेवा." },
+  "gov_t1_b5": { en: "Check that the document shown is yours before downloading or sharing it.", hi: "डाउनलोड या शेयर करने से पहले जांचें कि दिख रहा दस्तावेज़ आपका ही है।", mr: "डाउनलोड किंवा शेअर करण्यापूर्वी दिसणारे कागदपत्र तुमचेच आहे याची खात्री करा." },
+  "gov_t1_b6": { en: "Avoid using DigiLocker through links sent by unknown people.", hi: "अनजान लोगों द्वारा भेजे गए लिंक से DigiLocker का उपयोग न करें।", mr: "अनोळखी व्यक्तींनी पाठवलेल्या लिंकद्वारे DigiLocker वापरू नका." },
+  "gov_t2_b1": { en: "UMANG brings many government services together in one app.", hi: "UMANG एक ऐप में कई सरकारी सेवाओं को एक साथ उपलब्ध कराता है।", mr: "UMANG एका अ‍ॅपमध्ये अनेक सरकारी सेवा उपलब्ध करून देतो." },
+  "gov_t2_b2": { en: "Use it to find and access services from participating government departments.", hi: "इससे संबंधित सरकारी विभागों की सेवाएं खोज और उपयोग कर सकते हैं।", mr: "संबंधित सरकारी विभागांच्या सेवा शोधण्यासाठी आणि वापरण्यासाठी याचा उपयोग करा." },
+  "gov_t2_b3": { en: "Download UMANG only from an official app store.", hi: "UMANG केवल आधिकारिक ऐप स्टोर से डाउनलोड करें।", mr: "UMANG फक्त अधिकृत अ‍ॅप स्टोअरमधून डाउनलोड करा." },
+  "gov_t2_b4": { en: "Check the service name and department before submitting information.", hi: "जानकारी जमा करने से पहले सेवा का नाम और विभाग जांचें।", mr: "माहिती सबमिट करण्यापूर्वी सेवेचे नाव आणि विभाग तपासा." },
+  "gov_t2_b5": { en: "Never share your OTP, PIN or password with anyone.", hi: "अपना OTP, PIN या पासवर्ड किसी के साथ साझा न करें।", mr: "तुमचा OTP, PIN किंवा पासवर्ड कोणालाही सांगू नका." },
+  "gov_t2_b6": { en: "Log out or lock your phone if you use UMANG on a shared device.", hi: "साझा डिवाइस पर UMANG इस्तेमाल करने के बाद लॉग आउट करें या फोन लॉक करें।", mr: "सामायिक डिव्हाइसवर UMANG वापरल्यानंतर लॉग आउट करा किंवा फोन लॉक करा." },
+  "gov_t3_b1": { en: "MyGov is the Government of India's citizen engagement platform.", hi: "MyGov भारत सरकार का नागरिक सहभाग प्लेटफॉर्म है।", mr: "MyGov हे भारत सरकारचे नागरिक सहभागाचे प्लॅटफॉर्म आहे." },
+  "gov_t3_b2": { en: "You can find government updates, campaigns, discussions and public participation activities.", hi: "यहां सरकारी अपडेट, अभियान, चर्चाएं और नागरिक भागीदारी की गतिविधियां मिल सकती हैं।", mr: "येथे सरकारी अपडेट्स, मोहिमा, चर्चा आणि नागरिक सहभागाच्या उपक्रमांची माहिती मिळू शकते." },
+  "gov_t3_b3": { en: "Use the official MyGov website or app for information.", hi: "जानकारी के लिए आधिकारिक MyGov वेबसाइट या ऐप का उपयोग करें।", mr: "माहितीसाठी अधिकृत MyGov वेबसाइट किंवा अ‍ॅप वापरा." },
+  "gov_t3_b4": { en: "Check the date and source before believing a government-related post.", hi: "सरकार से जुड़ी पोस्ट पर भरोसा करने से पहले तारीख और स्रोत जांचें।", mr: "सरकारशी संबंधित पोस्टवर विश्वास ठेवण्यापूर्वी तारीख आणि स्रोत तपासा." },
+  "gov_t3_b5": { en: "Do not share sensitive personal information in public comments or posts.", hi: "सार्वजनिक टिप्पणियों या पोस्ट में संवेदनशील निजी जानकारी साझा न करें।", mr: "सार्वजनिक कमेंट्स किंवा पोस्टमध्ये संवेदनशील वैयक्तिक माहिती शेअर करू नका." },
+  "gov_t3_b6": { en: "Follow links from MyGov only when they lead to a trusted official service.", hi: "MyGov के लिंक तभी खोलें जब वे किसी भरोसेमंद आधिकारिक सेवा तक ले जाएं।", mr: "MyGov वरील लिंक फक्त विश्वासार्ह अधिकृत सेवेकडे नेत असल्यासच उघडा." },
+  "gov_t4_b1": { en: "Use the official UIDAI website for Aadhaar-related online services.", hi: "आधार से जुड़ी ऑनलाइन सेवाओं के लिए आधिकारिक UIDAI वेबसाइट का उपयोग करें।", mr: "आधारशी संबंधित ऑनलाइन सेवांसाठी अधिकृत UIDAI वेबसाइट वापरा." },
+  "gov_t4_b2": { en: "Services may include checking Aadhaar status, updating details and downloading Aadhaar-related documents.", hi: "इन सेवाओं में आधार स्थिति देखना, विवरण अपडेट करना और आधार से जुड़े दस्तावेज़ डाउनलोड करना शामिल हो सकता है।", mr: "यामध्ये आधारची स्थिती तपासणे, तपशील अपडेट करणे आणि आधारशी संबंधित कागदपत्रे डाउनलोड करणे अशा सेवा असू शकतात." },
+  "gov_t4_b3": { en: "Read the service instructions before entering your Aadhaar details.", hi: "आधार विवरण दर्ज करने से पहले सेवा के निर्देश पढ़ें।", mr: "आधार तपशील टाकण्यापूर्वी सेवेच्या सूचना वाचा." },
+  "gov_t4_b4": { en: "Never share the OTP received for an Aadhaar service with anyone.", hi: "आधार सेवा के लिए मिला OTP किसी के साथ साझा न करें।", mr: "आधार सेवेसाठी मिळालेला OTP कोणालाही सांगू नका." },
+  "gov_t4_b5": { en: "Avoid entering Aadhaar details on websites reached through random SMS or social-media links.", hi: "रैंडम SMS या सोशल मीडिया लिंक से खोली गई वेबसाइट पर आधार विवरण न डालें।", mr: "रँडम SMS किंवा सोशल मीडिया लिंकवरून उघडलेल्या वेबसाइटवर आधार तपशील टाकू नका." },
+  "gov_t4_b6": { en: "When sharing a copy, use the appropriate masking or privacy options when available.", hi: "कॉपी साझा करते समय उपलब्ध उचित मास्किंग या गोपनीयता विकल्प का उपयोग करें।", mr: "प्रत शेअर करताना उपलब्ध योग्य मास्किंग किंवा गोपनीयता पर्याय वापरा." },
+  "gov_t5_b1": { en: "Government portals provide official information and online services.", hi: "सरकारी पोर्टल आधिकारिक जानकारी और ऑनलाइन सेवाएं देते हैं।", mr: "सरकारी पोर्टल अधिकृत माहिती आणि ऑनलाइन सेवा देतात." },
+  "gov_t5_b2": { en: "Many Indian government websites use domains such as .gov.in or .nic.in.", hi: "भारत की कई सरकारी वेबसाइटें .gov.in या .nic.in जैसे डोमेन का उपयोग करती हैं।", mr: "भारतातील अनेक सरकारी वेबसाइट्स .gov.in किंवा .nic.in सारखे डोमेन वापरतात." },
+  "gov_t5_b3": { en: "Type the official web address yourself when possible instead of using unknown links.", hi: "संभव हो तो अनजान लिंक की जगह आधिकारिक वेब पता खुद टाइप करें।", mr: "शक्य असल्यास अनोळखी लिंकऐवजी अधिकृत वेब पत्ता स्वतः टाइप करा." },
+  "gov_t5_b4": { en: "Check the website name carefully before logging in or submitting details.", hi: "लॉगिन या विवरण जमा करने से पहले वेबसाइट का नाम ध्यान से जांचें।", mr: "लॉगिन किंवा तपशील सबमिट करण्यापूर्वी वेबसाइटचे नाव काळजीपूर्वक तपासा." },
+  "gov_t5_b5": { en: "Look for clear contact information and official department details.", hi: "स्पष्ट संपर्क जानकारी और आधिकारिक विभाग के विवरण देखें।", mr: "स्पष्ट संपर्क माहिती आणि अधिकृत विभागाचे तपशील पहा." },
+  "gov_t5_b6": { en: "Keep a bookmark of trusted government portals you use regularly.", hi: "जिन भरोसेमंद सरकारी पोर्टल का नियमित उपयोग करते हैं, उन्हें बुकमार्क करें।", mr: "नियमित वापरत असलेल्या विश्वासार्ह सरकारी पोर्टलचे बुकमार्क ठेवा." },
+  "gov_t6_b1": { en: "Read the eligibility rules and instructions before starting an application.", hi: "आवेदन शुरू करने से पहले पात्रता नियम और निर्देश पढ़ें।", mr: "अर्ज सुरू करण्यापूर्वी पात्रता नियम आणि सूचना वाचा." },
+  "gov_t6_b2": { en: "Keep required documents and correct information ready before filling the form.", hi: "फॉर्म भरने से पहले जरूरी दस्तावेज़ और सही जानकारी तैयार रखें।", mr: "फॉर्म भरण्यापूर्वी आवश्यक कागदपत्रे आणि योग्य माहिती तयार ठेवा." },
+  "gov_t6_b3": { en: "Enter your name, date of birth and other details exactly as required.", hi: "नाम, जन्मतिथि और अन्य विवरण ठीक उसी तरह भरें जैसा मांगा गया है।", mr: "नाव, जन्मतारीख आणि इतर तपशील मागितल्याप्रमाणे अचूक भरा." },
+  "gov_t6_b4": { en: "Review the form carefully before clicking Submit.", hi: "Submit पर क्लिक करने से पहले फॉर्म ध्यान से जांचें।", mr: "Submit करण्यापूर्वी फॉर्म काळजीपूर्वक तपासा." },
+  "gov_t6_b5": { en: "Save the application number or acknowledgement after submission.", hi: "जमा करने के बाद आवेदन संख्या या रसीद/पावती सुरक्षित रखें।", mr: "सबमिट केल्यानंतर अर्ज क्रमांक किंवा पोचपावती जतन करा." },
+  "gov_t6_b6": { en: "Pay fees only through the official application portal and keep the receipt.", hi: "फीस केवल आधिकारिक आवेदन पोर्टल से भरें और रसीद संभालकर रखें।", mr: "फी फक्त अधिकृत अर्ज पोर्टलवरून भरा आणि पावती जतन करा." },
+  "gov_t7_b1": { en: "Digital documents are electronic copies or verified documents that you can access online.", hi: "डिजिटल दस्तावेज़ इलेक्ट्रॉनिक या सत्यापित दस्तावेज़ होते हैं जिन्हें आप ऑनलाइन देख सकते हैं।", mr: "डिजिटल कागदपत्रे म्हणजे ऑनलाइन पाहता येणाऱ्या इलेक्ट्रॉनिक किंवा पडताळलेल्या कागदपत्रांच्या प्रती." },
+  "gov_t7_b2": { en: "Store important documents in trusted services such as DigiLocker.", hi: "महत्वपूर्ण दस्तावेज़ DigiLocker जैसी भरोसेमंद सेवाओं में रखें।", mr: "महत्त्वाची कागदपत्रे DigiLocker सारख्या विश्वासार्ह सेवेत ठेवा." },
+  "gov_t7_b3": { en: "Use a screen lock and keep your phone or computer updated.", hi: "स्क्रीन लॉक लगाएं और फोन या कंप्यूटर को अपडेट रखें।", mr: "स्क्रीन लॉक वापरा आणि फोन किंवा संगणक अपडेट ठेवा." },
+  "gov_t7_b4": { en: "Share documents only with people or organisations that genuinely need them.", hi: "दस्तावेज़ केवल उन्हीं लोगों या संस्थाओं से साझा करें जिन्हें वास्तव में जरूरत हो।", mr: "कागदपत्रे फक्त ज्यांना खरोखर गरज आहे अशाच व्यक्ती किंवा संस्थांसोबत शेअर करा." },
+  "gov_t7_b5": { en: "Check the recipient and document before sending it.", hi: "भेजने से पहले प्राप्तकर्ता और दस्तावेज़ जांचें।", mr: "पाठवण्यापूर्वी प्राप्तकर्ता आणि कागदपत्र तपासा." },
+  "gov_t7_b6": { en: "Keep a secure backup of important files when appropriate.", hi: "जरूरत होने पर महत्वपूर्ण फाइलों का सुरक्षित बैकअप रखें।", mr: "गरज असल्यास महत्त्वाच्या फाइल्सचा सुरक्षित बॅकअप ठेवा." },
+  "gov_t8_b1": { en: "Check the full web address before entering any personal information.", hi: "कोई भी निजी जानकारी डालने से पहले पूरा वेब पता जांचें।", mr: "वैयक्तिक माहिती टाकण्यापूर्वी संपूर्ण वेब पत्ता तपासा." },
+  "gov_t8_b2": { en: "For Indian government services, look for trusted official domains such as .gov.in or .nic.in.", hi: "भारतीय सरकारी सेवाओं के लिए .gov.in या .nic.in जैसे भरोसेमंद आधिकारिक डोमेन देखें।", mr: "भारतीय सरकारी सेवांसाठी .gov.in किंवा .nic.in सारखे विश्वासार्ह अधिकृत डोमेन पहा." },
+  "gov_t8_b3": { en: "Look for the correct department or organisation name on the website.", hi: "वेबसाइट पर सही विभाग या संस्था का नाम देखें।", mr: "वेबसाइटवर योग्य विभाग किंवा संस्थेचे नाव आहे का ते पहा." },
+  "gov_t8_b4": { en: "Be careful with small spelling changes in the website address.", hi: "वेब पते में छोटे-छोटे स्पेलिंग बदलावों से सावधान रहें।", mr: "वेब पत्त्यातील लहान स्पेलिंग बदलांपासून सावध रहा." },
+  "gov_t8_b5": { en: "A padlock or HTTPS helps protect the connection but does not by itself prove a site is official.", hi: "पैडलॉक या HTTPS कनेक्शन की सुरक्षा में मदद करता है, लेकिन अकेले इससे वेबसाइट के आधिकारिक होने का प्रमाण नहीं मिलता।", mr: "पॅडलॉक किंवा HTTPS कनेक्शनचे संरक्षण करण्यास मदत करते; पण त्यावरूनच वेबसाइट अधिकृत आहे असे सिद्ध होत नाही." },
+  "gov_t8_b6": { en: "When unsure, reach the service from a known official government portal.", hi: "शक होने पर किसी ज्ञात आधिकारिक सरकारी पोर्टल से सेवा खोलें।", mr: "शंका असल्यास ज्ञात अधिकृत सरकारी पोर्टलवरून सेवा उघडा." },
+  "gov_t9_b1": { en: "Do not trust websites that promise guaranteed approvals, jobs, refunds or benefits.", hi: "गारंटीड मंजूरी, नौकरी, रिफंड या लाभ का वादा करने वाली वेबसाइटों पर भरोसा न करें।", mr: "हमीची मंजुरी, नोकरी, परतावा किंवा लाभ देण्याचे आश्वासन देणाऱ्या वेबसाइटवर विश्वास ठेवू नका." },
+  "gov_t9_b2": { en: "Avoid sites asking for unnecessary personal, banking or OTP information.", hi: "अनावश्यक निजी, बैंकिंग या OTP जानकारी मांगने वाली साइटों से बचें।", mr: "अनावश्यक वैयक्तिक, बँकिंग किंवा OTP माहिती मागणाऱ्या साइट्स टाळा." },
+  "gov_t9_b3": { en: "Do not download unknown apps or files from suspicious government-looking websites.", hi: "संदिग्ध सरकारी जैसी दिखने वाली वेबसाइटों से अनजान ऐप या फाइल डाउनलोड न करें।", mr: "संशयास्पद सरकारीसारख्या दिसणाऱ्या वेबसाइटवरून अनोळखी अ‍ॅप किंवा फाइल डाउनलोड करू नका." },
+  "gov_t9_b4": { en: "Do not pay extra money to an unknown person for guaranteed government benefits.", hi: "सरकारी लाभ की गारंटी के लिए किसी अनजान व्यक्ति को अतिरिक्त पैसे न दें।", mr: "सरकारी लाभाची हमी देण्यासाठी अनोळखी व्यक्तीला जास्त पैसे देऊ नका." },
+  "gov_t9_b5": { en: "If a message contains a link, verify the service independently before opening it.", hi: "किसी संदेश में लिंक हो तो खोलने से पहले सेवा को स्वतंत्र रूप से सत्यापित करें।", mr: "संदेशात लिंक असल्यास ती उघडण्यापूर्वी सेवा स्वतंत्रपणे तपासा." },
+  "gov_t9_b6": { en: "If a site looks suspicious, close it and use a verified official source instead.", hi: "वेबसाइट संदिग्ध लगे तो उसे बंद करें और सत्यापित आधिकारिक स्रोत का उपयोग करें।", mr: "साइट संशयास्पद वाटल्यास ती बंद करा आणि सत्यापित अधिकृत स्रोत वापरा." },
+  "gov_t10_b1": { en: "DigiLocker — use the official DigiLocker website or app for digital documents.", hi: "DigiLocker — डिजिटल दस्तावेज़ों के लिए आधिकारिक DigiLocker वेबसाइट या ऐप का उपयोग करें।", mr: "DigiLocker — डिजिटल कागदपत्रांसाठी अधिकृत DigiLocker वेबसाइट किंवा अ‍ॅप वापरा." },
+  "gov_t10_b2": { en: "UMANG — use the official UMANG app or website for supported government services.", hi: "UMANG — उपलब्ध सरकारी सेवाओं के लिए आधिकारिक UMANG ऐप या वेबसाइट का उपयोग करें।", mr: "UMANG — उपलब्ध सरकारी सेवांसाठी अधिकृत UMANG अ‍ॅप किंवा वेबसाइट वापरा." },
+  "gov_t10_b3": { en: "MyGov — use the official MyGov platform for citizen engagement and government updates.", hi: "MyGov — नागरिक सहभागिता और सरकारी अपडेट के लिए आधिकारिक MyGov प्लेटफॉर्म का उपयोग करें।", mr: "MyGov — नागरिक सहभाग आणि सरकारी अपडेट्ससाठी अधिकृत MyGov प्लॅटफॉर्म वापरा." },
+  "gov_t10_b4": { en: "UIDAI — use the official UIDAI website for Aadhaar-related services.", hi: "UIDAI — आधार से जुड़ी सेवाओं के लिए आधिकारिक UIDAI वेबसाइट का उपयोग करें।", mr: "UIDAI — आधारशी संबंधित सेवांसाठी अधिकृत UIDAI वेबसाइट वापरा." },
+  "gov_t10_b5": { en: "National Portal of India — use the official government portal to find information and links to government services.", hi: "National Portal of India — सरकारी जानकारी और सेवाओं के लिंक के लिए आधिकारिक पोर्टल का उपयोग करें।", mr: "National Portal of India — सरकारी माहिती आणि सेवांच्या लिंकसाठी अधिकृत पोर्टल वापरा." },
+  "gov_t10_b6": { en: "For any service, start from a trusted official source instead of an unknown search result or message link.", hi: "किसी भी सेवा के लिए अनजान खोज परिणाम या संदेश लिंक की बजाय भरोसेमंद आधिकारिक स्रोत से शुरुआत करें।", mr: "कोणत्याही सेवेसाठी अनोळखी शोध परिणाम किंवा संदेशातील लिंकऐवजी विश्वासार्ह अधिकृत स्रोतापासून सुरुवात करा." },
+};
+function dsApplyGovernmentTranslations() {
+  const lang = localStorage.getItem('digitalSaathi_lang') || 'en';
+  document.querySelectorAll('[data-gov-i18n]').forEach(el => {
+    const key = el.getAttribute('data-gov-i18n');
+    const item = GOV_TRANSLATIONS[key];
+    if (item) el.textContent = item[lang] || item.en;
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  dsApplyGovernmentTranslations();
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) {
+    langSelect.addEventListener('change', () => setTimeout(dsApplyGovernmentTranslations, 0));
+  }
+});
+</script>
+<script>
+const scOptions = ["Click the link and enter your Aadhaar number", "Ignore it and verify through the official government website or app instead", "Forward it to family members so they can also claim it", "Reply with your bank account number"];
+const scCorrect = 1;
+const scExplanation = "Government refunds and subsidies are never claimed through random SMS links. Always verify through an official source.";
+const optWrap = document.getElementById('scenarioOptions');
+const feedbackEl = document.getElementById('scenarioFeedback');
+scOptions.forEach((text, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = String.fromCharCode(65 + idx) + '. ' + text;
+    btn.addEventListener('click', () => {
+        const buttons = optWrap.querySelectorAll('button');
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === scCorrect) b.classList.add('correct');
+        });
+        if (idx !== scCorrect) btn.classList.add('incorrect');
+        feedbackEl.textContent = (idx === scCorrect ? '✅ Correct! ' : '❌ Not quite. ') + scExplanation;
+    
+        if (typeof dsMarkLessonComplete === 'function' && !dsIsLessonComplete('government')) {
+            dsMarkLessonComplete('government');
+        }
+    });
+    optWrap.appendChild(btn);
+});
+</script>
+<script>
+/* Trilingual lesson-page copy. */
+Object.assign(translations.en, {
+  "government-services_hero_title": "🇮🇳 Government Digital Services",
+  "government-services_flow_learn": "LEARN",
+  "government-services_flow_practice": "PRACTICE",
+  "government-services_flow_quiz": "QUIZ",
+  "government-services_flow_score": "SCORE",
+  "government-services_flow_progress": "PROGRESS",
+  "government-services_simple_title": "Simple Explanation",
+  "government-services_simple_text": "The government offers several official digital platforms to access documents and services safely — it's important to know how to identify the real ones.",
+  "government-services_examples_title": "Practical Examples",
+  "government-services_ex1": "DigiLocker lets you store and access official documents like licenses and certificates digitally.",
+  "government-services_ex2": "UMANG and MyGov are official apps for accessing various government services in one place.",
+  "government-services_ex3": "Genuine government websites usually end in .gov.in or .nic.in.",
+  "government-services_safety_title": "Safety Tips",
+  "government-services_safe1": "Always use the official government website or app.",
+  "government-services_safe2": "Never click SMS links promising instant refunds.",
+  "government-services_safe3": "Check that a website ends in .gov.in before entering personal details.",
+  "government-services_safe4": "Never pay 'agents' extra money for guaranteed scheme approval.",
+  "government-services_safe5": "Verify news about government schemes through official press releases.",
+  "government-services_scenario_title": "Real-World Scenario — Practice",
+  "government-services_scenario_text": "You get an SMS: “Claim your government subsidy now by clicking this link and entering your Aadhaar number.”",
+  "government-services_scenario_question": "What should you do?",
+  "government-services_scenario_opt1": "Click the link and enter your Aadhaar number",
+  "government-services_scenario_opt2": "Ignore it and verify through the official government website or app instead",
+  "government-services_scenario_opt3": "Forward it to family members so they can also claim it",
+  "government-services_scenario_opt4": "Reply with your bank account number",
+  "government-services_scenario_correct": "Correct!",
+  "government-services_scenario_incorrect": "Not quite.",
+  "government-services_scenario_explanation": "Government refunds and subsidies are never claimed through random SMS links. Always verify through an official source.",
+  "government-services_quiz_btn": "Take the Government Digital Services Quiz",
+  "government-services_next_btn": "Next: Scam Awareness",
+});
+Object.assign(translations.hi, {
+  "government-services_hero_title": "🇮🇳 सरकारी डिजिटल सेवाएं",
+  "government-services_flow_learn": "सीखें",
+  "government-services_flow_practice": "अभ्यास",
+  "government-services_flow_quiz": "क्विज़",
+  "government-services_flow_score": "स्कोर",
+  "government-services_flow_progress": "प्रगति",
+  "government-services_simple_title": "सरल समझ",
+  "government-services_simple_text": "सरकार दस्तावेज़ों और सेवाओं तक सुरक्षित पहुंच के लिए कई आधिकारिक डिजिटल प्लेटफॉर्म देती है — यह जानना जरूरी है कि असली प्लेटफॉर्म की पहचान कैसे करें।",
+  "government-services_examples_title": "व्यावहारिक उदाहरण",
+  "government-services_ex1": "DigiLocker से आप लाइसेंस और प्रमाणपत्र जैसे आधिकारिक दस्तावेज़ डिजिटल रूप से सुरक्षित रख और देख सकते हैं।",
+  "government-services_ex2": "UMANG और MyGov एक ही जगह पर विभिन्न सरकारी सेवाओं तक पहुंचने के आधिकारिक ऐप हैं।",
+  "government-services_ex3": "असली सरकारी वेबसाइटें आमतौर पर .gov.in या .nic.in पर समाप्त होती हैं।",
+  "government-services_safety_title": "सुरक्षा सुझाव",
+  "government-services_safe1": "हमेशा आधिकारिक सरकारी वेबसाइट या ऐप का उपयोग करें।",
+  "government-services_safe2": "तुरंत रिफंड का वादा करने वाले SMS लिंक पर कभी क्लिक न करें।",
+  "government-services_safe3": "निजी जानकारी दर्ज करने से पहले जांचें कि वेबसाइट .gov.in पर समाप्त होती है।",
+  "government-services_safe4": "योजना की पक्की मंजूरी के लिए किसी ‘एजेंट’ को कभी अतिरिक्त पैसे न दें।",
+  "government-services_safe5": "सरकारी योजनाओं से जुड़ी खबरों की पुष्टि आधिकारिक प्रेस विज्ञप्तियों से करें।",
+  "government-services_scenario_title": "वास्तविक जीवन की स्थिति — अभ्यास",
+  "government-services_scenario_text": "आपको SMS मिलता है: “इस लिंक पर क्लिक करके और अपना आधार नंबर दर्ज करके अभी सरकारी सब्सिडी का दावा करें।”",
+  "government-services_scenario_question": "आपको क्या करना चाहिए?",
+  "government-services_scenario_opt1": "लिंक पर क्लिक करके अपना आधार नंबर दर्ज करें",
+  "government-services_scenario_opt2": "इसे अनदेखा करें और आधिकारिक सरकारी वेबसाइट या ऐप से पुष्टि करें",
+  "government-services_scenario_opt3": "इसे परिवार को फॉरवर्ड करें ताकि वे भी इसका दावा कर सकें",
+  "government-services_scenario_opt4": "अपने बैंक खाते का नंबर जवाब में भेजें",
+  "government-services_scenario_correct": "सही!",
+  "government-services_scenario_incorrect": "पूरी तरह सही नहीं।",
+  "government-services_scenario_explanation": "सरकारी रिफंड और सब्सिडी का दावा कभी भी अनजान SMS लिंक से नहीं किया जाता। हमेशा आधिकारिक स्रोत से पुष्टि करें।",
+  "government-services_quiz_btn": "सरकारी डिजिटल सेवाओं का क्विज़ लें",
+  "government-services_next_btn": "अगला: स्कैम जागरूकता",
+});
+Object.assign(translations.mr, {
+  "government-services_hero_title": "🇮🇳 सरकारी डिजिटल सेवा",
+  "government-services_flow_learn": "शिका",
+  "government-services_flow_practice": "सराव",
+  "government-services_flow_quiz": "क्विझ",
+  "government-services_flow_score": "गुण",
+  "government-services_flow_progress": "प्रगती",
+  "government-services_simple_title": "सोपे स्पष्टीकरण",
+  "government-services_simple_text": "दस्तऐवज आणि सेवांपर्यंत सुरक्षितपणे पोहोचण्यासाठी सरकार अनेक अधिकृत डिजिटल प्लॅटफॉर्म उपलब्ध करून देते — त्यांची खरी ओळख कशी करायची हे जाणून घेणे महत्त्वाचे आहे.",
+  "government-services_examples_title": "व्यावहारिक उदाहरणे",
+  "government-services_ex1": "DigiLocker मध्ये तुम्ही परवाने आणि प्रमाणपत्रांसारखी अधिकृत कागदपत्रे डिजिटल पद्धतीने साठवून पाहू शकता.",
+  "government-services_ex2": "UMANG आणि MyGov हे एकाच ठिकाणी विविध सरकारी सेवांपर्यंत पोहोचण्यासाठी अधिकृत अ‍ॅप्स आहेत.",
+  "government-services_ex3": "अधिकृत सरकारी वेबसाइट्स साधारणपणे .gov.in किंवा .nic.in ने समाप्त होतात.",
+  "government-services_safety_title": "सुरक्षिततेच्या टिप्स",
+  "government-services_safe1": "नेहमी अधिकृत सरकारी वेबसाइट किंवा अ‍ॅप वापरा.",
+  "government-services_safe2": "त्वरित परतावा देण्याचे आश्वासन देणाऱ्या SMS लिंकवर कधीही क्लिक करू नका.",
+  "government-services_safe3": "वैयक्तिक माहिती टाकण्यापूर्वी वेबसाइट .gov.in ने संपते का ते तपासा.",
+  "government-services_safe4": "योजनेची हमखास मंजुरी मिळवण्यासाठी ‘एजंट’ला कधीही अतिरिक्त पैसे देऊ नका.",
+  "government-services_safe5": "सरकारी योजनांबद्दलच्या बातम्यांची अधिकृत प्रसिद्धीपत्रकांद्वारे पडताळणी करा.",
+  "government-services_scenario_title": "वास्तविक जीवनातील प्रसंग — सराव",
+  "government-services_scenario_text": "तुम्हाला SMS मिळतो: “या लिंकवर क्लिक करून आणि तुमचा आधार क्रमांक टाकून आता सरकारी अनुदान मिळवा.”",
+  "government-services_scenario_question": "तुम्ही काय कराल?",
+  "government-services_scenario_opt1": "लिंकवर क्लिक करून तुमचा आधार क्रमांक टाका",
+  "government-services_scenario_opt2": "ते दुर्लक्षित करा आणि त्याऐवजी अधिकृत सरकारी वेबसाइट किंवा अ‍ॅपवरून खात्री करा",
+  "government-services_scenario_opt3": "कुटुंबीयांना फॉरवर्ड करा, म्हणजे तेही त्याचा दावा करू शकतील",
+  "government-services_scenario_opt4": "तुमचा बँक खाते क्रमांक उत्तरात पाठवा",
+  "government-services_scenario_correct": "बरोबर!",
+  "government-services_scenario_incorrect": "पूर्णपणे बरोबर नाही.",
+  "government-services_scenario_explanation": "सरकारी परतावे आणि अनुदान अनोळखी SMS लिंकद्वारे कधीही मागवले जात नाहीत. नेहमी अधिकृत स्रोतावरून खात्री करा.",
+  "government-services_quiz_btn": "सरकारी डिजिटल सेवांचा क्विझ घ्या",
+  "government-services_next_btn": "पुढील: स्कॅम जागरूकता",
+});
+function applyScenarioLanguage() {
+  const buttons = document.querySelectorAll('#scenarioOptions button');
+  buttons.forEach((btn, idx) => { const key = 'government-services_scenario_opt' + (idx + 1); btn.textContent = String.fromCharCode(65 + idx) + '. ' + dsT(key); });
+  const feedback = document.getElementById('scenarioFeedback');
+  if (feedback && buttons.length) {
+    const incorrect = Array.from(buttons).findIndex(btn => btn.classList.contains('incorrect'));
+    const answered = incorrect !== -1 ? incorrect : Array.from(buttons).findIndex(btn => btn.classList.contains('correct'));
+    if (answered !== -1) feedback.textContent = (answered === 1 ? dsT('government-services_scenario_correct') + ' ' : dsT('government-services_scenario_incorrect') + ' ') + dsT('government-services_scenario_explanation');
+  }
+}
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+applyScenarioLanguage();
+const lessonLangSelect = document.getElementById('langSelect');
+if (lessonLangSelect) lessonLangSelect.addEventListener('change', () => setTimeout(applyScenarioLanguage, 0));
+document.querySelectorAll('#scenarioOptions button').forEach(btn => btn.addEventListener('click', () => setTimeout(applyScenarioLanguage, 0)));
+</script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Saathi — Learn Digital Skills Safely</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="index.html">🌐 Digital Saathi</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="#learn" data-i18n="nav_learn">Learn</a></li>
+      <li><a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a></li>
+      <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+      <li><a href="about.html" data-i18n="nav_about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <select id="langSelect" class="lang-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="fontDec" aria-label="Decrease text size">A−</button>
+        <button id="fontReset" aria-label="Reset text size">A</button>
+        <button id="fontInc" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Digital Saathi</h1>
+  <p class="subtitle" data-i18n="hero_sub">Your friendly guide to becoming digitally confident and safe.</p>
+  <div class="hero-cta">
+    <a href="#learn" class="btn btn-primary" data-i18n="btn_start">Start Learning</a>
+    <a href="quiz.html" class="btn btn-secondary" data-i18n="btn_quiz">Take a Quiz</a>
+  </div>
+</section>
+
+<div class="daily-tip-card">
+  <h3 data-i18n="daily_tip_title">💡 Digital Tip of the Day</h3>
+  <p id="dailyTipText"></p>
+</div>
+
+<div class="card-grid" style="max-width:750px;">
+  <div class="topic-card">
+    <div class="icon">🚨</div>
+    <h3 data-i18n="scam_game_title">Can You Spot the Scam?</h3>
+    <p data-i18n="scam_game_desc">Test yourself against realistic scam scenarios.</p>
+    <a class="btn btn-primary" href="spot-the-scam.html">Play Now</a>
+  </div>
+  <div class="topic-card">
+    <div class="icon">🔎</div>
+    <h3 data-i18n="fnd_title">Fake News Detective</h3>
+    <p data-i18n="fnd_desc">Spot the warning signs in sample posts.</p>
+    <a class="btn btn-primary" href="fake-news-detective.html">Play Now</a>
+  </div>
+  <div class="topic-card">
+    <div class="icon">🆘</div>
+    <h3 data-i18n="help_title">What Should I Do?</h3>
+    <p data-i18n="help_desc">Get safe next steps for common tricky situations.</p>
+    <a class="btn btn-primary" href="help.html">Get Help</a>
+  </div>
+</div>
+
+<section id="learn">
+  <h2 data-i18n="learn_section_title">Learn the Essentials</h2>
+  <p class="section-lead" data-i18n="learn_section_lead">Five simple topics to help you use the digital world safely and confidently.</p>
+
+  <div class="card-grid">
+
+    <div class="topic-card">
+      <div class="icon">📱</div>
+      <h3 data-i18n="learn_smartphone_title">Smartphone Basics</h3>
+      <ul>
+        <li data-i18n="learn_smartphone_b1">Smartphone settings</li>
+        <li data-i18n="learn_smartphone_b2">Wi-Fi and mobile data</li>
+        <li data-i18n="learn_smartphone_b3">Installing applications</li>
+        <li data-i18n="learn_smartphone_b4">Updating applications</li>
+        <li data-i18n="learn_smartphone_b5">Storage management</li>
+        <li data-i18n="learn_smartphone_b6">Screen lock</li>
+        <li data-i18n="learn_smartphone_b7">Bluetooth</li>
+        <li data-i18n="learn_smartphone_b8">Screenshots</li>
+        <li data-i18n="learn_smartphone_b9">Accessibility features</li>
+      </ul>
+      <a class="btn btn-primary" href="pages/smartphone.html" data-i18n="learn_smartphone_btn">Learn Smartphone Basics</a>
+    </div>
+
+    <div class="topic-card">
+      <div class="icon">💳</div>
+      <h3 data-i18n="learn_payments_title">Digital Payments</h3>
+      <ul>
+        <li data-i18n="learn_payments_b1">What is UPI?</li>
+        <li data-i18n="learn_payments_b2">How UPI works</li>
+        <li data-i18n="learn_payments_b3">QR code payments</li>
+        <li data-i18n="learn_payments_b4">UPI PIN</li>
+        <li data-i18n="learn_payments_b5">OTP safety</li>
+        <li data-i18n="learn_payments_b6">Payment scams</li>
+        <li data-i18n="learn_payments_b7">Checking recipient details</li>
+        <li data-i18n="learn_payments_b8">Failed transactions</li>
+        <li data-i18n="learn_payments_b9">Safe digital payments</li>
+      </ul>
+      <a class="btn btn-primary" href="pages/payments.html" data-i18n="learn_payments_btn">Learn Digital Payments</a>
+    </div>
+
+    <div class="topic-card">
+      <div class="icon">🔐</div>
+      <h3 data-i18n="learn_online_title">Online Safety</h3>
+      <ul>
+        <li data-i18n="learn_online_b1">Strong passwords</li>
+        <li data-i18n="learn_online_b2">Two-factor authentication</li>
+        <li data-i18n="learn_online_b3">Phishing</li>
+        <li data-i18n="learn_online_b4">OTP safety</li>
+        <li data-i18n="learn_online_b5">Privacy</li>
+        <li data-i18n="learn_online_b6">Safe browsing</li>
+        <li data-i18n="learn_online_b7">Social-media safety</li>
+        <li data-i18n="learn_online_b8">Suspicious links</li>
+        <li data-i18n="learn_online_b9">Scam awareness</li>
+      </ul>
+      <a class="btn btn-primary" href="pages/online-safety.html" data-i18n="learn_online_btn">Learn Online Safety</a>
+    </div>
+
+    <div class="topic-card">
+      <div class="icon">📰</div>
+      <h3 data-i18n="learn_fake_title">Fake News</h3>
+      <ul>
+        <li data-i18n="learn_fake_b1">What is fake news?</li>
+        <li data-i18n="learn_fake_b2">How misinformation spreads</li>
+        <li data-i18n="learn_fake_b3">How to verify information</li>
+        <li data-i18n="learn_fake_b4">Checking sources</li>
+        <li data-i18n="learn_fake_b5">Reverse image search concept</li>
+        <li data-i18n="learn_fake_b6">Misleading headlines</li>
+        <li data-i18n="learn_fake_b7">AI-generated misinformation</li>
+        <li data-i18n="learn_fake_b8">Responsible sharing</li>
+      </ul>
+      <a class="btn btn-primary" href="pages/fake-news.html" data-i18n="learn_fake_btn">Learn Fake News Awareness</a>
+    </div>
+
+    <div class="topic-card">
+      <div class="icon">🇮🇳</div>
+      <h3 data-i18n="learn_government_title">Government Digital Services</h3>
+      <ul>
+        <li data-i18n="learn_government_b1">DigiLocker</li>
+        <li data-i18n="learn_government_b2">UMANG</li>
+        <li data-i18n="learn_government_b3">MyGov</li>
+        <li data-i18n="learn_government_b4">Aadhaar-related digital services</li>
+        <li data-i18n="learn_government_b5">Online government services</li>
+        <li data-i18n="learn_government_b6">Identifying official government websites</li>
+        <li data-i18n="learn_government_b7">Avoiding fake government websites</li>
+      </ul>
+      <a class="btn btn-primary" href="pages/government-services.html" data-i18n="learn_government_btn">Learn Government Services</a>
+    </div>
+
+  </div>
+</section>
+
+<h2 data-i18n="progress_title">Your Digital Progress</h2>
+<div class="progress-section">
+  <div class="overall-score">
+    <div data-i18n="progress_overall">Your Digital Safety Score</div>
+    <div class="score-num" id="overallScore">0%</div>
+  </div>
+  <div id="progressRows"></div>
+</div>
+
+<h2>🏆 Badges</h2>
+<div id="badgesGrid" class="badges-grid"></div>
+
+<section id="assistant" class="assistant-section">
+  <h2 data-i18n="assistant_title">🤖 Ask Digital Saathi</h2>
+  <div class="assistant-box">
+    <div class="assistant-quick">
+      <button data-topic="smartphone">Smartphone</button>
+      <button data-topic="payments">UPI</button>
+      <button data-topic="online-safety">Safety</button>
+      <button data-topic="fake-news">Fake News</button>
+      <button data-topic="government">Government</button>
+      <button data-topic="scam">Scam Awareness</button>
+    </div>
+    <div id="assistantMessages" class="assistant-messages"></div>
+    <div class="assistant-input-row">
+      <input id="assistantInput" type="text" data-i18n-placeholder="assistant_placeholder" placeholder="Type your question...">
+      <button id="assistantSendBtn" data-i18n="assistant_send">Send</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-brand">Digital Saathi</div>
+  <div class="footer-tagline" data-i18n="footer_tagline">Learn • Practice • Stay Safe</div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="#learn" data-i18n="nav_learn">Learn</a>
+    <a href="quiz.html" data-i18n="nav_quizzes">Quizzes</a>
+    <a href="safety.html" data-i18n="nav_safety">Safety</a>
+    <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+  </div>
+  <div class="footer-copy">© 2026 Digital Saathi</div>
+</footer>
+
+<a id="chatToggle" href="#assistant" aria-label="Ask Digital Saathi">🤖</a>
+
+<script src="js/gamification.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* Trilingual copy for the five learning cards. */
+Object.assign(translations.en, {
+  "learn_section_title": "Learn the Essentials",
+  "learn_section_lead": "Five simple topics to help you use the digital world safely and confidently.",
+  "learn_smartphone_title": "Smartphone Basics",
+  "learn_smartphone_b1": "Smartphone settings",
+  "learn_smartphone_b2": "Wi-Fi and mobile data",
+  "learn_smartphone_b3": "Installing applications",
+  "learn_smartphone_b4": "Updating applications",
+  "learn_smartphone_b5": "Storage management",
+  "learn_smartphone_b6": "Screen lock",
+  "learn_smartphone_b7": "Bluetooth",
+  "learn_smartphone_b8": "Screenshots",
+  "learn_smartphone_b9": "Accessibility features",
+  "learn_smartphone_btn": "Learn Smartphone Basics",
+  "learn_payments_title": "Digital Payments",
+  "learn_payments_b1": "What is UPI?",
+  "learn_payments_b2": "How UPI works",
+  "learn_payments_b3": "QR code payments",
+  "learn_payments_b4": "UPI PIN",
+  "learn_payments_b5": "OTP safety",
+  "learn_payments_b6": "Payment scams",
+  "learn_payments_b7": "Checking recipient details",
+  "learn_payments_b8": "Failed transactions",
+  "learn_payments_b9": "Safe digital payments",
+  "learn_payments_btn": "Learn Digital Payments",
+  "learn_online_title": "Online Safety",
+  "learn_online_b1": "Strong passwords",
+  "learn_online_b2": "Two-factor authentication",
+  "learn_online_b3": "Phishing",
+  "learn_online_b4": "OTP safety",
+  "learn_online_b5": "Privacy",
+  "learn_online_b6": "Safe browsing",
+  "learn_online_b7": "Social-media safety",
+  "learn_online_b8": "Suspicious links",
+  "learn_online_b9": "Scam awareness",
+  "learn_online_btn": "Learn Online Safety",
+  "learn_fake_title": "Fake News",
+  "learn_fake_b1": "What is fake news?",
+  "learn_fake_b2": "How misinformation spreads",
+  "learn_fake_b3": "How to verify information",
+  "learn_fake_b4": "Checking sources",
+  "learn_fake_b5": "Reverse image search concept",
+  "learn_fake_b6": "Misleading headlines",
+  "learn_fake_b7": "AI-generated misinformation",
+  "learn_fake_b8": "Responsible sharing",
+  "learn_fake_btn": "Learn Fake News Awareness",
+  "learn_government_title": "Government Digital Services",
+  "learn_government_b1": "DigiLocker",
+  "learn_government_b2": "UMANG",
+  "learn_government_b3": "MyGov",
+  "learn_government_b4": "Aadhaar-related digital services",
+  "learn_government_b5": "Online government services",
+  "learn_government_b6": "Identifying official government websites",
+  "learn_government_b7": "Avoiding fake government websites",
+  "learn_government_btn": "Learn Government Services",
+});
+Object.assign(translations.hi, {
+  "learn_section_title": "डिजिटल जरूरी बातें सीखें",
+  "learn_section_lead": "डिजिटल दुनिया को सुरक्षित और आत्मविश्वास से इस्तेमाल करने में मदद करने वाले पांच आसान विषय।",
+  "learn_smartphone_title": "स्मार्टफोन की मूल बातें",
+  "learn_smartphone_b1": "स्मार्टफोन की सेटिंग्स",
+  "learn_smartphone_b2": "Wi-Fi और मोबाइल डेटा",
+  "learn_smartphone_b3": "ऐप इंस्टॉल करना",
+  "learn_smartphone_b4": "ऐप अपडेट करना",
+  "learn_smartphone_b5": "स्टोरेज प्रबंधन",
+  "learn_smartphone_b6": "स्क्रीन लॉक",
+  "learn_smartphone_b7": "ब्लूटूथ",
+  "learn_smartphone_b8": "स्क्रीनशॉट",
+  "learn_smartphone_b9": "सुलभता सुविधाएं",
+  "learn_smartphone_btn": "स्मार्टफोन की मूल बातें सीखें",
+  "learn_payments_title": "डिजिटल भुगतान",
+  "learn_payments_b1": "UPI क्या है?",
+  "learn_payments_b2": "UPI कैसे काम करता है",
+  "learn_payments_b3": "QR कोड से भुगतान",
+  "learn_payments_b4": "UPI PIN",
+  "learn_payments_b5": "OTP सुरक्षा",
+  "learn_payments_b6": "भुगतान स्कैम",
+  "learn_payments_b7": "प्राप्तकर्ता का विवरण जांचना",
+  "learn_payments_b8": "विफल लेनदेन",
+  "learn_payments_b9": "सुरक्षित डिजिटल भुगतान",
+  "learn_payments_btn": "डिजिटल भुगतान सीखें",
+  "learn_online_title": "ऑनलाइन सुरक्षा",
+  "learn_online_b1": "मजबूत पासवर्ड",
+  "learn_online_b2": "टू-फैक्टर ऑथेंटिकेशन",
+  "learn_online_b3": "फिशिंग",
+  "learn_online_b4": "OTP सुरक्षा",
+  "learn_online_b5": "गोपनीयता",
+  "learn_online_b6": "सुरक्षित ब्राउज़िंग",
+  "learn_online_b7": "सोशल मीडिया सुरक्षा",
+  "learn_online_b8": "संदिग्ध लिंक",
+  "learn_online_b9": "स्कैम जागरूकता",
+  "learn_online_btn": "ऑनलाइन सुरक्षा सीखें",
+  "learn_fake_title": "फेक न्यूज़",
+  "learn_fake_b1": "फेक न्यूज़ क्या है?",
+  "learn_fake_b2": "गलत जानकारी कैसे फैलती है",
+  "learn_fake_b3": "जानकारी की पुष्टि कैसे करें",
+  "learn_fake_b4": "स्रोतों की जांच",
+  "learn_fake_b5": "रिवर्स इमेज सर्च की अवधारणा",
+  "learn_fake_b6": "भ्रामक हेडलाइन्स",
+  "learn_fake_b7": "AI से बनी गलत जानकारी",
+  "learn_fake_b8": "जिम्मेदारी से साझा करना",
+  "learn_fake_btn": "फेक न्यूज़ जागरूकता सीखें",
+  "learn_government_title": "सरकारी डिजिटल सेवाएं",
+  "learn_government_b1": "DigiLocker",
+  "learn_government_b2": "UMANG",
+  "learn_government_b3": "MyGov",
+  "learn_government_b4": "आधार से जुड़ी डिजिटल सेवाएं",
+  "learn_government_b5": "ऑनलाइन सरकारी सेवाएं",
+  "learn_government_b6": "आधिकारिक सरकारी वेबसाइटों की पहचान",
+  "learn_government_b7": "फर्जी सरकारी वेबसाइटों से बचना",
+  "learn_government_btn": "सरकारी सेवाएं सीखें",
+});
+Object.assign(translations.mr, {
+  "learn_section_title": "डिजिटल आवश्यक गोष्टी शिका",
+  "learn_section_lead": "डिजिटल जग सुरक्षित आणि आत्मविश्वासाने वापरण्यास मदत करणारे पाच सोपे विषय.",
+  "learn_smartphone_title": "स्मार्टफोन मूलभूत गोष्टी",
+  "learn_smartphone_b1": "स्मार्टफोन सेटिंग्ज",
+  "learn_smartphone_b2": "Wi-Fi आणि मोबाइल डेटा",
+  "learn_smartphone_b3": "अ‍ॅप्स इन्स्टॉल करणे",
+  "learn_smartphone_b4": "अ‍ॅप्स अपडेट करणे",
+  "learn_smartphone_b5": "स्टोरेज व्यवस्थापन",
+  "learn_smartphone_b6": "स्क्रीन लॉक",
+  "learn_smartphone_b7": "Bluetooth",
+  "learn_smartphone_b8": "स्क्रीनशॉट",
+  "learn_smartphone_b9": "सुलभता सुविधा",
+  "learn_smartphone_btn": "स्मार्टफोन मूलभूत गोष्टी शिका",
+  "learn_payments_title": "डिजिटल पेमेंट्स",
+  "learn_payments_b1": "UPI म्हणजे काय?",
+  "learn_payments_b2": "UPI कसे काम करते",
+  "learn_payments_b3": "QR कोड पेमेंट्स",
+  "learn_payments_b4": "UPI PIN",
+  "learn_payments_b5": "OTP सुरक्षितता",
+  "learn_payments_b6": "पेमेंट स्कॅम",
+  "learn_payments_b7": "प्राप्तकर्त्याचे तपशील तपासणे",
+  "learn_payments_b8": "अयशस्वी व्यवहार",
+  "learn_payments_b9": "सुरक्षित डिजिटल पेमेंट्स",
+  "learn_payments_btn": "डिजिटल पेमेंट्स शिका",
+  "learn_online_title": "ऑनलाइन सुरक्षा",
+  "learn_online_b1": "मजबूत पासवर्ड",
+  "learn_online_b2": "टू-फॅक्टर ऑथेंटिकेशन",
+  "learn_online_b3": "फिशिंग",
+  "learn_online_b4": "OTP सुरक्षितता",
+  "learn_online_b5": "गोपनीयता",
+  "learn_online_b6": "सुरक्षित ब्राउझिंग",
+  "learn_online_b7": "सोशल मीडिया सुरक्षितता",
+  "learn_online_b8": "संशयास्पद लिंक",
+  "learn_online_b9": "स्कॅम जागरूकता",
+  "learn_online_btn": "ऑनलाइन सुरक्षा शिका",
+  "learn_fake_title": "फेक न्यूज",
+  "learn_fake_b1": "फेक न्यूज म्हणजे काय?",
+  "learn_fake_b2": "चुकीची माहिती कशी पसरते",
+  "learn_fake_b3": "माहितीची पडताळणी कशी करावी",
+  "learn_fake_b4": "स्रोत तपासणे",
+  "learn_fake_b5": "रिव्हर्स इमेज सर्चची संकल्पना",
+  "learn_fake_b6": "दिशाभूल करणारे मथळे",
+  "learn_fake_b7": "AI-निर्मित चुकीची माहिती",
+  "learn_fake_b8": "जबाबदारीने शेअर करणे",
+  "learn_fake_btn": "फेक न्यूज जागरूकता शिका",
+  "learn_government_title": "सरकारी डिजिटल सेवा",
+  "learn_government_b1": "DigiLocker",
+  "learn_government_b2": "UMANG",
+  "learn_government_b3": "MyGov",
+  "learn_government_b4": "आधारशी संबंधित डिजिटल सेवा",
+  "learn_government_b5": "ऑनलाइन सरकारी सेवा",
+  "learn_government_b6": "अधिकृत सरकारी वेबसाइट्स ओळखणे",
+  "learn_government_b7": "बनावट सरकारी वेबसाइट्स टाळणे",
+  "learn_government_btn": "सरकारी सेवा शिका",
+});
+/* Trilingual copy for the three activity-card sentences only. */
+Object.assign(translations.en, {
+  scam_game_desc: "Test yourself against realistic scam scenarios.",
+  fnd_desc: "Spot the warning signs in sample posts.",
+  help_desc: "Get safe next steps for common tricky situations."
+});
+Object.assign(translations.hi, {
+  scam_game_desc: "वास्तविक स्कैम की परिस्थितियों में खुद को परखें।",
+  fnd_desc: "नमूना पोस्ट में चेतावनी के संकेत पहचानें।",
+  help_desc: "मुश्किल सामान्य परिस्थितियों में सुरक्षित अगले कदम जानें।"
+});
+Object.assign(translations.mr, {
+  scam_game_desc: "वास्तविक स्कॅमच्या परिस्थितींमध्ये स्वतःची चाचणी घ्या.",
+  fnd_desc: "नमुना पोस्टमधील इशारे ओळखा.",
+  help_desc: "सामान्य कठीण परिस्थितींमध्ये सुरक्षित पुढील पावले जाणून घ्या."
+});
+
+if (typeof dsApplyTranslations === 'function') dsApplyTranslations();
+</script>
+</body>
+</html>
